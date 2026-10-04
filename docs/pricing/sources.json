@@ -1,0 +1,9 @@
+{
+  "retrieved": "2026-10-04",
+  "region": "ap-south-1",
+  "provider": "AWS Price List API, GetProducts, regionCode=ap-south-1",
+  "documentation": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html",
+  "apiGateway": "https://aws.amazon.com/api-gateway/pricing/",
+  "appSync": "https://aws.amazon.com/appsync/pricing/",
+  "githubActions": "https://docs.github.com/en/billing/reference/actions-runner-pricing"
+}

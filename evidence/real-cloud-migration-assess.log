@@ -1,0 +1,44 @@
+
+Assessment For Migrating "supportgenone" (env: dev)
+
+Resources
+
+┌──────────┬─────────────┬─────────────────────┬──────────┬────────────────┐
+│ Category │ Service     │ Resource            │ Generate │ Refactor       │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ api      │ AppSync     │ supportGraphql      │ ✔        │ — (not needed) │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ api      │ API Gateway │ supportRest         │ ✔        │ — (not needed) │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ auth     │ Cognito     │ ticketAuth          │ ✔        │ ✔              │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ custom   │ customCDK   │ ticketSocket        │ ✔        │ ✔              │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ function │ Lambda      │ ticketAuthorizer    │ ✔        │ — (not needed) │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ function │ Lambda      │ ticketRest          │ ✔        │ — (not needed) │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ function │ Lambda      │ ticketSocketHandler │ ✔        │ — (not needed) │
+├──────────┼─────────────┼─────────────────────┼──────────┼────────────────┤
+│ function │ Lambda      │ ticketWorkflow      │ ✔        │ — (not needed) │
+└──────────┴─────────────┴─────────────────────┴──────────┴────────────────┘
+
+Advanced Features
+
+┌───────────┬─────────────────────────────┬───────────────────────────────────────┬────────────────┐
+│ Name      │ Path                        │ Generate                              │ Refactor       │
+├───────────┼─────────────────────────────┼───────────────────────────────────────┼────────────────┤
+│ overrides │ api/supportRest/override.ts │ ✘ requires adding code after generate │ — (not needed) │
+└───────────┴─────────────────────────────┴───────────────────────────────────────┴────────────────┘
+
+During migration, unsupported resources/features can be skipped by passing --skip-validations to the command.
+
+⚠️ Some features may not be reported by this assessment. More details are available in the migration guide.
+
+https://docs.amplify.aws/react/start/migrate-to-gen2/feature-matrix/
+
+
+⚠️  WARNING: AWS Amplify Gen 1 CLI is in maintenance mode and will reach end of life on May 1, 2027.
+During maintenance mode, only critical bug fixes and security patches will be provided.
+Migrate to Amplify Gen 2: https://docs.amplify.aws/react/start/migrate-to-gen2/
+

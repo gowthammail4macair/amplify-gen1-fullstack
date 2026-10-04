@@ -1,0 +1,23 @@
+{
+  "version": "1.4",
+  "auth": {
+    "aws_region": "ap-south-1",
+    "user_pool_id": "ap-south-1_5Q6nrDXqS",
+    "user_pool_client_id": "5q329vugqps0dl8lcil9gs504e"
+  },
+  "data": {
+    "url": "https://zw4vheuavfdzfkaugphptnr22y.appsync-api.ap-south-1.amazonaws.com/graphql",
+    "aws_region": "ap-south-1"
+  },
+  "custom": {
+    "rest": {
+      "endpoint": "https://iu6zhvysy7.execute-api.ap-south-1.amazonaws.com/dev",
+      "region": "ap-south-1"
+    },
+    "websocket": {
+      "endpoint": "wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev"
+    },
+    "ticketTableName": "Ticket-m7oh5hcokbhbvpkiluiqwlasfi-dev",
+    "connectionsTableName": "Connections-ap-south-1_5Q6nrDXqS"
+  }
+}

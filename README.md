@@ -4,7 +4,7 @@
 
 [CI/CD and infrastructure diagram](docs/ci-cd-infrastructure-gen1-gen2.png) · [Migration workflow diagram](docs/gen1-to-gen2-migration-workflow.png) · [Diagram notes](docs/CI-CD-AND-MIGRATION.md)
 
-Task 1: an independently versioned local Amplify Gen 1 project covering REST, AppSync GraphQL and API Gateway WebSockets. The code and infrastructure compile locally. No AWS resources were deployed.
+Task 1: an Amplify Gen 1 project covering REST, AppSync GraphQL and API Gateway WebSockets. It is published privately on GitHub and deployed in Mumbai. TypeScript, 21 runtime tests, synthesis and all 12 live API check groups pass.
 
 ```bash
 npm ci
@@ -15,4 +15,10 @@ Read [the implementation guide](docs/IMPLEMENTATION.md) for the steps used to bu
 
 `amplify/backend/` contains native Gen 1 Auth, API and Function definitions. WebSockets are a Gen 1 custom CDK resource. `src/` is the canonical Lambda code; the prepare script copies it into self-contained Gen 1 Lambda source folders. CLI version 14.5.1 is pinned as the official source-distributed `@aws-amplify/cli-internal` package, whose binary is `amplify`. Node 22 is the target Lambda/runtime version. This session validated with Node 24.16.0.
 
-For a future cloud deployment, configure AWS credentials, initialize an actual environment with `npm run amplify -- init`, review `npm run amplify -- status`, and then deploy with `npm run amplify -- push`. Read the guide before replacing the ignored offline metadata fixtures. Cloud deployment remains unverified.
+`.github/workflows/deploy.yml` deploys commits to `main` using temporary OIDC credentials. `scripts/deploy.cjs` selects the configured `dev` environment, replaces offline validation metadata, initializes against the actual application and pushes the backend. See the cloud deployment guide for evidence and pipeline status.
+
+## Cloud deployment follow-up
+
+[Private GitHub repository](https://github.com/gowthammail4macair/amplify-gen1-fullstack) · [workflow, endpoints and live checks](docs/CLOUD-DEPLOYMENT.md) · [rough monthly cost](docs/COST-ESTIMATE.md).
+
+The pipeline validates the code, deploys through short-lived GitHub OIDC credentials, and tests Cognito, REST, AppSync and WebSockets against AWS. `evidence/live-smoke.json` records the latest successful cloud check when present. The migration repository uses a separate environment with fresh resources.

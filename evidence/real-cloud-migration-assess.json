@@ -1,0 +1,8 @@
+{
+  "command": "amplify gen2-migration assess --yes",
+  "cliVersion": "14.5.1",
+  "appId": "d1zija7gqlw461",
+  "environment": "dev",
+  "exitCode": 0,
+  "scope": "Read-only discovery/assessment of deployed Gen 1; no lock/generation/refactor/retention changes"
+}

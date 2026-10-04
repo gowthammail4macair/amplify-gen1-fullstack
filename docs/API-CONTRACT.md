@@ -84,3 +84,5 @@ curl -H "Authorization: $ID_TOKEN" -H 'Content-Type: application/json' \
 ```
 
 Use an installed WebSocket client, for example `wscat`, to connect with the token query parameter. Keep token acquisition and test users outside Git.
+
+The additional GitHub Actions cloud smoke test exercises AWS Cognito, authorizers, Lambda resolvers and table access. See [cloud deployment results](CLOUD-DEPLOYMENT.md) and `evidence/live-smoke.json`. Stateful migration/refactor remains outside that check.

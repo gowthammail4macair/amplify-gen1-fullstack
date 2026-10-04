@@ -1,12 +1,14 @@
 # How Task 1 was implemented
 
+The steps below record initial construction and local validation. The later authorized GitHub Actions deployment and live API results are recorded in [CLOUD-DEPLOYMENT.md](CLOUD-DEPLOYMENT.md).
+
 ## 1. Define the use case and shared contract
 
 A support-ticket owner creates and manages tickets. Agents have additional administrative access. REST, GraphQL and WebSockets all use the same model table within the backend. [API-CONTRACT.md](API-CONTRACT.md) lists every operation and its authorization.
 
 ## 2. Create the Gen 1 project structure
 
-I authored the Gen 1 category inputs and function templates under `amplify/backend/`, using CLI 14.5.1 structures. This was an offline setup, not an `amplify init` deployment. `amplify/.config/project-config.json` describes the JavaScript project. `amplify/cli.json` enables GraphQL Transformer v2 and the default `sub::username` owner claim.
+I authored the Gen 1 category inputs and function templates under `amplify/backend/`, using CLI 14.5.1 structures. This initial construction was offline; the later CI deployment uses actual `amplify init`/`push` against the configured environment. `amplify/.config/project-config.json` describes the JavaScript project. `amplify/cli.json` enables GraphQL Transformer v2 and the default `sub::username` owner claim.
 
 `backend-config.json` records category dependencies. The official CLI is a pinned development dependency. `scripts/prepare-local.cjs` creates ignored local metadata only when missing and copies canonical `src/*.cjs` into each Lambda's `src/` folder. It does not fabricate an AWS app ID, stack or credentials.
 
@@ -63,7 +65,7 @@ This runs TypeScript checks, 21 runtime tests, official Auth/REST template synth
 
 ## 8. Initialize and test in AWS later
 
-This step was not run because you requested local validation only. Use a disposable AWS environment first. If you have only run the offline preparation, remove its ignored `amplify/.config/local-env-info.json`, `amplify/backend/amplify-meta.json`, and `amplify/#current-cloud-backend/` fixtures before `amplify init`. Do not remove actual deployed metadata.
+This step was not run during the initial local-only phase. The subsequently authorized cloud pipeline uses `scripts/deploy.cjs` to select the actual `dev` environment and deploy it; see the cloud deployment report. Use a disposable AWS environment first. If you have only run the offline preparation, remove its ignored `amplify/.config/local-env-info.json`, `amplify/backend/amplify-meta.json`, and `amplify/#current-cloud-backend/` fixtures before `amplify init`. Do not remove actual deployed metadata.
 
 ```bash
 # First configure your selected AWS profile and region.

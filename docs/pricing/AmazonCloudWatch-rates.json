@@ -1,0 +1,1202 @@
+[
+  {
+    "usage": "APS3-CW:HighResAlarmMonitorUsage",
+    "description": "$0.30 per alarm metric month (high resolution) - Asia Pacific (Mumbai)",
+    "unit": "Alarms",
+    "usd": "0.3000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-WAFLogs",
+    "description": "$0.067 per GB for over 50TB of APS3-VendedLogIA-Bytes-WAFLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-WAFLogs",
+    "description": "$0.101 per GB for the next 20TB of APS3-VendedLogIA-Bytes-WAFLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-WAFLogs",
+    "description": "$0.335 per GB for the first 10TB of APS3-VendedLogIA-Bytes-WAFLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-WAFLogs",
+    "description": "$0.201 per GB for the next 20TB of APS3-VendedLogIA-Bytes-WAFLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-CWNMHybrid-Paid",
+    "description": "From Asia Pacific (Mumbai) CW Network Monitor Hybrid",
+    "unit": "hours",
+    "usd": "0.1100000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for Aurora-MySQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProcessingIA-Bytes",
+    "description": "$0.335 per GB custom log data ingested in Infrequent Access log class -Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-ACU-Hours",
+    "description": "$0.003125 per ACU-Hour monitored by Database Insights for Aurora-PostgreSQL limitless databases in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0031250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:CompositeAlarmMonitorUsage",
+    "description": "$0.50 per composite alarm month - Asia Pacific (Mumbai)",
+    "unit": "Alarms",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:NFM-ResourceHours",
+    "description": "$0.0069 per resource (EC2 instance, EKS node) hour during the first 12 months in Asia Pacific (Mumbai)",
+    "unit": "hours",
+    "usd": "0.0069000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:Requests",
+    "description": "$0.01 per 1,000 requests",
+    "unit": "Requests",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataScanned-Bytes",
+    "description": "$0.0067 per GB log data scanned by CloudWatch Logs Insights queries - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0067000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-CFLogs",
+    "description": "$0.075 per GB of CloudFront log data delivered to Kinesis Firehose for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0750000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-CFLogs",
+    "description": "$0.25 per GB of CloudFront log data delivered to Kinesis Firehose for the first 10TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-CFLogs",
+    "description": "$0.05 per GB of CloudFront log data delivered to Kinesis Firehose over 50TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-CFLogs",
+    "description": "$0.15 per GB of CloudFront log data delivered to Kinesis Firehose for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-CW:OTEL:Bytes:EKS-CI",
+    "description": "$0.08 per GigaByte for CW:OTEL:Bytes:EKS-CI in Asia Pacific (Mumbai)",
+    "unit": "GigaBytes",
+    "usd": "0.0800000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes",
+    "description": "$0.335 per GB of log data delivered to Kinesis Firehose for the first 10TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes",
+    "description": "$0.101 per GB of log data delivered to Kinesis Firehose for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes",
+    "description": "$0.201 per GB of log data delivered to Kinesis Firehose for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes",
+    "description": "$0.067 per GB of log data delivered to Kinesis Firehose over 50TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ContributorInsightEvents",
+    "description": "$0.027 per million Events for CW:ContributorInsightEvents in Asia Pacific (Mumbai)",
+    "unit": "Events",
+    "usd": "0.0000000270",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for RDS Oracle provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProcessingOtelEss-Bytes",
+    "description": "$0.335 per GB of APS3-DataProcessingOtelEss-Bytes in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for RDS MySQL provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-ACU-Hours",
+    "description": "$0.000024 per ACU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for Aurora-MySQL Serverless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0000240000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for RDS MySQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Logs-LiveTail",
+    "description": "$0.01 per minute of CloudWatch Logs Live Tail session - Asia Pacific (Mumbai)",
+    "unit": "minutes",
+    "usd": "0.0100000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-WAFLogs",
+    "description": "$0.101 per GB for the next 20TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-WAFLogs",
+    "description": "$0.201 per GB for the next 20TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-WAFLogs",
+    "description": "$0.335 per GB for the first 10TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-WAFLogs",
+    "description": "$0.067 per GB for over 50TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ContributorRulesManaged",
+    "description": "$0.50 per rule per month for CW-Rule-DynamoDB in Asia Pacific (Mumbai)",
+    "unit": "Rule-Hour",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-MTLogs",
+    "description": "$0.075 per GB for the next 20TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0750000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-MTLogs",
+    "description": "$0.05 per GB for over 50TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-MTLogs",
+    "description": "$0.15 per GB for the next 20TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-MTLogs",
+    "description": "$0.25 per GB for the first 10TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-API",
+    "description": "$0.00001 per API Call for CW:DatabaseInsights-API in Asia Pacific (Mumbai)",
+    "unit": "API Calls",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-WAFLogs",
+    "description": "$0.067 per GB for over 50TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-WAFLogs",
+    "description": "$0.335 per GB for the first 10TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-WAFLogs",
+    "description": "$0.201 per GB for the next 20TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-FH-Egress-Bytes-WAFLogs",
+    "description": "$0.101 per GB for the next 20TB of vended log data delivered to Kinesis Firehose per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-S3-Egress-InputBytes",
+    "description": "$0.058 per GB of log data converted to Parquet format - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0580000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes",
+    "description": "$0.067 per GB of log data delivered to S3 over 50TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes",
+    "description": "$0.101 per GB of log data delivered to S3 for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes",
+    "description": "$0.335 per GB of log data delivered to S3 for the first 10TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes",
+    "description": "$0.201 per GB of log data delivered to S3 for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-Application-Signals-Bytes",
+    "description": "$0.15 per GB of Application Signals data ingested for over 30TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "30720",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Application-Signals-Bytes",
+    "description": "$0.35 per GB of Application Signals data ingested for the first 10TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-Application-Signals-Bytes",
+    "description": "$0.20 per GB of Application Signals data ingested for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2000000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for RDS SQL Server Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for Aurora-PostgreSQL provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for Aurora-MySQL provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-WAFLogs",
+    "description": "$0.134 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1340000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-WAFLogs",
+    "description": "$0.335 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-WAFLogs",
+    "description": "$0.67 per GB for the first 10TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.6700000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-WAFLogs",
+    "description": "$0.067 per GB for over 50TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:RUM-free-events",
+    "description": "$0.0 per CloudWatch RUM events first time free tier in Asia Pacific (Mumbai)",
+    "unit": "Events",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:PromQL:SamplesScanned",
+    "description": "$0.00000001 per Samples Scanned for CW:PromQL:SamplesScanned in Asia Pacific (Mumbai)",
+    "unit": "Samples Scanned",
+    "usd": "0.0000000100",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-MTLogs",
+    "description": "$0.50 per GB for the first 10TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-MTLogs",
+    "description": "$0.10 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1000000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-MTLogs",
+    "description": "$0.05 per GB for over 50TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-MTLogs",
+    "description": "$0.25 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for RDS SQL Server Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProcessingOtelIA-Bytes",
+    "description": "$0.335 per GB of APS3-DataProcessingOtelIA-Bytes in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:MetricStreamUsage",
+    "description": "$0.003 per 1,000 metric updates - Asia Pacific (Mumbai)",
+    "unit": "Metric Update",
+    "usd": "0.0000030000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-ACU-Hours",
+    "description": "$0.000576 per ACU-Hour for first month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Serverless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0005760000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for RDS SQL Server provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for RDS PostgreSQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProcessingOtel-Bytes",
+    "description": "$0.67 per GB of APS3-DataProcessingOtel-Bytes in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.6700000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:GMD-Metrics",
+    "description": "$0.01 per 1,000 metrics requested using GetMetricData API - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for Aurora-MySQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-ACU-Hours",
+    "description": "$0.003125 per ACU-Hour monitored by Database Insights for Aurora-MySQL serverless databases in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0031250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CentralizedBytes",
+    "description": "$0.05 per GB of APS3-CentralizedBytes in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for RDS PostgreSQL provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:LogAlarmMonitorUsage",
+    "description": "$0.10 per Alarm in Asia Pacific (Mumbai)",
+    "unit": "Alarms",
+    "usd": "0.1000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes",
+    "description": "$0.134 per GB of vended logs ingested in Standard log class for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1340000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes",
+    "description": "$0.067 per GB of vended logs ingested in Standard log class over 50TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes",
+    "description": "$0.335 per GB of vended logs ingested in Standard log class for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes",
+    "description": "$0.67 per GB of vended logs ingested in Standard log class for the first 10TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.6700000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for RDS MySQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProcessing-Bytes",
+    "description": "$0.67 per GB custom log data ingested in Standard log class - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.6700000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-DataProtection-Bytes",
+    "description": "$0.12 per GB for data scanned with Data Protection in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1200000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:PromQLAlarmMonitorUsage",
+    "description": "$0.10 per Alarm in Asia Pacific (Mumbai)",
+    "unit": "Alarms",
+    "usd": "0.1000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Omni-DataScanned-Bytes",
+    "description": "$0.005 per GB of log data scanned by CloudWatch Log Analytics and CloudWatch Logs Insights queries - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0050000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-XRay-Spans-Indexed",
+    "description": "$0.00000075 per spans indexed for APS3-XRay-Spans-Indexed in Asia Pacific (Mumbai)",
+    "unit": "spans indexed",
+    "usd": "0.0000007500",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for RDS MariaDB Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:GMWI-Metrics",
+    "description": "$0.02 per 1,000 metrics requested using GetMetricWidgetImage API - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0000200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:GIRR-Metrics",
+    "description": "$0.01 per 1,000 metrics requested using GetInsightRuleReport API - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-TimedStorage-ByteHrs",
+    "description": "$0.03 per GB-mo of log storage - Asia Pacific (Mumbai)",
+    "unit": "GB-Mo",
+    "usd": "0.0300000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:AlarmMonitorUsage",
+    "description": "$0.10 per alarm metric month (standard resolution) - Asia Pacific (Mumbai)",
+    "unit": "Alarms",
+    "usd": "0.1000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ContributorEventsManaged",
+    "description": "$0.034 per million Events for CW:ContributorEventsManaged in Asia Pacific (Mumbai)",
+    "unit": "Events",
+    "usd": "0.0000000340",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:MetricInsightAlarmUsage",
+    "description": "$0.10 per metric analyzed by the alarm per month",
+    "unit": "Alarms",
+    "usd": "0.1000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for RDS Oracle Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-vCPU-Hours",
+    "description": "$0.0125 per vCPU-Hour monitored by Database Insights for RDS MariaDB provisioned databases in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0125000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ContributorRulesManaged",
+    "description": "$9.00 per rule per month for CW-Rule-PrivateLink in Asia Pacific (Mumbai)",
+    "unit": "Rule-Hour",
+    "usd": "9.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:RUM-events",
+    "description": "$1 per 100k RUM events in Asia Pacific (Mumbai)",
+    "unit": "Events",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ContributorInsightRules",
+    "description": "$0.50 per rule per month for CW-Rule-CloudWatchLog in Asia Pacific (Osaka)",
+    "unit": "rule",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-ACU-Hours",
+    "description": "$0.000576 per ACU-Hour for first month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Limitless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0005760000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+    "description": "$0.05 per GB of CloudFront vended logs ingested in Infrequent Access log class over 50TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+    "description": "$0.15 per GB of CloudFront vended logs ingested in Infrequent Access log class for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+    "description": "$0.25 per GB of CloudFront vended logs ingested in Infrequent Access log class for the first 10TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+    "description": "$0.075 per GB of CloudFront vended logs ingested in Infrequent Access log class for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0750000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-CW:InternetMonitor-CityNetwork",
+    "description": "$0.74 per 10,000 city-networks monitored by Internet Monitor per hour in Asia Pacific (Mumbai)",
+    "unit": "Internet Monitor - City-Network",
+    "usd": "0.0000740000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes",
+    "description": "$0.101 per GB of vended logs ingested in Infrequent Access log class for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1010000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes",
+    "description": "$0.067 per GB of vended logs ingested in Infrequent Access log class over 50TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0670000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes",
+    "description": "$0.335 per GB of vended logs ingested in Infrequent Access log class for the first 10TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3350000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes",
+    "description": "$0.201 per GB of vended logs ingested in Infrequent Access log class for the next 20TB - Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2010000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-CW:ObservationUsage",
+    "description": "$0.10 per M observations ingested for over 4B observations - Asia Pacific (Mumbai)",
+    "unit": "Observations",
+    "usd": "0.0000001000",
+    "begin": "4000000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:ObservationUsage",
+    "description": "$0.18 per M observations ingested for the next 3B observations - Asia Pacific (Mumbai)",
+    "unit": "Observations",
+    "usd": "0.0000001800",
+    "begin": "1000000000",
+    "end": "4000000000"
+  },
+  {
+    "usage": "APS3-CW:ObservationUsage",
+    "description": "$0.21 per M observations ingested for the first 1B observations - Asia Pacific (Mumbai)",
+    "unit": "Observations",
+    "usd": "0.0000002100",
+    "begin": "0",
+    "end": "1000000000"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-MTLogs",
+    "description": "$0.15 per GB for the next 20TB of APS3-VendedLogIA-Bytes-MTLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-MTLogs",
+    "description": "$0.075 per GB for the next 20TB of APS3-VendedLogIA-Bytes-MTLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0750000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-MTLogs",
+    "description": "$0.25 per GB for the first 10TB of APS3-VendedLogIA-Bytes-MTLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLogIA-Bytes-MTLogs",
+    "description": "$0.05 per GB for over 50TB of APS3-VendedLogIA-Bytes-MTLogs in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:RUM-OTEL-bytes",
+    "description": "$0.35 per GB for CloudWatch RUM OpenTelemetry in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.3500000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-ACU-Hours",
+    "description": "$0.000024 per ACU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Limitless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0000240000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:NFM-FullyPaidResourceHours",
+    "description": "$0.0069 per resource (EC2 instance, EKS node) hour after the first 12 months in Asia Pacific (Mumbai)",
+    "unit": "hours",
+    "usd": "0.0069000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CentralizedBytes",
+    "description": "$0.05 per GB for CentralizedBytes in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-MTLogs",
+    "description": "$0.05 per GB for over 50TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-MTLogs",
+    "description": "$0.25 per GB for the first 10TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-MTLogs",
+    "description": "$0.075 per GB for the next 20TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0750000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-S3-Egress-Bytes-MTLogs",
+    "description": "$0.15 per GB for the next 20TB of vended log data delivered to S3 per month in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-CFLogs",
+    "description": "$0.05 per GB of CloudFront vended logs ingested in Standard log class over 50TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0500000000",
+    "begin": "51200",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-CFLogs",
+    "description": "$0.50 per GB of CloudFront vended logs ingested in Standard log class for the first 10TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "10240"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-CFLogs",
+    "description": "$0.25 per GB of CloudFront vended logs ingested in Standard log class for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.2500000000",
+    "begin": "10240",
+    "end": "30720"
+  },
+  {
+    "usage": "APS3-VendedLog-Bytes-CFLogs",
+    "description": "$0.10 per GB of CloudFront vended logs ingested in Standard log class for the next 20TB  -  Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1000000000",
+    "begin": "30720",
+    "end": "51200"
+  },
+  {
+    "usage": "APS3-CW:Canary-runs",
+    "description": "$0.0017 per canary run per month - Asia Pacific (Mumbai)",
+    "unit": "Runs",
+    "usd": "0.0017000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for RDS Oracle Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Application-Signals",
+    "description": "$0.30 per million Application Signals for over 1 billion Application Signals - Asia Pacific (Mumbai)",
+    "unit": "Signals",
+    "usd": "0.0000003000",
+    "begin": "1000000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Application-Signals",
+    "description": "$1.50 per million Application Signals for the first 100 million Application Signals - Asia Pacific (Mumbai)",
+    "unit": "Signals",
+    "usd": "0.0000015000",
+    "begin": "0",
+    "end": "100000000"
+  },
+  {
+    "usage": "APS3-Application-Signals",
+    "description": "$0.75 per million Application Signals for the next 900 million Application Signals - Asia Pacific (Mumbai)",
+    "unit": "Signals",
+    "usd": "0.0000007500",
+    "begin": "100000000",
+    "end": "1000000000"
+  },
+  {
+    "usage": "APS3-CW:MetricMonitorUsage",
+    "description": "$0.30 per metric-month for the first 10,000 metrics - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.3000000000",
+    "begin": "0",
+    "end": "10000"
+  },
+  {
+    "usage": "APS3-CW:MetricMonitorUsage",
+    "description": "$0.05 per metric-month for the next 750,000 metrics - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0500000000",
+    "begin": "250000",
+    "end": "1000000"
+  },
+  {
+    "usage": "APS3-CW:MetricMonitorUsage",
+    "description": "$0.02 per metric-month for over 1,000,000 metrics - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0200000000",
+    "begin": "1000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:MetricMonitorUsage",
+    "description": "$0.10 per metric-month for the next 240,000 metrics - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.1000000000",
+    "begin": "10000",
+    "end": "250000"
+  },
+  {
+    "usage": "APS3-TimedStorage-AIA-ByteHrs",
+    "description": "$0.006 per GB-Mo for TimedStorage-AIA-ByteHrs in Asia Pacific (Mumbai)",
+    "unit": "GB-Mo",
+    "usd": "0.0060000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:MetricsUsage",
+    "description": "$0.07 per metric month - Asia Pacific (Mumbai)",
+    "unit": "Metrics",
+    "usd": "0.0700000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:OTEL:Bytes:AWS",
+    "description": "$0.50 per GigaByte for CW:OTEL:Bytes:AWS in Asia Pacific (Mumbai)",
+    "unit": "GigaBytes",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for RDS PostgreSQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-ACU-Hours",
+    "description": "$0.003125 per ACU-Hour monitored by Database Insights for Aurora-PostgreSQL serverless databases in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0031250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-vCPU-Hours",
+    "description": "$0.000096 per vCPU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0000960000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-ACU-Hours",
+    "description": "$0.000576 per ACU-Hour for first month retention monitored by Database Insights (Standard Mode) for Aurora-MySQL Serverless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0005760000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:OTEL:Bytes",
+    "description": "$0.50 per GigaByte for CW:OTEL:Bytes in Asia Pacific (Mumbai)",
+    "unit": "GigaBytes",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-AMR-ACU-Hours",
+    "description": "$0.000024 per ACU-Hour for each additional month retention monitored by Database Insights (Standard Mode) for Aurora-PostgreSQL Serverless in Asia Pacific (Mumbai)",
+    "unit": "ACU-Hours",
+    "usd": "0.0000240000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:DatabaseInsights-Standard-FMR-vCPU-Hours",
+    "description": "$0.002305 per vCPU-Hour for first month retention monitored by Database Insights (Standard Mode) for RDS MariaDB Provisioned in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Hours",
+    "usd": "0.0023050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-TimedStorage-IA-ByteHrs",
+    "description": "$0.018 per GB-Mo for TimedStorage-IA-ByteHrs in Asia Pacific (Mumbai)",
+    "unit": "GB-Mo",
+    "usd": "0.0180000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CW:InternetMonitor-MonitoredResource",
+    "description": "$0.01 per resource monitored by Internet Monitor per hour in Asia Pacific (Mumbai)",
+    "unit": "Internet Monitor - Monitored Resource",
+    "usd": "0.0100000000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]

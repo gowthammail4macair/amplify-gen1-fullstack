@@ -15,3 +15,6 @@ amplify/backend/**/build/
 # Offline snapshots retained locally; never deployed or published.
 amplify/**/*offline-backup*
 amplify/#current-cloud-backend*
+
+# Downloaded CI artifacts; selected evidence is copied to evidence/*.json.
+evidence/cloud-ci*/

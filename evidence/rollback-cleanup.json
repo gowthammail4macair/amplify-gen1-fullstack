@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-04",
+  "table": "Connections-ap-south-1_BMU1D8EC1",
+  "sourceFailedStack": "arn:aws:cloudformation:ap-south-1:112097210422:stack/amplify-supportgenone-dev-115eb-customticketSocket-1AIF2C1C0YYJN/e6df1c40-bfc5-11f1-8da6-0affd36240e9",
+  "consistentItemCountBeforeDelete": 0,
+  "action": "Removed empty retained task-created connection table after failed WebSocket stage rollback"
+}

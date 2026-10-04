@@ -1,6 +1,6 @@
 ⚠️ Unable to determine the Lambda execution role name of function "ticketRest", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
-⚠️ Unable to determine the Lambda execution role name of function "ticketWorkflow", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
 ⚠️ Unable to determine the Lambda execution role name of function "ticketSocketHandler", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
+⚠️ Unable to determine the Lambda execution role name of function "ticketWorkflow", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
 ⚠️ WARNING: owners may reassign ownership for the following model(s) and role(s): Ticket: [owner]. If this is not intentional, you may want to apply field-level authorization rules to these fields. To read more: https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access.
 ✅ GraphQL schema compiled successfully.
 

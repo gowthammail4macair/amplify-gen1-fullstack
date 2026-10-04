@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-10-04T08:18:52.089Z",
+  "scope": "Live AWS HTTPS, Cognito SRP and WebSocket integration",
+  "checks": [
+    {
+      "name": "Cognito SRP login: two owners and an Agents member",
+      "status": "passed"
+    },
+    {
+      "name": "REST rejects missing and malformed Cognito tokens",
+      "status": "passed"
+    },
+    {
+      "name": "REST creates a ticket with owner identity",
+      "status": "passed"
+    },
+    {
+      "name": "REST owner read/update and cross-owner denial",
+      "status": "passed"
+    },
+    {
+      "name": "REST custom Lambda authorizer: Agents allowed, owner denied",
+      "status": "passed"
+    },
+    {
+      "name": "AppSync default resolver reads REST writes and enforces ownership",
+      "status": "passed"
+    },
+    {
+      "name": "AppSync generated create/update resolvers write shared DynamoDB",
+      "status": "passed"
+    },
+    {
+      "name": "AppSync custom Lambda summary/close and cross-owner denial",
+      "status": "passed"
+    },
+    {
+      "name": "WebSocket rejects invalid Cognito JWT at $connect",
+      "status": "passed"
+    },
+    {
+      "name": "WebSocket owner response, other-owner denial and Agents access",
+      "status": "passed"
+    },
+    {
+      "name": "AppSync generated delete resolver removes ticket",
+      "status": "passed"
+    },
+    {
+      "name": "REST cross-owner delete denied; owner delete succeeds",
+      "status": "passed"
+    }
+  ],
+  "cleanup": {
+    "users": [
+      "fulfilled",
+      "fulfilled",
+      "fulfilled"
+    ],
+    "socketsClosed": 3,
+    "ticketIds": [
+      "dfd1aad9-9b2d-4e0c-8ed0-c07a85c28321",
+      "29a54af5-5dba-45a7-90d2-a1c19b0e9764"
+    ]
+  },
+  "endpoints": {
+    "rest": "https://iu6zhvysy7.execute-api.ap-south-1.amazonaws.com/dev",
+    "graphql": "https://zw4vheuavfdzfkaugphptnr22y.appsync-api.ap-south-1.amazonaws.com/graphql",
+    "websocket": "wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "region": "ap-south-1",
+  "poolId": "ap-south-1_5Q6nrDXqS",
+  "tier": "ESSENTIALS",
+  "mfa": "OFF",
+  "ciTestPolicyResource": "arn:aws:cognito-idp:ap-south-1:112097210422:userpool/ap-south-1_5Q6nrDXqS",
+  "usersAfterSmoke": 0
+}

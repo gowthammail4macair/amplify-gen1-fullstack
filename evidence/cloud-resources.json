@@ -1,0 +1,20 @@
+{
+  "tickets": {
+    "name": "Ticket-m7oh5hcokbhbvpkiluiqwlasfi-dev",
+    "billing": {
+      "BillingMode": "PAY_PER_REQUEST",
+      "LastUpdateToPayPerRequestDateTime": "2026-10-04T13:14:27.963000+05:30"
+    },
+    "pitr": "DISABLED",
+    "itemsAfterSmoke": 0
+  },
+  "connections": {
+    "name": "Connections-ap-south-1_5Q6nrDXqS",
+    "billing": {
+      "BillingMode": "PAY_PER_REQUEST",
+      "LastUpdateToPayPerRequestDateTime": "2026-10-04T13:16:37.910000+05:30"
+    },
+    "pitr": "DISABLED",
+    "itemsAfterSmoke": 0
+  }
+}

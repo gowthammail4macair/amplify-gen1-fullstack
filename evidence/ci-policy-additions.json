@@ -1,0 +1,60 @@
+{
+  "policies": [
+    {
+      "reason": "CloudFormation IdentityPool Name attribute retrieval requires tag read not covered by AdministratorAccess-Amplify",
+      "policyName": "IdentityPoolTagRead",
+      "policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cognito-identity:ListTagsForResource"
+            ],
+            "Resource": "arn:aws:cognito-identity:ap-south-1:112097210422:identitypool/*"
+          }
+        ]
+      }
+    },
+    {
+      "reason": "CloudFormation Cognito UserPoolGroup resource read requires GetGroup",
+      "policyName": "UserPoolGroupRead",
+      "policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cognito-idp:GetGroup"
+            ],
+            "Resource": "arn:aws:cognito-idp:ap-south-1:112097210422:userpool/*"
+          }
+        ]
+      }
+    },
+    {
+      "reason": "CloudFormation WebSocket Stage tag reconciliation requires API Gateway V2 tag actions",
+      "policyName": "WebSocketResourceTags",
+      "policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "apigateway:TagResource",
+              "apigateway:UntagResource"
+            ],
+            "Resource": "arn:aws:apigateway:ap-south-1::/apis/*",
+            "Condition": {
+              "ForAnyValue:StringEquals": {
+                "aws:CalledVia": [
+                  "cloudformation.amazonaws.com"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

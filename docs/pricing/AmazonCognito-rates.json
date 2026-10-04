@@ -1,0 +1,498 @@
+[
+  {
+    "usage": "APS3-CognitoUserFederationRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserFederation (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Bedrock-Agent-Core:Auth-Request:Oauth2",
+    "description": "$0.00001 per Request for Bedrock-Agent-Core:Auth-Request:Oauth2 in Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceUpdateRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserResourceUpdate (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFull",
+    "description": "USD 0.00225 per client credential flow (M2M) token request in tier 1  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0022500000",
+    "begin": "0",
+    "end": "250000"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFull",
+    "description": "USD 0.001125 per client credential flow (M2M) token request in tier 3  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0011250000",
+    "begin": "5000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFull",
+    "description": "USD 0.0015 per client credential flow (M2M) token request in tier 2  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0015000000",
+    "begin": "250000",
+    "end": "5000000"
+  },
+  {
+    "usage": "APS3-CognitoEnterpriseMAU",
+    "description": "Cognito User Pools ap-south-1 enterprise users tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0150000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserFederationRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserFederation (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserTokenRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserToken (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserTokenRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserToken (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceReadRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserResourceRead (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoPlusMAU",
+    "description": "Cognito Plus ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0200000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserUpdateRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserUpdate (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserUpdateRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserUpdate (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserReadRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserRead (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserAccountRecoveryRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserAccountRecovery (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserCreationRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserCreation (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Bedrock-Agent-Core:Auth-Request:API-Keys",
+    "description": "$0.00001 per Request for Bedrock-Agent-Core:Auth-Request:API-Keys in Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserReadRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserRead (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceReadRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserResourceRead (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFree",
+    "description": "USD 0.00 per client credential flow (M2M) token request in tier 2  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0000000000",
+    "begin": "250000",
+    "end": "5000000"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFree",
+    "description": "USD 0.00 per client credential flow (M2M) token request in tier 1  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "250000"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsFree",
+    "description": "USD 0.00 per client credential flow (M2M) token request in tier 3  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0000000000",
+    "begin": "5000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoASFMAU",
+    "description": "Cognito User Pools ap-south-1 advanced security features users tier 3 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0200000000",
+    "begin": "100000",
+    "end": "1000000"
+  },
+  {
+    "usage": "APS3-CognitoASFMAU",
+    "description": "Cognito User Pools ap-south-1 advanced security features users tier 4 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0150000000",
+    "begin": "1000000",
+    "end": "10000000"
+  },
+  {
+    "usage": "APS3-CognitoASFMAU",
+    "description": "Cognito User Pools ap-south-1 advanced security features users tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0500000000",
+    "begin": "0",
+    "end": "50000"
+  },
+  {
+    "usage": "APS3-CognitoASFMAU",
+    "description": "Cognito User Pools ap-south-1 advanced security features users tier 2 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0350000000",
+    "begin": "50000",
+    "end": "100000"
+  },
+  {
+    "usage": "APS3-CognitoASFMAU",
+    "description": "Cognito User Pools ap-south-1 advanced security features users tier 5 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0100000000",
+    "begin": "10000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserReadRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserRead (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserAccountRecoveryRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserAccountRecovery (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoEssentialsMRRMAU",
+    "description": "Cognito Essentials multi-region-replication add-on ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0045000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserAuthenticationRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserAuthentication (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserFederationRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserFederation (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserCreationRPSPartial",
+    "description": "USD 45.00 per RPS-Month incremental RPS for UserCreation (partial month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "45.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoPlusMRRMAU",
+    "description": "Cognito Plus multi-region-replication add-on ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0060000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceUpdateRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserResourceUpdate (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceUpdateRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserResourceUpdate (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserPoolsMAU",
+    "description": "Cognito User Pools ap-south-1 tier 2 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0046000000",
+    "begin": "50000",
+    "end": "950000"
+  },
+  {
+    "usage": "APS3-CognitoUserPoolsMAU",
+    "description": "Cognito User Pools ap-south-1 tier 4 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0025000000",
+    "begin": "9950000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserPoolsMAU",
+    "description": "Cognito User Pools ap-south-1 tier 3 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0032500000",
+    "begin": "950000",
+    "end": "9950000"
+  },
+  {
+    "usage": "APS3-CognitoUserPoolsMAU",
+    "description": "Cognito User Pools ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0055000000",
+    "begin": "0",
+    "end": "50000"
+  },
+  {
+    "usage": "APS3-CognitoEssentialsMAU",
+    "description": "Cognito Essentials ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0150000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserCreationRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserCreation (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFree",
+    "description": "USD 0.00 per client credential flow app client, pro-rated by the second, in tier 1  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "100"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFree",
+    "description": "USD 0.00 per client credential flow app client, pro-rated by the second, in tier 2  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "100",
+    "end": "500"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFree",
+    "description": "USD 0.00 per client credential flow app client, pro-rated by the second, in tier 3  in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "500",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserUpdateRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserUpdate (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserAuthenticationRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserAuthentication (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+    "description": "$0.00195 per multi-region-replication client credential flow (M2M) token requests in tier 2 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0019500000",
+    "begin": "250000",
+    "end": "5000000"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+    "description": "$0.0014625 per multi-region-replication client credential flow (M2M) token requests in tier 3 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0014625000",
+    "begin": "5000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+    "description": "$0.002925 per multi-region-replication client credential flow (M2M) token requests in tier 1 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MTokens",
+    "usd": "0.0029250000",
+    "begin": "0",
+    "end": "250000"
+  },
+  {
+    "usage": "APS3-CognitoUserAuthenticationRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserAuthentication (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserTokenRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserToken (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFull",
+    "description": "$0.00 per client credential flow app client, pro-rated by the second in tier 3 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "500",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFull",
+    "description": "$0.00 per client credential flow app client, pro-rated by the second in tier 1 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "100"
+  },
+  {
+    "usage": "APS3-CUPM2MAppClientsFull",
+    "description": "$0.00 per client credential flow app client, pro-rated by the second in tier 2 in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPools-M2MAppClientMo",
+    "usd": "0.0000000000",
+    "begin": "100",
+    "end": "500"
+  },
+  {
+    "usage": "APS3-CognitoLiteMAU",
+    "description": "Cognito Lite ap-south-1 tier 4 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0025000000",
+    "begin": "9990000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoLiteMAU",
+    "description": "Cognito Lite ap-south-1 tier 1 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0055000000",
+    "begin": "0",
+    "end": "90000"
+  },
+  {
+    "usage": "APS3-CognitoLiteMAU",
+    "description": "Cognito Lite ap-south-1 tier 3 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0032500000",
+    "begin": "990000",
+    "end": "9990000"
+  },
+  {
+    "usage": "APS3-CognitoLiteMAU",
+    "description": "Cognito Lite ap-south-1 tier 2 pricing",
+    "unit": "CognitoUserPoolsMAU",
+    "usd": "0.0046000000",
+    "begin": "90000",
+    "end": "990000"
+  },
+  {
+    "usage": "APS3-CognitoUserResourceReadRPSFull",
+    "description": "USD 20.00 per RPS-Month incremental RPS for UserResourceRead (full month) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "20.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-CognitoUserAccountRecoveryRPSFree",
+    "description": "USD 0.00 per RPS-Month incremental RPS for UserAccountRecovery (exempt) for users in Asia Pacific (Mumbai)",
+    "unit": "CognitoUserPoolsRPSMo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]

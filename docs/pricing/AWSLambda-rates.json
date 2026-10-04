@@ -1,0 +1,3394 @@
+[
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.4xlarge-Management-Hours",
+    "description": "$0.156 per Hour for Lambda-Managed-Instances-r5.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1560000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.4xlarge-Management-Hours",
+    "description": "$0.19032 per Hour for Lambda-Managed-Instances-r6id.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1903200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.xlarge-Management-Hours",
+    "description": "$0.01473 per Hour for Lambda-Managed-Instances-c7g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0147300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.2xlarge-Management-Hours",
+    "description": "$0.02556 per Hour for Lambda-Managed-Instances-c6g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0255600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.16xlarge-Management-Hours",
+    "description": "$0.24288 per Hour for Lambda-Managed-Instances-m6g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2428800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.8xlarge-Management-Hours",
+    "description": "$0.3672 per Hour for Lambda-Managed-Instances-r5b.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3672000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Storage-GB-Second-ARM",
+    "description": "AWS Lambda - Ephemeral Storage for ARM - Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000000352",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.2xlarge-Management-Hours",
+    "description": "$0.0918 per Hour for Lambda-Managed-Instances-r5n.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0918000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.large-Management-Hours",
+    "description": "$0.0108 per Hour for Lambda-Managed-Instances-r5a.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0108000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.24xlarge-Management-Hours",
+    "description": "$1.1016 per Hour for Lambda-Managed-Instances-r5n.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.1016000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.4xlarge-Management-Hours",
+    "description": "$0.1056 per Hour for Lambda-Managed-Instances-r7gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1056000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.12xlarge-Management-Hours",
+    "description": "$0.46116 per Hour for Lambda-Managed-Instances-m6id.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4611600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.4xlarge-Management-Hours",
+    "description": "$0.05112 per Hour for Lambda-Managed-Instances-c6g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0511200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.2xlarge-Management-Hours",
+    "description": "$0.032385 per Hour for Lambda-Managed-Instances-c8g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0323850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.4xlarge-Management-Hours",
+    "description": "$0.08055 per Hour for Lambda-Managed-Instances-m5ad.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0805500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.large-Management-Hours",
+    "description": "$0.01515 per Hour for Lambda-Managed-Instances-m5.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0151500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.xlarge-Management-Hours",
+    "description": "$0.02145 per Hour for Lambda-Managed-Instances-r5a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0214500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.32xlarge-Management-Hours",
+    "description": "$0.53328 per Hour for Lambda-Managed-Instances-m6a.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5332800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.4xlarge-Management-Hours",
+    "description": "$0.06072 per Hour for Lambda-Managed-Instances-m6g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0607200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.8xlarge-Management-Hours",
+    "description": "$0.2424 per Hour for Lambda-Managed-Instances-m6i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2424000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.12xlarge-Management-Hours",
+    "description": "$0.4392 per Hour for Lambda-Managed-Instances-m5d.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4392000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.16xlarge-Management-Hours",
+    "description": "$0.312 per Hour for Lambda-Managed-Instances-r6g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3120000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.2xlarge-Management-Hours",
+    "description": "$0.0282 per Hour for Lambda-Managed-Instances-c5a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0282000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.16xlarge-Management-Hours",
+    "description": "$0.3432 per Hour for Lambda-Managed-Instances-r5a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3432000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.xlarge-Management-Hours",
+    "description": "$0.019245 per Hour for Lambda-Managed-Instances-m8g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0192450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.large-Management-Hours",
+    "description": "$0.0261 per Hour for Lambda-Managed-Instances-r5dn.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0261000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.8xlarge-Management-Hours",
+    "description": "$0.2844 per Hour for Lambda-Managed-Instances-c8gn.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2844000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.8xlarge-Management-Hours",
+    "description": "$0.156 per Hour for Lambda-Managed-Instances-r6g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1560000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.xlarge-Management-Hours",
+    "description": "$0.01749 per Hour for Lambda-Managed-Instances-m7g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0174900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.16xlarge-Management-Hours",
+    "description": "$0.4848 per Hour for Lambda-Managed-Instances-m6i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4848000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.8xlarge-Management-Hours",
+    "description": "$0.348195 per Hour for Lambda-Managed-Instances-m6in.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3481950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-Request",
+    "description": "$0.0000002 per Request for Lambda-Managed-Instances-Request in Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000002000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.8xlarge-Management-Hours",
+    "description": "$0.40716 per Hour for Lambda-Managed-Instances-m6idn.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4071600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.2xlarge-Management-Hours",
+    "description": "$0.0498 per Hour for Lambda-Managed-Instances-r5ad.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0498000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.xlarge-Management-Hours",
+    "description": "$0.02595 per Hour for Lambda-Managed-Instances-c6gn.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0259500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.large-Management-Hours",
+    "description": "$0.02265 per Hour for Lambda-Managed-Instances-r5d.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0226500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.large-Management-Hours",
+    "description": "$0.019215 per Hour for Lambda-Managed-Instances-m6id.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0192150000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.large-Management-Hours",
+    "description": "$0.015915 per Hour for Lambda-Managed-Instances-m7i.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0159150000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.8xlarge-Management-Hours",
+    "description": "$0.10224 per Hour for Lambda-Managed-Instances-c6g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1022400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.16xlarge-Management-Hours",
+    "description": "$0.20448 per Hour for Lambda-Managed-Instances-c6g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2044800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.2xlarge-Management-Hours",
+    "description": "$0.0294 per Hour for Lambda-Managed-Instances-c6gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0294000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.4xlarge-Management-Hours",
+    "description": "$0.06666 per Hour for Lambda-Managed-Instances-m6a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0666600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.24xlarge-Management-Hours",
+    "description": "$0.461955 per Hour for Lambda-Managed-Instances-m8g.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4619550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.8xlarge-Management-Hours",
+    "description": "$0.13824 per Hour for Lambda-Managed-Instances-c7gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1382400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.16xlarge-Management-Hours",
+    "description": "$0.4152 per Hour for Lambda-Managed-Instances-c6gn.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4152000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.16xlarge-Management-Hours",
+    "description": "$0.69639 per Hour for Lambda-Managed-Instances-m6in.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6963900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.4xlarge-Management-Hours",
+    "description": "$0.0561 per Hour for Lambda-Managed-Instances-c6a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0561000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.8xlarge-Management-Hours",
+    "description": "$0.1716 per Hour for Lambda-Managed-Instances-r6a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1716000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.24xlarge-Management-Hours",
+    "description": "$0.38865 per Hour for Lambda-Managed-Instances-c8g.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3886500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.large-Management-Hours",
+    "description": "$0.02355 per Hour for Lambda-Managed-Instances-r7a.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0235500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.2xlarge-Management-Hours",
+    "description": "$0.03456 per Hour for Lambda-Managed-Instances-c7gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0345600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.12xlarge-Management-Hours",
+    "description": "$0.4914 per Hour for Lambda-Managed-Instances-r7i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4914000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.large-Management-Hours",
+    "description": "$0.00834 per Hour for Lambda-Managed-Instances-m6a.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0083400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.xlarge-Management-Hours",
+    "description": "$0.050895 per Hour for Lambda-Managed-Instances-m6idn.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0508950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.32xlarge-Management-Hours",
+    "description": "$0.6864 per Hour for Lambda-Managed-Instances-r6a.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6864000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second-ARM",
+    "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-2",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000120001",
+    "begin": "7500000000",
+    "end": "18750000000"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second-ARM",
+    "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-3",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000106667",
+    "begin": "18750000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second-ARM",
+    "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-1",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000133334",
+    "begin": "0",
+    "end": "7500000000"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.16xlarge-Management-Hours",
+    "description": "$0.4284 per Hour for Lambda-Managed-Instances-c7i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4284000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.2xlarge-Management-Hours",
+    "description": "$0.0402 per Hour for Lambda-Managed-Instances-m5ad.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0402000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.large-Management-Hours",
+    "description": "$0.020475 per Hour for Lambda-Managed-Instances-r7i.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0204750000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.2xlarge-Management-Hours",
+    "description": "$0.03333 per Hour for Lambda-Managed-Instances-m6a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0333300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.12xlarge-Management-Hours",
+    "description": "$0.20736 per Hour for Lambda-Managed-Instances-c7gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2073600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.large-Management-Hours",
+    "description": "$0.0195 per Hour for Lambda-Managed-Instances-r6i.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0195000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Streaming-Response-Processed-Bytes",
+    "description": "$0.008 per GiB for of Lambda-Streaming-Response-Processed-Bytes usage in Asia Pacific (Mumbai)",
+    "unit": "Processed-Gigabytes",
+    "usd": "0.0080000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.8xlarge-Management-Hours",
+    "description": "$0.2142 per Hour for Lambda-Managed-Instances-c7i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2142000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.xlarge-Management-Hours",
+    "description": "$0.014025 per Hour for Lambda-Managed-Instances-c6a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0140250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.12xlarge-Management-Hours",
+    "description": "$0.23097 per Hour for Lambda-Managed-Instances-m8g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2309700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.24xlarge-Management-Hours",
+    "description": "$0.5148 per Hour for Lambda-Managed-Instances-r5a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5148000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.4xlarge-Management-Hours",
+    "description": "$0.1638 per Hour for Lambda-Managed-Instances-r7i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1638000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.4xlarge-Management-Hours",
+    "description": "$0.102 per Hour for Lambda-Managed-Instances-c6i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1020000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.12xlarge-Management-Hours",
+    "description": "$0.40824 per Hour for Lambda-Managed-Instances-c6in.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4082400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.12xlarge-Management-Hours",
+    "description": "$0.2574 per Hour for Lambda-Managed-Instances-r5a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2574000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Edge-Request",
+    "description": "AWS Lambda Edge - Total Requests - Asia Pacific (Mumbai)",
+    "unit": "Request",
+    "usd": "0.0000006000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.8xlarge-Management-Hours",
+    "description": "$0.1716 per Hour for Lambda-Managed-Instances-r5a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1716000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.xlarge-Management-Hours",
+    "description": "$0.01728 per Hour for Lambda-Managed-Instances-c7gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0172800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.8xlarge-Management-Hours",
+    "description": "$0.13335 per Hour for Lambda-Managed-Instances-m5a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1333500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.2xlarge-Management-Hours",
+    "description": "$0.0429 per Hour for Lambda-Managed-Instances-r5a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0429000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.xlarge-Management-Hours",
+    "description": "$0.0471 per Hour for Lambda-Managed-Instances-r7a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0471000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.12xlarge-Management-Hours",
+    "description": "$0.522285 per Hour for Lambda-Managed-Instances-m6in.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5222850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.large-Management-Hours",
+    "description": "$0.01245 per Hour for Lambda-Managed-Instances-r5ad.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0124500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.4xlarge-Management-Hours",
+    "description": "$0.17409 per Hour for Lambda-Managed-Instances-m6in.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1740900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.8xlarge-Management-Hours",
+    "description": "$0.27216 per Hour for Lambda-Managed-Instances-c6in.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2721600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.48xlarge-Management-Hours",
+    "description": "$1.189155 per Hour for Lambda-Managed-Instances-r8g.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.1891550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.12xlarge-Management-Hours",
+    "description": "$0.2556 per Hour for Lambda-Managed-Instances-m7gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2556000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.32xlarge-Management-Hours",
+    "description": "$1.08864 per Hour for Lambda-Managed-Instances-c6in.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.0886400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5n.xlarge-Management-Hours",
+    "description": "$0.0324 per Hour for Lambda-Managed-Instances-c5n.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0324000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.16xlarge-Management-Hours",
+    "description": "$0.28992 per Hour for Lambda-Managed-Instances-m6gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2899200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.xlarge-Management-Hours",
+    "description": "$0.031815 per Hour for Lambda-Managed-Instances-m7i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0318150000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.8xlarge-Management-Hours",
+    "description": "$0.2928 per Hour for Lambda-Managed-Instances-m5d.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2928000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.xlarge-Management-Hours",
+    "description": "$0.0213 per Hour for Lambda-Managed-Instances-m7gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0213000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.16xlarge-Management-Hours",
+    "description": "$0.39639 per Hour for Lambda-Managed-Instances-r8g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3963900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.32xlarge-Management-Hours",
+    "description": "$1.392765 per Hour for Lambda-Managed-Instances-m6in.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.3927650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.large-Management-Hours",
+    "description": "$0.0186 per Hour for Lambda-Managed-Instances-m5n.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0186000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.large-Management-Hours",
+    "description": "$0.011205 per Hour for Lambda-Managed-Instances-r6gd.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0112050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.24xlarge-Management-Hours",
+    "description": "$0.81648 per Hour for Lambda-Managed-Instances-c6in.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8164800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.16xlarge-Management-Hours",
+    "description": "$0.49896 per Hour for Lambda-Managed-Instances-c6id.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4989600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.large-Management-Hours",
+    "description": "$0.01005 per Hour for Lambda-Managed-Instances-m5ad.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0100500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.xlarge-Management-Hours",
+    "description": "$0.0264 per Hour for Lambda-Managed-Instances-r7gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0264000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Durable-Execution-TimedStorage-ByteHrs",
+    "description": "$0.16 per GigaBytesMonth for Lambda-Durable-Execution-TimedStorage-ByteHrs in Asia Pacific (Mumbai)",
+    "unit": "GigaBytesMonth",
+    "usd": "0.1600000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.32xlarge-Management-Hours",
+    "description": "$0.9696 per Hour for Lambda-Managed-Instances-m6i.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9696000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.4xlarge-Management-Hours",
+    "description": "$0.13608 per Hour for Lambda-Managed-Instances-c6in.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1360800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.8xlarge-Management-Hours",
+    "description": "$0.2976 per Hour for Lambda-Managed-Instances-m5n.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2976000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.4xlarge-Management-Hours",
+    "description": "$0.06999 per Hour for Lambda-Managed-Instances-m7g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0699900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Web-Memory-GB-Second-ARM",
+    "description": "$0.0000036667 per GB-Second for Lambda-Web-Memory-GB-Second-ARM in Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000036667",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5a.4xlarge-Management-Hours",
+    "description": "$0.0858 per Hour for Lambda-Managed-Instances-r5a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0858000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.large-Management-Hours",
+    "description": "$0.00759 per Hour for Lambda-Managed-Instances-m6g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0075900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.4xlarge-Management-Hours",
+    "description": "$0.18837 per Hour for Lambda-Managed-Instances-r7a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1883700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.12xlarge-Management-Hours",
+    "description": "$0.3114 per Hour for Lambda-Managed-Instances-c6gn.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3114000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Provisioned-Concurrency",
+    "description": "AWS Lambda - Provisioned Concurrency - Asia Pacific (Mumbai)",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000044985",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.2xlarge-Management-Hours",
+    "description": "$0.078 per Hour for Lambda-Managed-Instances-r6i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0780000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.xlarge-Management-Hours",
+    "description": "$0.022425 per Hour for Lambda-Managed-Instances-r6gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0224250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.12xlarge-Management-Hours",
+    "description": "$0.270285 per Hour for Lambda-Managed-Instances-r7g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2702850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.16xlarge-Management-Hours",
+    "description": "$0.8352 per Hour for Lambda-Managed-Instances-r5dn.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8352000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.8xlarge-Management-Hours",
+    "description": "$0.2424 per Hour for Lambda-Managed-Instances-m5.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2424000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.xlarge-Management-Hours",
+    "description": "$0.0147 per Hour for Lambda-Managed-Instances-c6gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0147000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.4xlarge-Management-Hours",
+    "description": "$0.1038 per Hour for Lambda-Managed-Instances-c6gn.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1038000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.48xlarge-Management-Hours",
+    "description": "$0.6732 per Hour for Lambda-Managed-Instances-c6a.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6732000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.8xlarge-Management-Hours",
+    "description": "$0.139965 per Hour for Lambda-Managed-Instances-m7g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1399650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.32xlarge-Management-Hours",
+    "description": "$1.52256 per Hour for Lambda-Managed-Instances-r6id.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.5225600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.xlarge-Management-Hours",
+    "description": "$0.04353 per Hour for Lambda-Managed-Instances-m6in.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0435300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.xlarge-Management-Hours",
+    "description": "$0.026775 per Hour for Lambda-Managed-Instances-c7i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0267750000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.large-Management-Hours",
+    "description": "$0.02295 per Hour for Lambda-Managed-Instances-r5n.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0229500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.12xlarge-Management-Hours",
+    "description": "$0.6264 per Hour for Lambda-Managed-Instances-r5dn.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6264000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.24xlarge-Management-Hours",
+    "description": "$0.76356 per Hour for Lambda-Managed-Instances-m7i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7635600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.24xlarge-Management-Hours",
+    "description": "$0.8532 per Hour for Lambda-Managed-Instances-c8gn.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8532000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.16xlarge-Management-Hours",
+    "description": "$0.75351 per Hour for Lambda-Managed-Instances-r7a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7535100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.2xlarge-Management-Hours",
+    "description": "$0.10179 per Hour for Lambda-Managed-Instances-m6idn.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1017900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.24xlarge-Management-Hours",
+    "description": "$0.7272 per Hour for Lambda-Managed-Instances-m5.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7272000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.16xlarge-Management-Hours",
+    "description": "$0.5688 per Hour for Lambda-Managed-Instances-c8gn.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5688000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.12xlarge-Management-Hours",
+    "description": "$0.19995 per Hour for Lambda-Managed-Instances-m5a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1999500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.12xlarge-Management-Hours",
+    "description": "$0.3636 per Hour for Lambda-Managed-Instances-m5.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3636000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.2xlarge-Management-Hours",
+    "description": "$0.05355 per Hour for Lambda-Managed-Instances-c7i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0535500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.2xlarge-Management-Hours",
+    "description": "$0.0519 per Hour for Lambda-Managed-Instances-c6gn.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0519000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.large-Management-Hours",
+    "description": "$0.00906 per Hour for Lambda-Managed-Instances-m6gd.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0090600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.24xlarge-Management-Hours",
+    "description": "$1.04457 per Hour for Lambda-Managed-Instances-m6in.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.0445700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-SnapStart-Cached-GB-S",
+    "description": "$0.0000018058 per GB-Second for Lambda-SnapStart-Cached-GB-S in Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000018058",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.8xlarge-Management-Hours",
+    "description": "$0.1122 per Hour for Lambda-Managed-Instances-c6a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1122000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.12xlarge-Management-Hours",
+    "description": "$0.29895 per Hour for Lambda-Managed-Instances-r5ad.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2989500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-vCPU-Second",
+    "description": "$0.000032656 per vCPU-Second for Lambda-MicroVM-vCPU-Second in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Seconds",
+    "usd": "0.0000326560",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.2xlarge-Management-Hours",
+    "description": "$0.07686 per Hour for Lambda-Managed-Instances-m6id.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0768600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.24xlarge-Management-Hours",
+    "description": "$0.612 per Hour for Lambda-Managed-Instances-c6i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6120000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.4xlarge-Management-Hours",
+    "description": "$0.0852 per Hour for Lambda-Managed-Instances-m7gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0852000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.16xlarge-Management-Hours",
+    "description": "$0.27648 per Hour for Lambda-Managed-Instances-c7gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2764800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.16xlarge-Management-Hours",
+    "description": "$0.25911 per Hour for Lambda-Managed-Instances-c8g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2591100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.16xlarge-Management-Hours",
+    "description": "$0.2244 per Hour for Lambda-Managed-Instances-c6a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2244000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.4xlarge-Management-Hours",
+    "description": "$0.0996 per Hour for Lambda-Managed-Instances-r5ad.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0996000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.2xlarge-Management-Hours",
+    "description": "$0.1044 per Hour for Lambda-Managed-Instances-r5dn.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1044000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.4xlarge-Management-Hours",
+    "description": "$0.12726 per Hour for Lambda-Managed-Instances-m7i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1272600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.xlarge-Management-Hours",
+    "description": "$0.04758 per Hour for Lambda-Managed-Instances-r6id.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0475800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Provisioned-GB-Second-ARM",
+    "description": "AWS Lambda - Total Compute (Provisioned) for ARM - Asia Pacific (Mumbai)",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000083973",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.16xlarge-Management-Hours",
+    "description": "$0.7344 per Hour for Lambda-Managed-Instances-r5b.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7344000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gn.8xlarge-Management-Hours",
+    "description": "$0.2076 per Hour for Lambda-Managed-Instances-c6gn.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2076000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.12xlarge-Management-Hours",
+    "description": "$0.565125 per Hour for Lambda-Managed-Instances-r7a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5651250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.16xlarge-Management-Hours",
+    "description": "$0.5856 per Hour for Lambda-Managed-Instances-m5d.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5856000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.xlarge-Management-Hours",
+    "description": "$0.02253 per Hour for Lambda-Managed-Instances-r7g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0225300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.xlarge-Management-Hours",
+    "description": "$0.01665 per Hour for Lambda-Managed-Instances-m5a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0166500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.12xlarge-Management-Hours",
+    "description": "$0.15336 per Hour for Lambda-Managed-Instances-c6g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1533600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.xlarge-Management-Hours",
+    "description": "$0.0297 per Hour for Lambda-Managed-Instances-c5d.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0297000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.48xlarge-Management-Hours",
+    "description": "$2.260515 per Hour for Lambda-Managed-Instances-r7a.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "2.2605150000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.4xlarge-Management-Hours",
+    "description": "$0.1836 per Hour for Lambda-Managed-Instances-r5b.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1836000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.xlarge-Management-Hours",
+    "description": "$0.03843 per Hour for Lambda-Managed-Instances-m6id.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0384300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.large-Management-Hours",
+    "description": "$0.010725 per Hour for Lambda-Managed-Instances-r6a.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0107250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.8xlarge-Management-Hours",
+    "description": "$0.30744 per Hour for Lambda-Managed-Instances-m6id.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3074400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.8xlarge-Management-Hours",
+    "description": "$0.3276 per Hour for Lambda-Managed-Instances-r7i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3276000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.2xlarge-Management-Hours",
+    "description": "$0.0906 per Hour for Lambda-Managed-Instances-r5d.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0906000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.8xlarge-Management-Hours",
+    "description": "$0.204 per Hour for Lambda-Managed-Instances-c6i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2040000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.2xlarge-Management-Hours",
+    "description": "$0.039 per Hour for Lambda-Managed-Instances-r6g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0390000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.large-Management-Hours",
+    "description": "$0.02379 per Hour for Lambda-Managed-Instances-r6id.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0237900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.16xlarge-Management-Hours",
+    "description": "$0.27993 per Hour for Lambda-Managed-Instances-m7g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2799300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.xlarge-Management-Hours",
+    "description": "$0.0356 per Hour for Lambda-Managed-Instances-c8gn.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0356000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.16xlarge-Management-Hours",
+    "description": "$0.624 per Hour for Lambda-Managed-Instances-r6i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6240000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.24xlarge-Management-Hours",
+    "description": "$0.3384 per Hour for Lambda-Managed-Instances-c5a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3384000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.xlarge-Management-Hours",
+    "description": "$0.0255 per Hour for Lambda-Managed-Instances-c5.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0255000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-Snapshot-Storage-GB-Hour",
+    "description": "$0.0001266667 per GB-Hour for Lambda-MicroVM-Snapshot-Storage-GB-Hour in Asia Pacific (Mumbai)",
+    "unit": "GB-Hours",
+    "usd": "0.0001266667",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5n.4xlarge-Management-Hours",
+    "description": "$0.1296 per Hour for Lambda-Managed-Instances-c5n.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1296000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.8xlarge-Management-Hours",
+    "description": "$0.312 per Hour for Lambda-Managed-Instances-r5.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3120000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.12xlarge-Management-Hours",
+    "description": "$0.2415 per Hour for Lambda-Managed-Instances-m5ad.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2415000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.48xlarge-Management-Hours",
+    "description": "$1.7064 per Hour for Lambda-Managed-Instances-c8gn.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.7064000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.2xlarge-Management-Hours",
+    "description": "$0.045045 per Hour for Lambda-Managed-Instances-r7g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0450450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.24xlarge-Management-Hours",
+    "description": "$0.936 per Hour for Lambda-Managed-Instances-r6i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9360000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.2xlarge-Management-Hours",
+    "description": "$0.0426 per Hour for Lambda-Managed-Instances-m7gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0426000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.12xlarge-Management-Hours",
+    "description": "$0.3564 per Hour for Lambda-Managed-Instances-c5d.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3564000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.16xlarge-Management-Hours",
+    "description": "$0.7344 per Hour for Lambda-Managed-Instances-r5n.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7344000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.4xlarge-Management-Hours",
+    "description": "$0.09909 per Hour for Lambda-Managed-Instances-r8g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0990900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.16xlarge-Management-Hours",
+    "description": "$0.2256 per Hour for Lambda-Managed-Instances-c5a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2256000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.12xlarge-Management-Hours",
+    "description": "$0.3168 per Hour for Lambda-Managed-Instances-r7gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3168000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Durable-Execution-Operations",
+    "description": "$0.0000086 per DurableOperation for Lambda-Durable-Execution-Operations in Asia Pacific (Mumbai)",
+    "unit": "DurableOperations",
+    "usd": "0.0000086000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.large-Management-Hours",
+    "description": "$0.011265 per Hour for Lambda-Managed-Instances-r7g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0112650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.12xlarge-Management-Hours",
+    "description": "$0.1764 per Hour for Lambda-Managed-Instances-c6gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1764000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.8xlarge-Management-Hours",
+    "description": "$0.12144 per Hour for Lambda-Managed-Instances-m6g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1214400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.16xlarge-Management-Hours",
+    "description": "$0.23559 per Hour for Lambda-Managed-Instances-c7g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2355900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.12xlarge-Management-Hours",
+    "description": "$0.468 per Hour for Lambda-Managed-Instances-r6i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4680000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.8xlarge-Management-Hours",
+    "description": "$0.3624 per Hour for Lambda-Managed-Instances-r5d.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3624000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.12xlarge-Management-Hours",
+    "description": "$0.234 per Hour for Lambda-Managed-Instances-r6g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2340000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.xlarge-Management-Hours",
+    "description": "$0.01812 per Hour for Lambda-Managed-Instances-m6gd.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0181200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.18xlarge-Management-Hours",
+    "description": "$0.459 per Hour for Lambda-Managed-Instances-c5.18xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4590000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.24xlarge-Management-Hours",
+    "description": "$1.14192 per Hour for Lambda-Managed-Instances-r6id.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.1419200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.24xlarge-Management-Hours",
+    "description": "$0.936 per Hour for Lambda-Managed-Instances-r5.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9360000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.large-Management-Hours",
+    "description": "$0.021765 per Hour for Lambda-Managed-Instances-m6in.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0217650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.48xlarge-Management-Hours",
+    "description": "$0.79992 per Hour for Lambda-Managed-Instances-m6a.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7999200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Web-Request-ARM",
+    "description": "$0.0000003 per Request for Lambda-Web-Request-ARM in Asia Pacific (Mumbai)",
+    "unit": "Request",
+    "usd": "0.0000003000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.xlarge-Management-Hours",
+    "description": "$0.0453 per Hour for Lambda-Managed-Instances-r5d.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0453000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.4xlarge-Management-Hours",
+    "description": "$0.15372 per Hour for Lambda-Managed-Instances-m6id.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1537200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.4xlarge-Management-Hours",
+    "description": "$0.078 per Hour for Lambda-Managed-Instances-r6g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0780000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.large-Management-Hours",
+    "description": "$0.0084 per Hour for Lambda-Managed-Instances-m5a.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0084000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-Request-ARM",
+    "description": "$0.0000002 per Request for Lambda-Managed-Instances-Request-ARM in Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000002000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.24xlarge-Management-Hours",
+    "description": "$1.2528 per Hour for Lambda-Managed-Instances-r5dn.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.2528000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.16xlarge-Management-Hours",
+    "description": "$0.5952 per Hour for Lambda-Managed-Instances-m5n.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5952000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.16xlarge-Management-Hours",
+    "description": "$0.358755 per Hour for Lambda-Managed-Instances-r6gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3587550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.large-Management-Hours",
+    "description": "$0.0195 per Hour for Lambda-Managed-Instances-r5.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0195000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.48xlarge-Management-Hours",
+    "description": "$0.92391 per Hour for Lambda-Managed-Instances-m8g.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9239100000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-SnapStart-Restored-GB",
+    "description": "$0.000166559 per GB for Lambda-SnapStart-Restored-GB in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0001665590",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.xlarge-Management-Hours",
+    "description": "$0.0141 per Hour for Lambda-Managed-Instances-c5a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0141000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.large-Management-Hours",
+    "description": "$0.01239 per Hour for Lambda-Managed-Instances-r8g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0123900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.12xlarge-Management-Hours",
+    "description": "$0.21744 per Hour for Lambda-Managed-Instances-m6gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2174400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-Snapshot-Write-GB",
+    "description": "$0.004163646 per GB for Lambda-MicroVM-Snapshot-Write-GB in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0041636460",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.32xlarge-Management-Hours",
+    "description": "$1.248 per Hour for Lambda-Managed-Instances-r6i.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.2480000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.2xlarge-Management-Hours",
+    "description": "$0.06804 per Hour for Lambda-Managed-Instances-c6in.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0680400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Edge-GB-Second",
+    "description": "AWS Lambda Edge - Total Compute - Asia Pacific (Mumbai)",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000500100",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.24xlarge-Management-Hours",
+    "description": "$1.13025 per Hour for Lambda-Managed-Instances-r7a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.1302500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.12xlarge-Management-Hours",
+    "description": "$0.2574 per Hour for Lambda-Managed-Instances-r6a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2574000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.32xlarge-Management-Hours",
+    "description": "$0.99792 per Hour for Lambda-Managed-Instances-c6id.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9979200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.4xlarge-Management-Hours",
+    "description": "$0.1422 per Hour for Lambda-Managed-Instances-c8gn.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1422000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.xlarge-Management-Hours",
+    "description": "$0.0303 per Hour for Lambda-Managed-Instances-m5.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0303000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.2xlarge-Management-Hours",
+    "description": "$0.06363 per Hour for Lambda-Managed-Instances-m7i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0636300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.12xlarge-Management-Hours",
+    "description": "$0.3213 per Hour for Lambda-Managed-Instances-c7i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3213000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.2xlarge-Management-Hours",
+    "description": "$0.0594 per Hour for Lambda-Managed-Instances-c5d.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0594000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.8xlarge-Management-Hours",
+    "description": "$0.15399 per Hour for Lambda-Managed-Instances-m8g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1539900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.2xlarge-Management-Hours",
+    "description": "$0.0918 per Hour for Lambda-Managed-Instances-r5b.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0918000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.16xlarge-Management-Hours",
+    "description": "$0.4848 per Hour for Lambda-Managed-Instances-m5.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4848000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.9xlarge-Management-Hours",
+    "description": "$0.2673 per Hour for Lambda-Managed-Instances-c5d.9xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2673000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.8xlarge-Management-Hours",
+    "description": "$0.19935 per Hour for Lambda-Managed-Instances-r5ad.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1993500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.8xlarge-Management-Hours",
+    "description": "$0.117795 per Hour for Lambda-Managed-Instances-c7g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1177950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.xlarge-Management-Hours",
+    "description": "$0.0459 per Hour for Lambda-Managed-Instances-r5n.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0459000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5n.9xlarge-Management-Hours",
+    "description": "$0.2916 per Hour for Lambda-Managed-Instances-c5n.9xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2916000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.24xlarge-Management-Hours",
+    "description": "$0.6426 per Hour for Lambda-Managed-Instances-c7i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6426000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-Memory-GB-Second",
+    "description": "$0.000004324 per GB-Second for Lambda-MicroVM-Memory-GB-Second in Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000043240",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.12xlarge-Management-Hours",
+    "description": "$0.3636 per Hour for Lambda-Managed-Instances-m6i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3636000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-Snapshot-Read-GB",
+    "description": "$0.001677993 per GB for Lambda-MicroVM-Snapshot-Read-GB in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0016779930",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.32xlarge-Management-Hours",
+    "description": "$0.816 per Hour for Lambda-Managed-Instances-c6i.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8160000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.4xlarge-Management-Hours",
+    "description": "$0.102 per Hour for Lambda-Managed-Instances-c5.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1020000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.12xlarge-Management-Hours",
+    "description": "$0.5508 per Hour for Lambda-Managed-Instances-r5n.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5508000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.4xlarge-Management-Hours",
+    "description": "$0.0858 per Hour for Lambda-Managed-Instances-r6a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0858000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.12xlarge-Management-Hours",
+    "description": "$0.1692 per Hour for Lambda-Managed-Instances-c5a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1692000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.24xlarge-Management-Hours",
+    "description": "$0.7128 per Hour for Lambda-Managed-Instances-c5d.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7128000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.2xlarge-Management-Hours",
+    "description": "$0.03624 per Hour for Lambda-Managed-Instances-m6gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0362400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.12xlarge-Management-Hours",
+    "description": "$0.5508 per Hour for Lambda-Managed-Instances-r5b.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5508000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Tenant-Isolated-Environment-Memory-GB-ARM",
+    "description": "$0.000133333 per GB for Lambda-Tenant-Isolated-Environment-Memory-GB-ARM in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0001333330",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.xlarge-Management-Hours",
+    "description": "$0.04095 per Hour for Lambda-Managed-Instances-r7i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0409500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.4xlarge-Management-Hours",
+    "description": "$0.1812 per Hour for Lambda-Managed-Instances-r5d.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1812000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.16xlarge-Management-Hours",
+    "description": "$0.408 per Hour for Lambda-Managed-Instances-c6i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4080000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.xlarge-Management-Hours",
+    "description": "$0.0303 per Hour for Lambda-Managed-Instances-m6i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0303000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.xlarge-Management-Hours",
+    "description": "$0.0372 per Hour for Lambda-Managed-Instances-m5n.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0372000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.2xlarge-Management-Hours",
+    "description": "$0.051 per Hour for Lambda-Managed-Instances-c6i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0510000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.12xlarge-Management-Hours",
+    "description": "$0.5436 per Hour for Lambda-Managed-Instances-r5d.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5436000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.32xlarge-Management-Hours",
+    "description": "$1.62864 per Hour for Lambda-Managed-Instances-m6idn.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.6286400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.2xlarge-Management-Hours",
+    "description": "$0.04485 per Hour for Lambda-Managed-Instances-r6gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0448500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.large-Management-Hours",
+    "description": "$0.025455 per Hour for Lambda-Managed-Instances-m6idn.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0254550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.xlarge-Management-Hours",
+    "description": "$0.03402 per Hour for Lambda-Managed-Instances-c6in.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0340200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Event-Poller-Unit-Hour",
+    "description": "$0.122 per Event-Poller-Unit-Hour for Lambda-Event-Poller-Unit-Hour in Asia Pacific (Mumbai)",
+    "unit": "Event-Poller-Unit-Hours",
+    "usd": "0.1220000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7gd.4xlarge-Management-Hours",
+    "description": "$0.06912 per Hour for Lambda-Managed-Instances-c7gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0691200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.16xlarge-Management-Hours",
+    "description": "$0.26664 per Hour for Lambda-Managed-Instances-m6a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2666400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second",
+    "description": "AWS Lambda - Total Compute - Asia Pacific (Mumbai)-Tier-1",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000166667",
+    "begin": "0",
+    "end": "6000000000"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second",
+    "description": "AWS Lambda - Total Compute - Asia Pacific (Mumbai)-Tier-3",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000133334",
+    "begin": "15000000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-GB-Second",
+    "description": "AWS Lambda - Total Compute - Asia Pacific (Mumbai)-Tier-2",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000150000",
+    "begin": "6000000000",
+    "end": "15000000000"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.large-Management-Hours",
+    "description": "$0.01065 per Hour for Lambda-Managed-Instances-m7gd.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0106500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.48xlarge-Management-Hours",
+    "description": "$1.2852 per Hour for Lambda-Managed-Instances-c7i.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.2852000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.24xlarge-Management-Hours",
+    "description": "$1.1016 per Hour for Lambda-Managed-Instances-r5b.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.1016000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.24xlarge-Management-Hours",
+    "description": "$0.8784 per Hour for Lambda-Managed-Instances-m5d.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8784000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.8xlarge-Management-Hours",
+    "description": "$0.180195 per Hour for Lambda-Managed-Instances-r7g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1801950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.4xlarge-Management-Hours",
+    "description": "$0.06477 per Hour for Lambda-Managed-Instances-c8g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0647700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.large-Management-Hours",
+    "description": "$0.00963 per Hour for Lambda-Managed-Instances-m8g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0096300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.16xlarge-Management-Hours",
+    "description": "$0.307965 per Hour for Lambda-Managed-Instances-m8g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3079650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.2xlarge-Management-Hours",
+    "description": "$0.078 per Hour for Lambda-Managed-Instances-r5.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0780000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.xlarge-Management-Hours",
+    "description": "$0.0522 per Hour for Lambda-Managed-Instances-r5dn.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0522000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.12xlarge-Management-Hours",
+    "description": "$0.1683 per Hour for Lambda-Managed-Instances-c6a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1683000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Web-vCPU-Second-ARM",
+    "description": "$0.0000276944 per vCPU-Second for Lambda-Web-vCPU-Second-ARM in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Seconds",
+    "usd": "0.0000276944",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.8xlarge-Management-Hours",
+    "description": "$0.25452 per Hour for Lambda-Managed-Instances-m7i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2545200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.2xlarge-Management-Hours",
+    "description": "$0.034995 per Hour for Lambda-Managed-Instances-m7g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0349950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.12xlarge-Management-Hours",
+    "description": "$0.4266 per Hour for Lambda-Managed-Instances-c8gn.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4266000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.32xlarge-Management-Hours",
+    "description": "$0.4488 per Hour for Lambda-Managed-Instances-c6a.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4488000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8gn.2xlarge-Management-Hours",
+    "description": "$0.0711 per Hour for Lambda-Managed-Instances-c8gn.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0711000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Storage-GB-Second",
+    "description": "AWS Lambda - Ephemeral Storage - Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000000352",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.12xlarge-Management-Hours",
+    "description": "$0.297285 per Hour for Lambda-Managed-Instances-r8g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2972850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.large-Management-Hours",
+    "description": "$0.0183 per Hour for Lambda-Managed-Instances-m5d.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0183000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Provisioned-GB-Second",
+    "description": "AWS Lambda - Total Compute (Provisioned) - Asia Pacific (Mumbai)",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000104966",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.8xlarge-Management-Hours",
+    "description": "$0.376755 per Hour for Lambda-Managed-Instances-r7a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3767550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Durable-Execution-Written-Bytes",
+    "description": "$0.27 per GigaByte for Lambda-Durable-Execution-Written-Bytes in Asia Pacific (Mumbai)",
+    "unit": "GigaBytes",
+    "usd": "0.2700000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.8xlarge-Management-Hours",
+    "description": "$0.1611 per Hour for Lambda-Managed-Instances-m5ad.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1611000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.2xlarge-Management-Hours",
+    "description": "$0.029445 per Hour for Lambda-Managed-Instances-c7g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0294450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.16xlarge-Management-Hours",
+    "description": "$0.3987 per Hour for Lambda-Managed-Instances-r5ad.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3987000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Streaming-Response-Processed-Bytes-ARM",
+    "description": "$0.008 per GiB for Lambda-Streaming-Response-Processed-Bytes-ARM in Asia Pacific (Mumbai)",
+    "unit": "Processed-Gigabytes",
+    "usd": "0.0080000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.large-Management-Hours",
+    "description": "$0.00975 per Hour for Lambda-Managed-Instances-r6g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0097500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.12xlarge-Management-Hours",
+    "description": "$0.194325 per Hour for Lambda-Managed-Instances-c8g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1943250000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.16xlarge-Management-Hours",
+    "description": "$0.6552 per Hour for Lambda-Managed-Instances-r7i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6552000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.16xlarge-Management-Hours",
+    "description": "$0.32205 per Hour for Lambda-Managed-Instances-m5ad.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3220500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.xlarge-Management-Hours",
+    "description": "$0.0201 per Hour for Lambda-Managed-Instances-m5ad.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0201000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6g.xlarge-Management-Hours",
+    "description": "$0.0195 per Hour for Lambda-Managed-Instances-r6g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0195000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.2xlarge-Management-Hours",
+    "description": "$0.0819 per Hour for Lambda-Managed-Instances-r7i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0819000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.16xlarge-Management-Hours",
+    "description": "$0.61488 per Hour for Lambda-Managed-Instances-m6id.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6148800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.12xlarge-Management-Hours",
+    "description": "$0.306 per Hour for Lambda-Managed-Instances-c5.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3060000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.8xlarge-Management-Hours",
+    "description": "$0.13332 per Hour for Lambda-Managed-Instances-m6a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1333200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.4xlarge-Management-Hours",
+    "description": "$0.1212 per Hour for Lambda-Managed-Instances-m6i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1212000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.8xlarge-Management-Hours",
+    "description": "$0.4176 per Hour for Lambda-Managed-Instances-r5dn.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4176000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.16xlarge-Management-Hours",
+    "description": "$0.76128 per Hour for Lambda-Managed-Instances-r6id.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7612800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.8xlarge-Management-Hours",
+    "description": "$0.1128 per Hour for Lambda-Managed-Instances-c5a.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1128000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.8xlarge-Management-Hours",
+    "description": "$0.17937 per Hour for Lambda-Managed-Instances-r6gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1793700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.large-Management-Hours",
+    "description": "$0.01515 per Hour for Lambda-Managed-Instances-m6i.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0151500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.12xlarge-Management-Hours",
+    "description": "$0.61074 per Hour for Lambda-Managed-Instances-m6idn.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6107400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Request-ARM",
+    "description": "AWS Lambda - Total Requests for ARM - Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000002000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.2xlarge-Management-Hours",
+    "description": "$0.03849 per Hour for Lambda-Managed-Instances-m8g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0384900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.24xlarge-Management-Hours",
+    "description": "$0.92232 per Hour for Lambda-Managed-Instances-m6id.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9223200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.large-Management-Hours",
+    "description": "$0.008745 per Hour for Lambda-Managed-Instances-m7g.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0087450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.4xlarge-Management-Hours",
+    "description": "$0.156 per Hour for Lambda-Managed-Instances-r6i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1560000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.12xlarge-Management-Hours",
+    "description": "$0.57096 per Hour for Lambda-Managed-Instances-r6id.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5709600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.16xlarge-Management-Hours",
+    "description": "$0.4224 per Hour for Lambda-Managed-Instances-r7gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4224000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.48xlarge-Management-Hours",
+    "description": "$1.52712 per Hour for Lambda-Managed-Instances-m7i.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.5271200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Tenant-Isolated-Environment-Memory-GB",
+    "description": "$0.000166667 per GB for Lambda-Tenant-Isolated-Environment-Memory-GB in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0001666670",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.24xlarge-Management-Hours",
+    "description": "$0.59457 per Hour for Lambda-Managed-Instances-r8g.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5945700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.16xlarge-Management-Hours",
+    "description": "$0.50904 per Hour for Lambda-Managed-Instances-m7i.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5090400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m8g.4xlarge-Management-Hours",
+    "description": "$0.076995 per Hour for Lambda-Managed-Instances-m8g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0769950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.2xlarge-Management-Hours",
+    "description": "$0.0606 per Hour for Lambda-Managed-Instances-m5.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0606000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5a.4xlarge-Management-Hours",
+    "description": "$0.0564 per Hour for Lambda-Managed-Instances-c5a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0564000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.48xlarge-Management-Hours",
+    "description": "$1.0296 per Hour for Lambda-Managed-Instances-r6a.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.0296000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.2xlarge-Management-Hours",
+    "description": "$0.051 per Hour for Lambda-Managed-Instances-c5.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0510000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.8xlarge-Management-Hours",
+    "description": "$0.312 per Hour for Lambda-Managed-Instances-r6i.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3120000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.4xlarge-Management-Hours",
+    "description": "$0.089685 per Hour for Lambda-Managed-Instances-r6gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0896850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6gd.12xlarge-Management-Hours",
+    "description": "$0.26907 per Hour for Lambda-Managed-Instances-r6gd.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2690700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.xlarge-Management-Hours",
+    "description": "$0.039 per Hour for Lambda-Managed-Instances-r5.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0390000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5n.18xlarge-Management-Hours",
+    "description": "$0.5832 per Hour for Lambda-Managed-Instances-c5n.18xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5832000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.2xlarge-Management-Hours",
+    "description": "$0.094185 per Hour for Lambda-Managed-Instances-r7a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0941850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-SQS-Event-Poller-Unit-Hour",
+    "description": "$0.0097 per Event-Poller-Unit-Hour for Lambda-SQS-Event-Poller-Unit-Hour in Asia Pacific (Mumbai)",
+    "unit": "Event-Poller-Unit-Hours",
+    "usd": "0.0097000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.16xlarge-Management-Hours",
+    "description": "$0.2352 per Hour for Lambda-Managed-Instances-c6gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2352000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6in.16xlarge-Management-Hours",
+    "description": "$0.54432 per Hour for Lambda-Managed-Instances-c6in.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5443200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.4xlarge-Management-Hours",
+    "description": "$0.07248 per Hour for Lambda-Managed-Instances-m6gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0724800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.24xlarge-Management-Hours",
+    "description": "$0.3366 per Hour for Lambda-Managed-Instances-c6a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3366000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.4xlarge-Management-Hours",
+    "description": "$0.1836 per Hour for Lambda-Managed-Instances-r5n.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1836000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.4xlarge-Management-Hours",
+    "description": "$0.0588 per Hour for Lambda-Managed-Instances-c6gd.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0588000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.16xlarge-Management-Hours",
+    "description": "$0.7248 per Hour for Lambda-Managed-Instances-r5d.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7248000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.xlarge-Management-Hours",
+    "description": "$0.01518 per Hour for Lambda-Managed-Instances-m6g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0151800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6id.32xlarge-Management-Hours",
+    "description": "$1.22976 per Hour for Lambda-Managed-Instances-m6id.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.2297600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.4xlarge-Management-Hours",
+    "description": "$0.1464 per Hour for Lambda-Managed-Instances-m5d.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1464000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5n.8xlarge-Management-Hours",
+    "description": "$0.3672 per Hour for Lambda-Managed-Instances-r5n.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3672000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.12xlarge-Management-Hours",
+    "description": "$0.468 per Hour for Lambda-Managed-Instances-r5.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4680000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7i.12xlarge-Management-Hours",
+    "description": "$0.38178 per Hour for Lambda-Managed-Instances-m7i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3817800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.24xlarge-Management-Hours",
+    "description": "$0.7272 per Hour for Lambda-Managed-Instances-m6i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7272000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.24xlarge-Management-Hours",
+    "description": "$0.3999 per Hour for Lambda-Managed-Instances-m5a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3999000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.16xlarge-Management-Hours",
+    "description": "$0.2667 per Hour for Lambda-Managed-Instances-m5a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2667000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.2xlarge-Management-Hours",
+    "description": "$0.0528 per Hour for Lambda-Managed-Instances-r7gd.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0528000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.large-Management-Hours",
+    "description": "$0.0132 per Hour for Lambda-Managed-Instances-r7gd.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0132000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6gd.8xlarge-Management-Hours",
+    "description": "$0.14496 per Hour for Lambda-Managed-Instances-m6gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1449600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.9xlarge-Management-Hours",
+    "description": "$0.2295 per Hour for Lambda-Managed-Instances-c5.9xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2295000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.18xlarge-Management-Hours",
+    "description": "$0.5346 per Hour for Lambda-Managed-Instances-c5d.18xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5346000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.12xlarge-Management-Hours",
+    "description": "$0.37422 per Hour for Lambda-Managed-Instances-c6id.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3742200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.16xlarge-Management-Hours",
+    "description": "$0.3408 per Hour for Lambda-Managed-Instances-m7gd.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3408000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.xlarge-Management-Hours",
+    "description": "$0.016665 per Hour for Lambda-Managed-Instances-m6a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0166650000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6i.xlarge-Management-Hours",
+    "description": "$0.039 per Hour for Lambda-Managed-Instances-r6i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0390000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.24xlarge-Management-Hours",
+    "description": "$1.22148 per Hour for Lambda-Managed-Instances-m6idn.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.2214800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Request",
+    "description": "AWS Lambda - Total Requests - Asia Pacific (Mumbai)",
+    "unit": "Request",
+    "usd": "0.0000002000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.24xlarge-Management-Hours",
+    "description": "$0.8928 per Hour for Lambda-Managed-Instances-m5n.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8928000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.8xlarge-Management-Hours",
+    "description": "$0.198195 per Hour for Lambda-Managed-Instances-r8g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1981950000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.12xlarge-Management-Hours",
+    "description": "$0.18216 per Hour for Lambda-Managed-Instances-m6g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1821600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5dn.4xlarge-Management-Hours",
+    "description": "$0.2088 per Hour for Lambda-Managed-Instances-r5dn.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2088000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7a.32xlarge-Management-Hours",
+    "description": "$1.507005 per Hour for Lambda-Managed-Instances-r7a.32xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.5070050000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.8xlarge-Management-Hours",
+    "description": "$0.24948 per Hour for Lambda-Managed-Instances-c6id.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2494800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5.16xlarge-Management-Hours",
+    "description": "$0.624 per Hour for Lambda-Managed-Instances-r5.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6240000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.2xlarge-Management-Hours",
+    "description": "$0.06237 per Hour for Lambda-Managed-Instances-c6id.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0623700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.4xlarge-Management-Hours",
+    "description": "$0.1488 per Hour for Lambda-Managed-Instances-m5n.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1488000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.2xlarge-Management-Hours",
+    "description": "$0.09516 per Hour for Lambda-Managed-Instances-r6id.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0951600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.xlarge-Management-Hours",
+    "description": "$0.031185 per Hour for Lambda-Managed-Instances-c6id.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0311850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.2xlarge-Management-Hours",
+    "description": "$0.0732 per Hour for Lambda-Managed-Instances-m5d.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0732000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.24xlarge-Management-Hours",
+    "description": "$0.39996 per Hour for Lambda-Managed-Instances-m6a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3999600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.48xlarge-Management-Hours",
+    "description": "$0.777315 per Hour for Lambda-Managed-Instances-c8g.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7773150000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6g.2xlarge-Management-Hours",
+    "description": "$0.03036 per Hour for Lambda-Managed-Instances-m6g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0303600000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6a.12xlarge-Management-Hours",
+    "description": "$0.19998 per Hour for Lambda-Managed-Instances-m6a.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1999800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.8xlarge-Management-Hours",
+    "description": "$0.129555 per Hour for Lambda-Managed-Instances-c8g.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1295550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5d.xlarge-Management-Hours",
+    "description": "$0.0366 per Hour for Lambda-Managed-Instances-m5d.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0366000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5.24xlarge-Management-Hours",
+    "description": "$0.612 per Hour for Lambda-Managed-Instances-c5.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.6120000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.2xlarge-Management-Hours",
+    "description": "$0.0333 per Hour for Lambda-Managed-Instances-m5a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0333000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5n.2xlarge-Management-Hours",
+    "description": "$0.0648 per Hour for Lambda-Managed-Instances-c5n.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0648000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5ad.24xlarge-Management-Hours",
+    "description": "$0.48315 per Hour for Lambda-Managed-Instances-m5ad.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4831500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6gd.8xlarge-Management-Hours",
+    "description": "$0.1176 per Hour for Lambda-Managed-Instances-c6gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1176000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5.4xlarge-Management-Hours",
+    "description": "$0.1212 per Hour for Lambda-Managed-Instances-m5.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1212000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.16xlarge-Management-Hours",
+    "description": "$0.3432 per Hour for Lambda-Managed-Instances-r6a.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3432000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.xlarge-Management-Hours",
+    "description": "$0.02145 per Hour for Lambda-Managed-Instances-r6a.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0214500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.2xlarge-Management-Hours",
+    "description": "$0.049545 per Hour for Lambda-Managed-Instances-r8g.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0495450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.4xlarge-Management-Hours",
+    "description": "$0.20358 per Hour for Lambda-Managed-Instances-m6idn.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2035800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c8g.xlarge-Management-Hours",
+    "description": "$0.0162 per Hour for Lambda-Managed-Instances-c8g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0162000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.4xlarge-Management-Hours",
+    "description": "$0.12474 per Hour for Lambda-Managed-Instances-c6id.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1247400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Provisioned-Concurrency-ARM",
+    "description": "AWS Lambda - Provisioned Concurrency for ARM - Asia Pacific (Mumbai)",
+    "unit": "Lambda-GB-Second",
+    "usd": "0.0000035988",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.4xlarge-Management-Hours",
+    "description": "$0.05889 per Hour for Lambda-Managed-Instances-c7g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0588900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.24xlarge-Management-Hours",
+    "description": "$0.9828 per Hour for Lambda-Managed-Instances-r7i.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.9828000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.2xlarge-Management-Hours",
+    "description": "$0.0744 per Hour for Lambda-Managed-Instances-m5n.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0744000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6i.2xlarge-Management-Hours",
+    "description": "$0.0606 per Hour for Lambda-Managed-Instances-m6i.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0606000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7g.12xlarge-Management-Hours",
+    "description": "$0.209955 per Hour for Lambda-Managed-Instances-m7g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2099550000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6idn.16xlarge-Management-Hours",
+    "description": "$0.81432 per Hour for Lambda-Managed-Instances-m6idn.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.8143200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r8g.xlarge-Management-Hours",
+    "description": "$0.02478 per Hour for Lambda-Managed-Instances-r8g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0247800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7i.48xlarge-Management-Hours",
+    "description": "$1.9656 per Hour for Lambda-Managed-Instances-r7i.48xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.9656000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.xlarge-Management-Hours",
+    "description": "$0.0459 per Hour for Lambda-Managed-Instances-r5b.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0459000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m6in.2xlarge-Management-Hours",
+    "description": "$0.087045 per Hour for Lambda-Managed-Instances-m6in.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0870450000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5b.large-Management-Hours",
+    "description": "$0.02295 per Hour for Lambda-Managed-Instances-r5b.large-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0229500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c5d.4xlarge-Management-Hours",
+    "description": "$0.1188 per Hour for Lambda-Managed-Instances-c5d.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1188000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-Memory-GB-Second-ARM",
+    "description": "$0.000003667 per GB-Second for Lambda-MicroVM-Memory-GB-Second-ARM in Asia Pacific (Mumbai)",
+    "unit": "GB-Seconds",
+    "usd": "0.0000036670",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.24xlarge-Management-Hours",
+    "description": "$0.5148 per Hour for Lambda-Managed-Instances-r6a.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5148000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.4xlarge-Management-Hours",
+    "description": "$0.09009 per Hour for Lambda-Managed-Instances-r7g.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0900900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6g.xlarge-Management-Hours",
+    "description": "$0.01278 per Hour for Lambda-Managed-Instances-c6g.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0127800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6id.8xlarge-Management-Hours",
+    "description": "$0.38064 per Hour for Lambda-Managed-Instances-r6id.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3806400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6a.2xlarge-Management-Hours",
+    "description": "$0.02805 per Hour for Lambda-Managed-Instances-c6a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0280500000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6id.24xlarge-Management-Hours",
+    "description": "$0.74844 per Hour for Lambda-Managed-Instances-c6id.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.7484400000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m7gd.8xlarge-Management-Hours",
+    "description": "$0.1704 per Hour for Lambda-Managed-Instances-m7gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1704000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.xlarge-Management-Hours",
+    "description": "$0.0249 per Hour for Lambda-Managed-Instances-r5ad.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0249000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-MicroVM-vCPU-Second-ARM",
+    "description": "$0.000027694 per vCPU-Second for Lambda-MicroVM-vCPU-Second-ARM in Asia Pacific (Mumbai)",
+    "unit": "vCPU-Seconds",
+    "usd": "0.0000276940",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7gd.8xlarge-Management-Hours",
+    "description": "$0.2112 per Hour for Lambda-Managed-Instances-r7gd.8xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.2112000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5ad.24xlarge-Management-Hours",
+    "description": "$0.5979 per Hour for Lambda-Managed-Instances-r5ad.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.5979000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r5d.24xlarge-Management-Hours",
+    "description": "$1.0872 per Hour for Lambda-Managed-Instances-r5d.24xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "1.0872000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5a.4xlarge-Management-Hours",
+    "description": "$0.0666 per Hour for Lambda-Managed-Instances-m5a.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0666000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7g.12xlarge-Management-Hours",
+    "description": "$0.176685 per Hour for Lambda-Managed-Instances-c7g.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1766850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-m5n.12xlarge-Management-Hours",
+    "description": "$0.4464 per Hour for Lambda-Managed-Instances-m5n.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.4464000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.12xlarge-Management-Hours",
+    "description": "$0.306 per Hour for Lambda-Managed-Instances-c6i.12xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3060000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c7i.4xlarge-Management-Hours",
+    "description": "$0.1071 per Hour for Lambda-Managed-Instances-c7i.4xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.1071000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r6a.2xlarge-Management-Hours",
+    "description": "$0.0429 per Hour for Lambda-Managed-Instances-r6a.2xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0429000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-r7g.16xlarge-Management-Hours",
+    "description": "$0.36039 per Hour for Lambda-Managed-Instances-r7g.16xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.3603900000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-Lambda-Managed-Instances-c6i.xlarge-Management-Hours",
+    "description": "$0.0255 per Hour for Lambda-Managed-Instances-c6i.xlarge-Management-Hours in Asia Pacific (Mumbai)",
+    "unit": "Hours",
+    "usd": "0.0255000000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]

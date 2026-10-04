@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-04",
+  "currency": "USD",
+  "region": "ap-south-1",
+  "assumptions": {
+    "mau": 1000,
+    "restRequests": 100000,
+    "graphqlOperations": 100000,
+    "websocketMessagesBothDirections": 200000,
+    "websocketConnectionMinutes": 100000,
+    "lambdaInvocations": 500000,
+    "lambdaAverageSeconds": 0.2,
+    "dynamoReadRequestUnits": 500000,
+    "dynamoWriteRequestUnits": 200000,
+    "databaseGB": 1,
+    "logsIngestedGB": 1,
+    "logsRetainedGB": 1,
+    "deploymentAssetsGB": 0.5,
+    "internetEgressGB": 1,
+    "buildsPerRepoPerMonth": 30,
+    "buildMinutes": 10,
+    "ciSmokeMAUPerRepo": 90,
+    "mauIncludesCISmokeUsers": true
+  },
+  "rates": {
+    "restPerMillion": 3.5,
+    "graphqlPerMillion": 4,
+    "wsMessagesPerMillion": 1,
+    "wsMinutesPerMillion": 0.25,
+    "lambdaRequestsPerMillion": 0.2,
+    "lambdaGBSecond": 1.66667e-05,
+    "dynamoRRUPerMillion": 0.1425,
+    "dynamoWRUPerMillion": 0.71,
+    "dynamoGBMonth": 0.285,
+    "logsIngestGB": 0.67,
+    "logsStorageGBMonth": 0.03,
+    "s3GBMonth": 0.025,
+    "cognitoEssentialsPerMAU": 0.015,
+    "cognitoLitePerMAU": 0.0055,
+    "githubLinuxMinute": 0.006
+  }
+}

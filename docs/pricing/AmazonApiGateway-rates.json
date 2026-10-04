@@ -1,0 +1,154 @@
+[
+  {
+    "usage": "APS3-ApiGatewayMinute",
+    "description": "$0.25/million connection minutes",
+    "unit": "minutes",
+    "usd": "0.0000002500",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:237GB",
+    "description": "API Gateway Dedicated Cache: 237GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "3.8000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:0.5GB",
+    "description": "API Gateway Dedicated Cache: 0.5GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.0200000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:118GB",
+    "description": "API Gateway Dedicated Cache: 118GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "1.9000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-APIGateway-Portal-Months",
+    "description": "$130.26 per Month for APIGateway-Portal-Months in Asia Pacific (Mumbai)",
+    "unit": "Month",
+    "usd": "130.2600000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayRequest",
+    "description": "$3.50/million requests - first 333 million requests/month",
+    "unit": "Requests",
+    "usd": "0.0000035000",
+    "begin": "0",
+    "end": "333000000"
+  },
+  {
+    "usage": "APS3-ApiGatewayRequest",
+    "description": "$2.80/million requests - next 667 million requests/month",
+    "unit": "Requests",
+    "usd": "0.0000028000",
+    "begin": "333000000",
+    "end": "1000000000"
+  },
+  {
+    "usage": "APS3-ApiGatewayRequest",
+    "description": "$2.38/million requests - next 19 billion requests/month",
+    "unit": "Requests",
+    "usd": "0.0000023800",
+    "begin": "1000000000",
+    "end": "20000000000"
+  },
+  {
+    "usage": "APS3-ApiGatewayRequest",
+    "description": "$1.51/million requests - over 20 billion requests/month",
+    "unit": "Requests",
+    "usd": "0.0000015100",
+    "begin": "20000000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:58.2GB",
+    "description": "API Gateway Dedicated Cache: 58.2GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "1.0000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:28.4GB",
+    "description": "API Gateway Dedicated Cache: 28.4GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.5000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:6.05GB",
+    "description": "API Gateway Dedicated Cache: 6.05GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.2000000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-APIGateway-Portal-Product-Months",
+    "description": "$13.03 per Month for APIGateway-Portal-Product-Months in Asia Pacific (Mumbai)",
+    "unit": "Month",
+    "usd": "13.0300000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:1.55GB",
+    "description": "API Gateway Dedicated Cache: 1.55GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.0380000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayHttpRequest",
+    "description": "$1.05/million requests - API Gateway HTTP API (first 300 million)",
+    "unit": "Requests",
+    "usd": "0.0000010500",
+    "begin": "0",
+    "end": "300000000"
+  },
+  {
+    "usage": "APS3-ApiGatewayHttpRequest",
+    "description": "$0.95/million requests - API Gateway HTTP API (more than 300 million)",
+    "unit": "Requests",
+    "usd": "0.0000009500",
+    "begin": "300000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayMessage",
+    "description": "$0.8/million messages - over 1 billion messages/month",
+    "unit": "Messages",
+    "usd": "0.0000008000",
+    "begin": "1000000000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ApiGatewayMessage",
+    "description": "$1/million messages - first 1 billion messages/month",
+    "unit": "Messages",
+    "usd": "0.0000010000",
+    "begin": "0",
+    "end": "1000000000"
+  },
+  {
+    "usage": "APS3-ApiGatewayCacheUsage:13.5GB",
+    "description": "API Gateway Dedicated Cache: 13.5GB - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.2500000000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]

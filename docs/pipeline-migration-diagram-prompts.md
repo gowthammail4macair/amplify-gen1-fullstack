@@ -1,3 +1,5 @@
+> Historical image prompts from the initial local phase. Cloud deployment and API verification were subsequently authorized; current results are in CLOUD-DEPLOYMENT.md. The original images have not been regenerated.
+
 # CI/CD and migration diagram generation
 
 Mode: built-in image_gen, using the imagegen skill.

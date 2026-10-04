@@ -1,0 +1,106 @@
+[
+  {
+    "usage": "APS3-AppSyncCacheUsage:1.55GB",
+    "description": "AppSync Dedicated Cache 1.55Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.0440000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:12.3GB",
+    "description": "AppSync Dedicated Cache 12.3Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.2980000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:25.05GB",
+    "description": "AppSync Dedicated Cache 25.05Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.5950000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-EventAPI-Operation",
+    "description": "$1 per million Event API operations in Asia Pacific (Mumbai)",
+    "unit": "Operation",
+    "usd": "0.0000010000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:50.47GB",
+    "description": "AppSync Dedicated Cache 50.47Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "1.1890000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-GraphQLInvocation",
+    "description": "$4 per million query and data modification operations in Asia Pacific (Mumbai)",
+    "unit": "Requests",
+    "usd": "0.0000040000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ConnectionDuration",
+    "description": "$0.08 per million minutes of connection in Asia Pacific (Mumbai)",
+    "unit": "Minutes",
+    "usd": "0.0000000800",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:101.38GB",
+    "description": "AppSync Dedicated Cache 101.38Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "2.3790000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:317.77GB",
+    "description": "AppSync Dedicated Cache 317.77Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "6.7750000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-EventAPI-ConnectionDuration",
+    "description": "$0.08 per million Event API connection minutes in Asia Pacific (Mumbai)",
+    "unit": "Minute",
+    "usd": "0.0000000800",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:3.22GB",
+    "description": "AppSync Dedicated Cache 3.22Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "0.0890000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-GraphQLNotification",
+    "description": "$2 per million real-time updates in Asia Pacific (Mumbai)",
+    "unit": "Messages",
+    "usd": "0.0000020000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-AppSyncCacheUsage:203.26GB",
+    "description": "AppSync Dedicated Cache 203.26Gb - Asia Pacific (Mumbai)",
+    "unit": "Hrs",
+    "usd": "4.7580000000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]

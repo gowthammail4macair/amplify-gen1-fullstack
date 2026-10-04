@@ -1,0 +1,250 @@
+[
+  {
+    "usage": "APS3-TimedPITRStorage-ByteHrs",
+    "description": "$0.228 per GB-Month of storage used for DynamoDB PITR backup",
+    "unit": "GB-Mo",
+    "usd": "0.2280000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IncrementalExportDataSize-Bytes",
+    "description": "$0.1140 per GB of incremental data exported in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1140000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-ReadCapacityUnit-Hrs",
+    "description": "$0.0001850 per hour for units of IA read capacity in Asia Pacific (Mumbai)",
+    "unit": "ReadCapacityUnit-Hrs",
+    "usd": "0.0001850000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ImportDataSize-Bytes",
+    "description": "$0.1710 per GB for data import in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1710000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-TimedStorage-ByteHrs",
+    "description": "$0.285 per GB-Month of storage used beyond first 25 free GB-Months",
+    "unit": "GB-Mo",
+    "usd": "0.2850000000",
+    "begin": "25",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-TimedStorage-ByteHrs",
+    "description": "$0.00 per GB-Month of storage for first 25 free GB-Months",
+    "unit": "GB-Mo",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "25"
+  },
+  {
+    "usage": "APS3-IA-WriteRequestUnits",
+    "description": "$0.89 per million IA write request units in Asia Pacific (Mumbai)",
+    "unit": "WriteRequestUnits",
+    "usd": "0.0000008900",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-WriteCapacityUnit-Hrs",
+    "description": "$0.00074 per hour for units of write capacity beyond the free tier",
+    "unit": "WriteCapacityUnit-Hrs",
+    "usd": "0.0007400000",
+    "begin": "18600",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-WriteCapacityUnit-Hrs",
+    "description": "$0.00 per hour for 25 units of write capacity for a month (free tier)",
+    "unit": "WriteCapacityUnit-Hrs",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "18600"
+  },
+  {
+    "usage": "APS3-RestoreDataSize-Bytes",
+    "description": "$0.171 per GB of data restored",
+    "unit": "GB",
+    "usd": "0.1710000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-WriteRequestUnits",
+    "description": "$0.71 per million write request units (Asia Pacific (India))",
+    "unit": "WriteRequestUnits",
+    "usd": "0.0000007100",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReadCapacityUnit-Hrs",
+    "description": "$0.000148 per hour for units of read capacity beyond the free tier",
+    "unit": "ReadCapacityUnit-Hrs",
+    "usd": "0.0001480000",
+    "begin": "18600",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReadCapacityUnit-Hrs",
+    "description": "$0.00 per hour for 25 units of read capacity for a month (free tier)",
+    "unit": "ReadCapacityUnit-Hrs",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "18600"
+  },
+  {
+    "usage": "APS3-Streams-Requests",
+    "description": "$0.00 for 2.5 million DynamoDB Streams read request units for a month (free tier) (Asia Pacific (India))",
+    "unit": "Requests",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "2500000"
+  },
+  {
+    "usage": "APS3-Streams-Requests",
+    "description": "$0.000000228 per DynamoDB Streams read request unit beyond free tier (Asia Pacific (India))",
+    "unit": "Requests",
+    "usd": "0.0000002280",
+    "begin": "2500000",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ExportDataSize-Bytes",
+    "description": "$0.11400 per GB of data exported in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.1140000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ChangeDataCaptureUnits-Kinesis",
+    "description": "$0.11385 per million change data capture units for Kinesis Data Streams in Asia Pacific (Mumbai)",
+    "unit": "ChangeDataCaptureUnits",
+    "usd": "0.0000001139",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReadRequestUnits",
+    "description": "$0.1425 per million read request units (Asia Pacific (India))",
+    "unit": "ReadRequestUnits",
+    "usd": "0.0000001425",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-ReadRequestUnits",
+    "description": "$0.178 per million IA read request units in Asia Pacific (Mumbai)",
+    "unit": "ReadRequestUnits",
+    "usd": "0.0000001780",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-WriteCapacityUnit-Hrs",
+    "description": "$0.0009300 per hour for units of IA write capacity in Asia Pacific (Mumbai)",
+    "unit": "WriteCapacityUnit-Hrs",
+    "usd": "0.0009300000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-ReplWriteRequestUnits",
+    "description": "$0.89 per million replicated IA write request units in Asia Pacific (Mumbai)",
+    "unit": "ReplicatedWriteRequestUnits",
+    "usd": "0.0000008900",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VectorSearch",
+    "description": "$0.00228 per GB of vector data searched in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0022800000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-VectorWriteRequest",
+    "description": "$0.59072 per GB of vector write requests in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.5907200000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-TimedStorage-ByteHrs",
+    "description": "$0.11400 per GB-Month of IA storage in Asia Pacific (Mumbai)",
+    "unit": "GB-Mo",
+    "usd": "0.1140000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-VectorWriteRequest",
+    "description": "$0.74167 per GB of IA vector write requests in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.7416700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReplWriteRequestUnits",
+    "description": "$0.71 per million ReplicatedWriteRequestUnit in Asia Pacific (Mumbai)",
+    "unit": "ReplicatedWriteRequestUnits",
+    "usd": "0.0000007100",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-IA-VectorSearch",
+    "description": "$0.00287 per GB of IA vector data searched in Asia Pacific (Mumbai)",
+    "unit": "GB",
+    "usd": "0.0028700000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-TimedBackupStorage-ByteHrs",
+    "description": "$0.114 per GB-Month of storage used for on-demand backup",
+    "unit": "GB-Month",
+    "usd": "0.1140000000",
+    "begin": "0",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReplWriteCapacityUnit-Hrs",
+    "description": "$0.00074 per ReplicatedWriteCapacityUnit-Hr in Asia Pacific (Mumbai)",
+    "unit": "ReplicatedWriteCapacityUnit-Hrs",
+    "usd": "0.0007400000",
+    "begin": "18600",
+    "end": "Inf"
+  },
+  {
+    "usage": "APS3-ReplWriteCapacityUnit-Hrs",
+    "description": "$0.00 per hour for 25 units of replicated write capacity for a month (free tier) in Asia Pacific (Mumbai)",
+    "unit": "ReplicatedWriteCapacityUnit-Hrs",
+    "usd": "0.0000000000",
+    "begin": "0",
+    "end": "18600"
+  },
+  {
+    "usage": "APS3-IA-ReplWriteCapacityUnit-Hrs",
+    "description": "$0.00093 per hour for units of IA replicated write capacity in Asia Pacific (Mumbai)",
+    "unit": "ReplicatedWriteCapacityUnit-Hrs",
+    "usd": "0.0009300000",
+    "begin": "0",
+    "end": "Inf"
+  }
+]
