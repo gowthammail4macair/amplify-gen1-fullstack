@@ -7,19 +7,19 @@
   "url": "https://d2i2kf1hg91937.cloudfront.net",
   "distributionId": "E1KMLNKNIT86GN",
   "status": "published",
-  "timestamp": "2026-10-04T11:15:35.090Z",
-  "sourceSha": "4816a1c0d8f32ff3b43ab69ef9445b4c1b3c9f67",
+  "timestamp": "2026-10-04T11:47:25.868Z",
+  "sourceSha": "a2f5e0a8f78765d16b5aedcf2051de2d938a43c4",
   "build": {
     "project": "amplify-gen1-fullstack",
     "configSource": "amplify_outputs.json",
-    "sourceSha": "4816a1c0d8f32ff3b43ab69ef9445b4c1b3c9f67",
-    "builtAt": "2026-10-04T11:15:27.805Z",
+    "sourceSha": "a2f5e0a8f78765d16b5aedcf2051de2d938a43c4",
+    "builtAt": "2026-10-04T11:47:23.274Z",
     "frontendLabel": "Amplify Gen 1",
     "assets": [
       {
-        "path": "assets/app-20437c6c8ec2.js",
-        "sha256": "20437c6c8ec29ab5d146c57edd023e31285b042c4f5a8e3bc68140c3ee35fd3a",
-        "bytes": 104219
+        "path": "assets/app-b7aa2532f7f0.js",
+        "sha256": "b7aa2532f7f0f8d120a19569538bb2b30c2270712c270815f8951902c053449c",
+        "bytes": 104528
       },
       {
         "path": "assets/style-012d39db5352.css",
@@ -28,7 +28,7 @@
       },
       {
         "path": "index.html",
-        "sha256": "35dd10746872d42b7227efc9bc28b056597a466d8a033b166f127f43fbe99547",
+        "sha256": "710aa0633dd071da5f2a259773502d505201e2bf9579ca4aba24e09670c858c3",
         "bytes": 8038
       }
     ],

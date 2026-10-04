@@ -1,0 +1,184 @@
+{
+  "run": "20261004-mutr70bu",
+  "method": "Visible in-app browser form and button interactions",
+  "result": {
+    "url": "https://d2i2kf1hg91937.cloudfront.net/",
+    "checks": [
+      {
+        "name": "Fixed build clears stale summary and live result on selection",
+        "passed": true
+      },
+      {
+        "name": "Fixed build clears stale summary after an update",
+        "passed": true
+      },
+      {
+        "name": "Cognito sign-in and REST queue",
+        "passed": true
+      },
+      {
+        "name": "REST create",
+        "passed": true
+      },
+      {
+        "name": "REST title and status update",
+        "passed": true
+      },
+      {
+        "name": "Generated GraphQL reads REST update",
+        "passed": true
+      },
+      {
+        "name": "Custom Lambda summary",
+        "passed": true
+      },
+      {
+        "name": "Custom Lambda close",
+        "passed": true
+      },
+      {
+        "name": "Authenticated WebSocket connection",
+        "passed": true
+      },
+      {
+        "name": "WebSocket reads closed ticket",
+        "passed": true
+      },
+      {
+        "name": "Generated GraphQL create",
+        "passed": true
+      },
+      {
+        "name": "GraphQL list sees REST and GraphQL writes",
+        "passed": true
+      },
+      {
+        "name": "REST list sees GraphQL write",
+        "passed": true
+      },
+      {
+        "name": "Closed status filter",
+        "passed": true
+      },
+      {
+        "name": "Custom REST authorizer denies non-Agent",
+        "passed": true
+      },
+      {
+        "name": "WebSocket disconnect",
+        "passed": true
+      },
+      {
+        "name": "Sign-out returns login form",
+        "passed": true
+      }
+    ],
+    "fixtures": [
+      {
+        "id": "251651d8-d64d-443d-8184-f8d64b6f1f87",
+        "source": "REST"
+      },
+      {
+        "id": "bb4d4eec-9f77-4dac-8928-998d62c6307b",
+        "source": "GraphQL"
+      },
+      {
+        "id": "459d6bd0-39c5-4fdb-8ac6-2f93bb147bd3",
+        "source": "REST",
+        "phase": "fixed build"
+      },
+      {
+        "id": "50afc22b-2173-4bd7-8d04-92f57f4bde1f",
+        "source": "GraphQL",
+        "phase": "fixed build"
+      }
+    ],
+    "startedAt": "2026-10-04T11:44:51.673Z",
+    "fixedBuildScript": "/assets/app-b7aa2532f7f0.js",
+    "finishedAt": "2026-10-04T11:56:03.945Z",
+    "initialBuildChecks": [
+      {
+        "name": "Cognito sign-in and REST queue",
+        "passed": true
+      },
+      {
+        "name": "REST create",
+        "passed": true
+      },
+      {
+        "name": "REST title and status update",
+        "passed": true
+      },
+      {
+        "name": "Generated GraphQL reads REST update",
+        "passed": true
+      },
+      {
+        "name": "Custom Lambda summary",
+        "passed": true
+      },
+      {
+        "name": "Custom Lambda close",
+        "passed": true
+      },
+      {
+        "name": "Authenticated WebSocket connection",
+        "passed": true
+      },
+      {
+        "name": "WebSocket reads closed ticket",
+        "passed": true
+      },
+      {
+        "name": "Generated GraphQL create",
+        "passed": true
+      },
+      {
+        "name": "GraphQL list sees REST and GraphQL writes",
+        "passed": true
+      },
+      {
+        "name": "REST list sees GraphQL write",
+        "passed": true
+      },
+      {
+        "name": "Closed status filter",
+        "passed": true
+      },
+      {
+        "name": "Custom REST authorizer denies non-Agent",
+        "passed": true
+      },
+      {
+        "name": "WebSocket disconnect",
+        "passed": true
+      },
+      {
+        "name": "Sign-out returns login form",
+        "passed": true
+      }
+    ],
+    "sourceSha": "a2f5e0a8f78765d16b5aedcf2051de2d938a43c4"
+  },
+  "cleanup": {
+    "removedOnlyExactFixtureIds": [
+      "251651d8-d64d-443d-8184-f8d64b6f1f87",
+      "bb4d4eec-9f77-4dac-8928-998d62c6307b",
+      "459d6bd0-39c5-4fdb-8ac6-2f93bb147bd3",
+      "50afc22b-2173-4bd7-8d04-92f57f4bde1f"
+    ],
+    "remainingTicketIds": [
+      "30e5ee9d-cf1d-456e-85d9-d1a52dd1ce5c",
+      "32a90fac-1cc0-4054-80b9-7d804d50b7c4",
+      "3acdd8af-edac-4612-b45a-abf0e335f2b4",
+      "c6491c61-b664-4281-98ca-3b5d09e8d6b7"
+    ],
+    "preExistingTicketsPreserved": true,
+    "ownerAccountRetained": true,
+    "remainingConnections": 0
+  },
+  "limitations": [
+    "Permanent-delete confirmation dialog and its cancel path were not exercised in this recheck. Agent-positive and cross-owner access were covered by the prior successful live API CI tests, not repeated through the browser in this run."
+  ],
+  "fix": "Clear summary and WebSocket result when the selected ticket changes or its title, status, or update timestamp changes."
+}

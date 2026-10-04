@@ -47,3 +47,13 @@ The REST origin allowlist supports both localhost:3000 and this hosted origin.
 WebSocket lookup is request/response; this example does not broadcast ticket
 updates to other connected clients. Existing accounts must be created through
 Cognito administration; this demo frontend does not offer public registration.
+
+## Latest live browser recheck
+
+On 4 October 2026 the final hosted frontend passed 17 browser checks, including
+REST, generated and custom GraphQL resolvers, WebSocket lookup, authentication,
+and owner authorization denial. Summaries and live responses now clear when the
+selected ticket or its stored content changes. See
+[the recorded results](../evidence/frontend-recheck.json) and
+[browser screenshot](../evidence/frontend-recheck.jpg) for coverage and limitations.
+All new fixtures were cleaned up and the existing demo owner account was retained.
