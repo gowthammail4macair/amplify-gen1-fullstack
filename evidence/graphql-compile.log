@@ -1,0 +1,14 @@
+⚠️ Unable to determine the Lambda execution role name of function "ticketRest", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
+⚠️ Unable to determine the Lambda execution role name of function "ticketWorkflow", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
+⚠️ Unable to determine the Lambda execution role name of function "ticketSocketHandler", so it is not granted admin access to the "supportGraphql" GraphQL API. Add its execution role name to "adminRoleNames" in custom-roles.json to grant access.
+⚠️ WARNING: owners may reassign ownership for the following model(s) and role(s): Ticket: [owner]. If this is not intentional, you may want to apply field-level authorization rules to these fields. To read more: https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access.
+✅ GraphQL schema compiled successfully.
+
+Edit your schema at /Users/testadmin/Documents/AmplifyGen1_to_Gen2_migration/amplify-gen1-fullstack/amplify/backend/api/supportGraphql/schema.graphql or place .graphql files in a directory at /Users/testadmin/Documents/AmplifyGen1_to_Gen2_migration/amplify-gen1-fullstack/amplify/backend/api/supportGraphql/schema
+
+⚠️  WARNING: AWS Amplify Gen 1 CLI is in maintenance mode and will reach end of life on May 1, 2027.
+During maintenance mode, only critical bug fixes and security patches will be provided.
+Migrate to Amplify Gen 2: https://docs.amplify.aws/react/start/migrate-to-gen2/
+
+Be careful when using @auth directives on a field in a root type. @auth directives on field definitions use the source object to perform authorization logic and the source will be an empty object for fields on root types. Static group authorization should perform as expected.
+Be careful when using @auth directives on a field in a root type. @auth directives on field definitions use the source object to perform authorization logic and the source will be an empty object for fields on root types. Static group authorization should perform as expected.

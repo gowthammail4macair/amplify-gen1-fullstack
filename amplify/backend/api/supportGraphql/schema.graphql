@@ -1,0 +1,21 @@
+enum TicketStatus { OPEN IN_PROGRESS CLOSED }
+type Ticket @model @auth(rules: [
+  {allow: owner, ownerField: "owner"},
+  {allow: groups, groups: ["Agents"]}
+]) {
+  id: ID!
+  title: String!
+  status: TicketStatus!
+  owner: String
+}
+type TicketSummary { id: ID!, title: String!, status: TicketStatus!, summary: String! }
+type Query {
+  ticketSummary(id: ID!): TicketSummary
+    @function(name: "ticketWorkflow-${env}")
+    @auth(rules: [{allow: private, provider: userPools}])
+}
+type Mutation {
+  closeTicket(id: ID!): Ticket
+    @function(name: "ticketWorkflow-${env}")
+    @auth(rules: [{allow: private, provider: userPools}])
+}

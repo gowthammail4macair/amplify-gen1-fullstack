@@ -1,0 +1,32 @@
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
+const { DynamoDBDocumentClient, GetCommand, PutCommand, UpdateCommand, DeleteCommand, ScanCommand } = require('@aws-sdk/lib-dynamodb');
+const client = DynamoDBDocumentClient.from(new DynamoDBClient({}), { marshallOptions: { removeUndefinedValues: true } });
+function createDatabase(doc = client, table = process.env.TICKET_TABLE) {
+  return {
+    async get(id) { return (await doc.send(new GetCommand({ TableName: table, Key: { id }, ConsistentRead: true }))).Item; },
+    async create(ticket) { await doc.send(new PutCommand({ TableName: table, Item: ticket, ConditionExpression: 'attribute_not_exists(id)' })); return ticket; },
+    async list(user, cursor) {
+      let start;
+      if (cursor) {
+        try {
+          const value = JSON.parse(Buffer.from(cursor, 'base64url').toString());
+          if (!value || typeof value.id !== 'string' || Object.keys(value).some(k => k !== 'id')) throw new Error();
+          start = value;
+        } catch { const { HttpError } = require('./domain.cjs'); throw new HttpError(400, 'Invalid cursor'); }
+      }
+      const admin = user.groups.includes('Agents');
+      const result = await doc.send(new ScanCommand({ TableName: table, Limit: 50, ExclusiveStartKey: start,
+        ...(admin ? {} : { FilterExpression: '#owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': user.owner } }) }));
+      return { items: result.Items || [], nextToken: result.LastEvaluatedKey ? Buffer.from(JSON.stringify(result.LastEvaluatedKey)).toString('base64url') : null };
+    },
+    async update(ticket, changes) {
+      const fields = { ...changes, updatedAt: new Date().toISOString() };
+      const names = { '#owner': 'owner' }, values = { ':owner': ticket.owner };
+      const setters = Object.entries(fields).map(([key, value], i) => { names[`#f${i}`] = key; values[`:v${i}`] = value; return `#f${i} = :v${i}`; });
+      return (await doc.send(new UpdateCommand({ TableName: table, Key: { id: ticket.id }, UpdateExpression: `SET ${setters.join(', ')}`,
+        ConditionExpression: 'attribute_exists(id) AND #owner = :owner', ExpressionAttributeNames: names, ExpressionAttributeValues: values, ReturnValues: 'ALL_NEW' }))).Attributes;
+    },
+    async delete(ticket) { await doc.send(new DeleteCommand({ TableName: table, Key: { id: ticket.id }, ConditionExpression: 'attribute_exists(id) AND #owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': ticket.owner } })); }
+  };
+}
+module.exports = { createDatabase };

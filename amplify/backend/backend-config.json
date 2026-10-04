@@ -1,0 +1,160 @@
+{
+  "api": {
+    "supportGraphql": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    },
+    "supportRest": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "ticketRest"
+        },
+        {
+          "attributes": [
+            "UserPoolArn"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "ticketAuthorizer"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "ticketAuth": {
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "custom": {
+    "ticketSocket": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "IdentityPoolId",
+            "IdentityPoolName",
+            "UserPoolId",
+            "UserPoolArn",
+            "UserPoolName",
+            "AppClientIDWeb",
+            "AppClientID"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "Region",
+            "LambdaExecutionRole",
+            "LambdaExecutionRoleArn"
+          ],
+          "category": "function",
+          "resourceName": "ticketSocketHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "Region",
+            "LambdaExecutionRole",
+            "LambdaExecutionRoleArn"
+          ],
+          "category": "function",
+          "resourceName": "ticketAuthorizer"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "customCDK"
+    }
+  },
+  "function": {
+    "ticketAuthorizer": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ticketRest": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "supportGraphql"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ticketSocketHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "supportGraphql"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ticketWorkflow": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "supportGraphql"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}

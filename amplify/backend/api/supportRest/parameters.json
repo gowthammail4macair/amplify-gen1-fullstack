@@ -1,0 +1,14 @@
+{
+  "AuthPoolArn": {
+    "Fn::GetAtt": [
+      "authticketAuth",
+      "Outputs.UserPoolArn"
+    ]
+  },
+  "AuthorizerArn": {
+    "Fn::GetAtt": [
+      "functionticketAuthorizer",
+      "Outputs.Arn"
+    ]
+  }
+}

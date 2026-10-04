@@ -1,0 +1,9 @@
+{
+  "local": {
+    "categories": {
+      "auth": {
+        "ticketAuth": {}
+      }
+    }
+  }
+}

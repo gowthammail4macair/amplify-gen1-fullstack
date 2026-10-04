@@ -1,0 +1,31 @@
+{
+  "name": "amplify-gen1-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Amplify Gen 1 support-ticket backend: REST, AppSync and WebSocket APIs",
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run prepare && npm run typecheck && npm test && tsx scripts/synth.ts",
+    "amplify": "amplify",
+    "prepare": "node scripts/prepare-local.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0",
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.0.0",
+    "aws-jwt-verify": "5.2.1"
+  },
+  "devDependencies": {
+    "@aws-amplify/cli-internal": "14.5.1",
+    "@aws-amplify/cli-extensibility-helper": "3.0.43",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0",
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
+    "@types/node": "^22.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/tickets": {
+      "name": "/tickets",
+      "lambdaFunction": "ticketRest",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/admin/tickets": {
+      "name": "/admin/tickets",
+      "lambdaFunction": "ticketRest",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

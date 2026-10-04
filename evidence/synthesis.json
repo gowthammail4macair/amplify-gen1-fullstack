@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "Official Gen 1 Auth and REST synthesis, CLI GraphQL compilation, custom CDK synthesis; no deployment",
+  "graphqlOperations": [
+    "createTicket",
+    "getTicket",
+    "listTickets",
+    "updateTicket",
+    "deleteTicket",
+    "ticketSummary",
+    "closeTicket"
+  ],
+  "restPaths": [
+    "/tickets",
+    "/tickets/{id}",
+    "/admin/tickets"
+  ],
+  "websocketRoutes": [
+    "$connect",
+    "$disconnect",
+    "$default",
+    "getTicket"
+  ],
+  "dependencyGraphAcyclic": true
+}

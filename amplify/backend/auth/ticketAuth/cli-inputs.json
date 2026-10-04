@@ -1,0 +1,54 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "resourceName": "ticketAuth",
+    "resourceNameTruncated": "ticketAuth",
+    "userPoolName": "ticket-users",
+    "authSelections": "identityPoolAndUserPool",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "requiredAttributes": [
+      "email"
+    ],
+    "usernameAttributes": [
+      "email"
+    ],
+    "aliasAttributes": [],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 12,
+    "passwordPolicyCharacters": [
+      "Requires Lowercase",
+      "Requires Uppercase",
+      "Requires Numbers",
+      "Requires Symbols"
+    ],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientSetAttributes": false,
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {},
+    "hostedUI": false,
+    "thirdPartyAuth": false,
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "breakCircularDependency": true,
+    "useEnabledMfas": true,
+    "identityPoolName": "ticket-identities",
+    "allowUnauthenticatedIdentities": false
+  }
+}

@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"es2020","module":"commonjs","moduleResolution":"node","outDir":"build","esModuleInterop":true,"skipLibCheck":true,"strict":true},"include":["cdk-stack.ts"]}

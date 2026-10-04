@@ -1,0 +1,147 @@
+
+> amplify-gen1-fullstack@1.0.0 validate
+> npm run prepare && npm run typecheck && npm test && tsx scripts/synth.ts
+
+
+> amplify-gen1-fullstack@1.0.0 prepare
+> node scripts/prepare-local.cjs
+
+
+> amplify-gen1-fullstack@1.0.0 typecheck
+> tsc --noEmit
+
+
+> amplify-gen1-fullstack@1.0.0 test
+> node --test test/*.test.cjs
+
+✔ REST create assigns verified owner and ignores submitted owner/status (4.798459ms)
+✔ REST list exposes only the authenticated user tickets (0.120125ms)
+✔ REST rejects requests without verified claims (0.06725ms)
+✔ REST rejects another owner reading/updating/deleting a ticket (0.154417ms)
+✔ REST rejects ordinary users at the custom-authorized admin route (0.094584ms)
+✔ REST permits Agents to list all tickets and access another owner (0.148ms)
+✔ REST validates JSON, title and status (0.167083ms)
+✔ REST update/delete operate on the same data as GraphQL custom workflow (0.146125ms)
+✔ REST handles conditional-write conflict without leaking internal errors (0.086875ms)
+✔ GraphQL summary supports Gen 1 @function event shape (0.091916ms)
+✔ GraphQL custom resolver rejects another owner and missing identity (3.927125ms)
+✔ REST Lambda authorizer denies normal users and permits Agents with an exact ARN policy (0.15525ms)
+✔ WebSocket Lambda authorizer verifies Cognito token from the connect query parameter (0.048333ms)
+✔ Lambda authorizer fails closed for missing, expired or invalid tokens (0.073166ms)
+✔ real Cognito JWT verification checks signature, issuer, audience, token_use and expiry offline (26.145625ms)
+✔ WebSocket connects, looks up a ticket and disconnects (0.324167ms)
+✔ WebSocket refuses another owner on each message (0.072084ms)
+✔ WebSocket expired sessions are removed and disconnected (0.070708ms)
+✔ WebSocket rejects unauthenticated connect and unknown action (0.078291ms)
+✔ DynamoDB list filters at the database and paginates without trusting cursor shape (0.331958ms)
+✔ DynamoDB update/delete use conditional ownership protection (0.127417ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 190.857
+[WARNING] aws-cdk-lib.CfnResource#addDependency is deprecated.
+  Use `addResourceDependency` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.CfnResource#addDependency is deprecated.
+  Use `addResourceDependency` instead.
+  This API will be removed in the next major release.
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+scripts/synth.ts:23:18
+WARNING Parameters/authticketAuthIdentityPoolId: Parameter 'authticketAuthIdentityPoolId' is not referenced anywhere in the template (CloudFormation Validate)
+   SocketValidation aws-cdk-lib.Stack
+   Acknowledge with 'CloudFormation-Validate::W2001'
+
+A copy of this report can be found in: dist/socket-cdk/validation-report.json
+{
+  "status": "passed",
+  "scope": "Official Gen 1 Auth and REST synthesis, CLI GraphQL compilation, custom CDK synthesis; no deployment",
+  "graphqlOperations": [
+    "createTicket",
+    "getTicket",
+    "listTickets",
+    "updateTicket",
+    "deleteTicket",
+    "ticketSummary",
+    "closeTicket"
+  ],
+  "restPaths": [
+    "/tickets",
+    "/tickets/{id}",
+    "/admin/tickets"
+  ],
+  "websocketRoutes": [
+    "$connect",
+    "$disconnect",
+    "$default",
+    "getTicket"
+  ],
+  "dependencyGraphAcyclic": true
+}

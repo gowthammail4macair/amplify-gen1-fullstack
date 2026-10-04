@@ -1,0 +1,17 @@
+{
+  "projectName": "supportgenone",
+  "version": "3.1",
+  "frontend": "javascript",
+  "providers": [
+    "awscloudformation"
+  ],
+  "javascript": {
+    "framework": "none",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "dist",
+      "BuildCommand": "npm run validate",
+      "StartCommand": "npm test"
+    }
+  }
+}

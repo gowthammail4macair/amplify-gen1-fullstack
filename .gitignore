@@ -1,0 +1,13 @@
+node_modules/
+.amplify/
+dist/
+cdk.out/
+.DS_Store
+amplify_outputs.json
+amplify/#current-cloud-backend/
+amplify/.config/local-*
+amplify/backend/amplify-meta.json
+amplify/backend/**/build/
+.env
+.env.*
+!.env.example

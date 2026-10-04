@@ -1,0 +1,10 @@
+{
+  "name": "gen1-backend-overrides",
+  "private": true,
+  "devDependencies": {
+    "@aws-amplify/cli-extensibility-helper": "3.0.43",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}

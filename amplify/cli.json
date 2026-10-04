@@ -1,0 +1,22 @@
+{
+  "features": {
+    "graphqltransformer": {
+      "transformerversion": 2,
+      "improvepluralization": true,
+      "useexperimentalpipelinedtransformer": true,
+      "enableiterativegsiupdates": true,
+      "secondarykeyasgsi": true,
+      "suppressschemamigrationprompt": true,
+      "securityenhancementnotification": false,
+      "showfieldauthnotification": false,
+      "usesubusernamefordefaultidentityclaim": true
+    },
+    "auth": {
+      "breakcirculardependency": true,
+      "useenabledmfas": true
+    },
+    "project": {
+      "overrides": true
+    }
+  }
+}
