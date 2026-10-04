@@ -56,6 +56,12 @@ async function main() {
   assert.ok(Object.values(auth.Resources).some((r: any) => r.Type === 'AWS::Cognito::UserPool'));
   // Verify the backend-config graph has no category-level dependency cycle.
   const config = JSON.parse(readFileSync('amplify/backend/backend-config.json', 'utf8'));
+  for (const dependency of config.api.supportRest.dependsOn) {
+    for (const attribute of dependency.attributes) {
+      const parameter = `${dependency.category}${dependency.resourceName}${attribute}`;
+      assert.ok(restTemplate.Parameters[parameter], `REST dependency parameter missing: ${parameter}`);
+    }
+  }
   const graph: Record<string,string[]> = {};
   for (const [category, entries] of Object.entries(config)) for (const [name, resource] of Object.entries(entries as any)) graph[`${category}/${name}`] = ((resource as any).dependsOn || []).map((d: any) => `${d.category}/${d.resourceName}`);
   const active = new Set<string>(), done = new Set<string>();
