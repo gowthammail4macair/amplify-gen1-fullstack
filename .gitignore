@@ -18,3 +18,8 @@ amplify/#current-cloud-backend*
 
 # Downloaded CI artifacts; selected evidence is copied to evidence/*.json.
 evidence/cloud-ci*/
+# CLI init regenerates these documentation, type and sample files.
+amplify/README.md
+amplify/backend/types/amplify-dependent-resources-ref.d.ts
+amplify/hooks/README.md
+amplify/hooks/*.sample
