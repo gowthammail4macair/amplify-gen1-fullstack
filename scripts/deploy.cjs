@@ -15,6 +15,7 @@ fs.writeFileSync('amplify/backend/amplify-meta.json', JSON.stringify({ ...requir
 const ccb = 'amplify/#current-cloud-backend';
 if (fs.existsSync(ccb)) fs.renameSync(ccb, ccb + '-validation-' + Date.now());
 run(['init', '--amplify', JSON.stringify({ appId: cfg.appId, envName, defaultEditor: 'vscode' }), '--providers', JSON.stringify({ awscloudformation: { configLevel: 'general' } }), '--yes']);
+require('./prepare-local.cjs');
 run(['push', '--yes']);
 const meta = JSON.parse(fs.readFileSync('amplify/backend/amplify-meta.json', 'utf8'));
 const aws = args => JSON.parse(execFileSync('aws', [...args, '--region', cfg.region, '--output', 'json'], { encoding: 'utf8' }));
