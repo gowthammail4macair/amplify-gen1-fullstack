@@ -12,7 +12,8 @@
         "cloudformation:GetTemplate",
         "cloudformation:DescribeChangeSet",
         "cloudformation:ExecuteChangeSet",
-        "cloudformation:DeleteChangeSet"
+        "cloudformation:DeleteChangeSet",
+        "cloudformation:GetTemplateSummary"
       ],
       "Resource": [
         "arn:aws:cloudformation:ap-south-1:112097210422:stack/support-d1zija7gqlw461-frontend/*",
