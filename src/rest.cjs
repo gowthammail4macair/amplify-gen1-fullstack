@@ -2,7 +2,13 @@ const { HttpError, identity, assertAccess, newTicket, patch } = require('./domai
 const { createDatabase } = require('./database.cjs');
 function createHandler(db = createDatabase()) {
   return async event => {
-    const reply = (statusCode, body) => ({ statusCode, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGIN || 'http://localhost:3000', 'Access-Control-Allow-Headers': 'Authorization,Content-Type' }, body: JSON.stringify(body) });
+    const allowedOrigins = process.env.ALLOWED_ORIGINS ? JSON.parse(process.env.ALLOWED_ORIGINS) : [process.env.ALLOWED_ORIGIN || 'http://localhost:3000'];
+    const origin = event.headers?.origin || event.headers?.Origin;
+    const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Headers': 'Authorization,Content-Type', 'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,OPTIONS', Vary: 'Origin' };
+    if (allowedOrigins.includes(origin)) headers['Access-Control-Allow-Origin'] = origin;
+    const reply = (statusCode, body) => ({ statusCode, headers, body: statusCode === 204 ? '' : JSON.stringify(body) });
+    // Preflight is public; every data operation still requires verified authorizer claims.
+    if (event.httpMethod === 'OPTIONS') return reply(204);
     try {
       const auth = event.requestContext?.authorizer;
       const user = identity(auth?.claims || (auth?.sub ? { sub: auth.sub, username: auth.username, 'cognito:groups': auth.groups } : null));

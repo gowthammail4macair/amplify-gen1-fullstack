@@ -1,5 +1,7 @@
 # Amplify Gen 1: support tickets
 
+The SupportDesk frontend is included under [`frontend/`](frontend/README.md). Its separate S3/CloudFront hosting and full-stack deployment are managed by the GitHub workflow; live URLs are recorded in [`frontend/hosting.json`](frontend/hosting.json).
+
 ![Support-ticket architecture: Cognito, REST, GraphQL, WebSockets and DynamoDB](docs/support-ticket-architecture.png)
 
 [CI/CD and infrastructure diagram](docs/ci-cd-infrastructure-gen1-gen2.png) · [Migration workflow diagram](docs/gen1-to-gen2-migration-workflow.png) · [Diagram notes](docs/CI-CD-AND-MIGRATION.md)

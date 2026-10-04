@@ -55,6 +55,15 @@ function message(ws, value) {
   try {
     await test('Cognito SRP login: two owners and an Agents member', async () => { owner = await user('owner'); other = await user('other'); agent = await user('agent', true); });
     await test('REST rejects missing and malformed Cognito tokens', async () => { for (const t of ['', 'invalid']) assert.ok([401,403].includes((await rest(t, 'GET', '/tickets')).status)); });
+    await test('REST preflight supports the hosted website and localhost, excluding other origins', async () => {
+      const { allowedOrigins } = require('../frontend/origins.cjs');
+      for (const origin of allowedOrigins) for (const path of ['/tickets', '/tickets/any-id', '/admin/tickets']) {
+        const r = await fetch(restBase + path, { method: 'OPTIONS', headers: { Origin: origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'Authorization,Content-Type' } });
+        assert.equal(r.status, 204); assert.equal(r.headers.get('access-control-allow-origin'), origin);
+      }
+      const unlisted = await fetch(restBase + '/tickets', { method: 'OPTIONS', headers: { Origin: 'https://unlisted.example.invalid' } });
+      assert.equal(unlisted.headers.get('access-control-allow-origin'), null);
+    });
     await test('REST creates a ticket with owner identity', async () => { const r = await rest(owner, 'POST', '/tickets', { title: 'Live smoke ' + runId }); assert.equal(r.status, 201, JSON.stringify(r)); ticket = r.body; tickets.push(ticket.id); assert.ok(ticket.owner.includes('::')); });
     await test('REST owner read/update and cross-owner denial', async () => { assert.equal((await rest(owner, 'GET', '/tickets/' + ticket.id)).status, 200); assert.equal((await rest(other, 'GET', '/tickets/' + ticket.id)).status, 403); assert.equal((await rest(other, 'PATCH', '/tickets/' + ticket.id, { title: 'forbidden' })).status, 403); assert.equal((await rest(owner, 'PATCH', '/tickets/' + ticket.id, { status: 'IN_PROGRESS' })).status, 200); });
     await test('REST custom Lambda authorizer: Agents allowed, owner denied', async () => { assert.equal((await rest(owner, 'GET', '/admin/tickets')).status, 403); assert.equal((await rest(agent, 'GET', '/admin/tickets')).status, 200); });

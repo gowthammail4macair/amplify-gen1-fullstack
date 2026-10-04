@@ -23,3 +23,6 @@ amplify/README.md
 amplify/backend/types/amplify-dependent-resources-ref.d.ts
 amplify/hooks/README.md
 amplify/hooks/*.sample
+
+# Frontend assets are generated from deployed backend outputs.
+frontend/dist/

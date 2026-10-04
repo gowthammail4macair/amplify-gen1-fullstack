@@ -1,0 +1,9 @@
+{
+  "stack": "support-d1zija7gqlw461-frontend",
+  "region": "ap-south-1",
+  "assetsBucket": "support-d1zija7gqlw461-assets-112097210422",
+  "websiteBucket": "support-d1zija7gqlw461-website-112097210422",
+  "websiteUrl": "http://support-d1zija7gqlw461-website-112097210422.s3-website.ap-south-1.amazonaws.com",
+  "url": "https://d2i2kf1hg91937.cloudfront.net",
+  "distributionId": "E1KMLNKNIT86GN"
+}

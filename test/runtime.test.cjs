@@ -54,3 +54,24 @@ test('WebSocket expired sessions are removed and disconnected',async()=>{const f
 test('WebSocket rejects unauthenticated connect and unknown action',async()=>{const f=websocketFixture();assert.equal((await f.call('$connect')).statusCode,401);await f.call('$connect',null,{owner,expiresAt:claims.exp});await f.call('$default',{action:'other'});assert.equal(f.messages[0].type,'error');});
 test('DynamoDB list filters at the database and paginates without trusting cursor shape',async()=>{let input;const db=createDatabase({async send(c){input=c.input;return{Items:[],LastEvaluatedKey:{id:'next'}};}},'TicketTable');const r=await db.list({owner,groups:[]});assert.equal(input.FilterExpression,'#owner = :owner');assert.equal(input.ExpressionAttributeValues[':owner'],owner);assert.deepEqual(JSON.parse(Buffer.from(r.nextToken,'base64url')),{id:'next'});await assert.rejects(db.list({owner,groups:[]},Buffer.from('{"id":"one","owner":"evil"}').toString('base64url')),{statusCode:400});});
 test('DynamoDB update/delete use conditional ownership protection',async()=>{const calls=[];const db=createDatabase({async send(c){calls.push(c.input);return{Attributes:{id:'one'}};}},'TicketTable');await db.update({id:'one',owner},{status:'CLOSED'});await db.delete({id:'one',owner});for(const x of calls){assert.equal(x.ConditionExpression,'attribute_exists(id) AND #owner = :owner');assert.equal(x.ExpressionAttributeValues[':owner'],owner);}});
+
+test('REST public preflight and authenticated replies use the configured origin allowlist', async()=>{
+  const previous=process.env.ALLOWED_ORIGINS;
+  process.env.ALLOWED_ORIGINS=JSON.stringify(['http://localhost:3000','https://hosted.example.invalid']);
+  try {
+    const h=rest(database());
+    for(const origin of ['http://localhost:3000','https://hosted.example.invalid']) {
+      const preflight=await h({httpMethod:'OPTIONS',path:'/tickets',headers:{Origin:origin},requestContext:{}});
+      assert.equal(preflight.statusCode,204);assert.equal(preflight.body,'');
+      assert.equal(preflight.headers['Access-Control-Allow-Origin'],origin);
+      assert.ok(preflight.headers['Access-Control-Allow-Methods'].includes('PATCH'));
+      const response=await h({...event('GET','/tickets'),headers:{origin}});
+      assert.equal(response.statusCode,200);assert.equal(response.headers['Access-Control-Allow-Origin'],origin);
+      assert.equal(response.headers.Vary,'Origin');
+    }
+    const unlisted=await h({httpMethod:'OPTIONS',path:'/tickets',headers:{Origin:'https://unlisted.example.invalid'}});
+    assert.equal(unlisted.headers['Access-Control-Allow-Origin'],undefined);
+    const denied=await h({httpMethod:'GET',path:'/tickets',headers:{Origin:'https://hosted.example.invalid'}});
+    assert.equal(denied.statusCode,401);assert.equal(denied.headers['Access-Control-Allow-Origin'],'https://hosted.example.invalid');
+  } finally {if(previous===undefined)delete process.env.ALLOWED_ORIGINS;else process.env.ALLOWED_ORIGINS=previous;}
+});

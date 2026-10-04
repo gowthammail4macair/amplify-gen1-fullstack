@@ -2,13 +2,16 @@
   "name": "amplify-gen1-fullstack",
   "version": "1.0.0",
   "private": true,
-  "description": "Amplify Gen 1 support-ticket backend: REST, AppSync and WebSocket APIs",
+  "description": "Amplify Gen 1 support-ticket full-stack application: REST, AppSync and WebSocket APIs",
   "scripts": {
     "test": "node --test test/*.test.cjs",
     "typecheck": "tsc --noEmit",
     "validate": "npm run prepare && npm run typecheck && npm test && tsx scripts/synth.ts",
     "amplify": "amplify",
-    "prepare": "node scripts/prepare-local.cjs"
+    "prepare": "node scripts/prepare-local.cjs",
+    "frontend:build": "node scripts/build-frontend.cjs",
+    "hosting:prepare": "node scripts/hosting.cjs prepare",
+    "frontend:deploy": "npm run frontend:build && node scripts/hosting.cjs publish"
   },
   "engines": {
     "node": ">=22"
@@ -27,6 +30,7 @@
     "amazon-cognito-identity-js": "^6.3.16",
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.0",
+    "esbuild": "0.28.2",
     "tsx": "^4.0.0",
     "typescript": "^5.0.0"
   },

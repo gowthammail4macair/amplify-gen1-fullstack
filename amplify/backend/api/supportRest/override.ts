@@ -12,8 +12,7 @@ export function override(resources: AmplifyApiRestResourceStackTemplate) {
         authorizerUri: { 'Fn::Sub': 'arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${functionticketAuthorizerArn}/invocations' } } }
   };
   const template = body.paths['/tickets']['x-amazon-apigateway-any-method'];
-  const options = body.paths['/tickets'].options;
-  options['x-amazon-apigateway-integration'].responses.default.responseParameters['method.response.header.Access-Control-Allow-Origin'] = "'http://localhost:3000'";
+  const options = { ...template, security: [], parameters: [] };
   const method = (security: string, withId = false) => ({ ...template, security: [{ [security]: [] }],
     parameters: withId ? [{ name: 'id', in: 'path', required: true, type: 'string' }] : [] });
   body.paths = {

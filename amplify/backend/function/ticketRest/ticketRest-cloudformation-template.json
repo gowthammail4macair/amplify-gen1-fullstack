@@ -88,7 +88,8 @@
                   }
                 ]
               ]
-            }
+            },
+            "ALLOWED_ORIGINS": "[\"http://localhost:3000\",\"https://d2i2kf1hg91937.cloudfront.net\"]"
           }
         },
         "Role": {

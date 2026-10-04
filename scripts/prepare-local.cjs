@@ -21,3 +21,9 @@ meta.api.supportGraphql.output.authConfig = {
   additionalAuthenticationProviders: service.additionalAuthTypes.map(appSyncAuthTypeToAuthConfig)
 };
 fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2) + '\n');
+
+// Keep CORS origins in sync with the independently hosted frontend.
+const restTemplatePath='amplify/backend/function/ticketRest/ticketRest-cloudformation-template.json';
+const restTemplate=JSON.parse(fs.readFileSync(restTemplatePath));
+restTemplate.Resources.LambdaFunction.Properties.Environment.Variables.ALLOWED_ORIGINS=JSON.stringify(require('../frontend/origins.cjs').allowedOrigins);
+fs.writeFileSync(restTemplatePath,JSON.stringify(restTemplate,null,2)+'\n');
