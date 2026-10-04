@@ -1,11 +1,11 @@
 {
-  "AuthPoolArn": {
+  "authticketAuthUserPoolArn": {
     "Fn::GetAtt": [
       "authticketAuth",
       "Outputs.UserPoolArn"
     ]
   },
-  "AuthorizerArn": {
+  "functionticketAuthorizerArn": {
     "Fn::GetAtt": [
       "functionticketAuthorizer",
       "Outputs.Arn"
