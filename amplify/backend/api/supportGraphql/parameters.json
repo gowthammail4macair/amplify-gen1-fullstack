@@ -1,3 +1,9 @@
 {
-  "AppSyncApiName": "supportGraphql"
+  "AppSyncApiName": "supportGraphql",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authticketAuth",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
