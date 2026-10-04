@@ -1,5 +1,16 @@
 {
-  "local": {
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-supportgenone-dev-115eb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::112097210422:role/amplify-supportgenone-dev-115eb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::112097210422:role/amplify-supportgenone-dev-115eb-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-supportgenone-dev-115eb-deployment",
+      "UnauthRoleName": "amplify-supportgenone-dev-115eb-unauthRole",
+      "StackName": "amplify-supportgenone-dev-115eb",
+      "StackId": "arn:aws:cloudformation:ap-south-1:112097210422:stack/amplify-supportgenone-dev-115eb/56b7d0c0-bfbc-11f1-a166-02fff94de1e3",
+      "AmplifyAppId": "d1zija7gqlw461"
+    },
     "categories": {
       "auth": {
         "ticketAuth": {}

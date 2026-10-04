@@ -1,0 +1,9 @@
+{
+  "region": "ap-south-1",
+  "roleArn": "arn:aws:iam::112097210422:role/AmplifyTicketDemo-gen1-GitHub",
+  "repository": "https://github.com/gowthammail4macair/amplify-gen1-fullstack",
+  "branch": "main",
+  "generation": 1,
+  "appId": "d1zija7gqlw461",
+  "envName": "dev"
+}

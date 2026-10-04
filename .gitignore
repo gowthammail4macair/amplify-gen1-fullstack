@@ -11,3 +11,7 @@ amplify/backend/**/build/
 .env
 .env.*
 !.env.example
+
+# Offline snapshots retained locally; never deployed or published.
+amplify/**/*offline-backup*
+amplify/#current-cloud-backend*

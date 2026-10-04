@@ -1,0 +1,49 @@
+name: Validate, deploy and test AWS backend
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: aws-main-deployment
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CI: '1'
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_BRANCH: main
+      AMPLIFY_APP_ID: ${{ vars.AMPLIFY_APP_ID }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm install --global npm@11.13.0
+      - run: npm ci
+      - name: Validate source and synthesize infrastructure
+        run: npm run validate
+      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+          role-session-name: amplify-${{ github.run_id }}
+          allowed-account-ids: '112097210422'
+      - name: Deploy Amplify Gen 1 environment
+        run: node scripts/deploy.cjs
+      - name: Exercise deployed REST, GraphQL and WebSocket APIs
+        run: node scripts/smoke-test.cjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: deployment-evidence
+          path: |
+            amplify_outputs.json
+            evidence/live-smoke.json
+            evidence/synthesis.json
+          retention-days: 14
