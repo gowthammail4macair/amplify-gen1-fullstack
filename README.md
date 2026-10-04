@@ -2,6 +2,8 @@
 
 ![Support-ticket architecture: Cognito, REST, GraphQL, WebSockets and DynamoDB](docs/support-ticket-architecture.png)
 
+[CI/CD and infrastructure diagram](docs/ci-cd-infrastructure-gen1-gen2.png) · [Migration workflow diagram](docs/gen1-to-gen2-migration-workflow.png) · [Diagram notes](docs/CI-CD-AND-MIGRATION.md)
+
 Task 1: an independently versioned local Amplify Gen 1 project covering REST, AppSync GraphQL and API Gateway WebSockets. The code and infrastructure compile locally. No AWS resources were deployed.
 
 ```bash
