@@ -6,7 +6,7 @@ The SupportDesk frontend is included under [`frontend/`](frontend/README.md). It
 
 [CI/CD and infrastructure diagram](docs/ci-cd-infrastructure-gen1-gen2.png) · [Migration workflow diagram](docs/gen1-to-gen2-migration-workflow.png) · [Diagram notes](docs/CI-CD-AND-MIGRATION.md)
 
-Task 1: an Amplify Gen 1 project covering REST, AppSync GraphQL and API Gateway WebSockets. It is published privately on GitHub and deployed in Mumbai. TypeScript, 21 runtime tests, synthesis and all 12 live API check groups pass.
+Task 1: an Amplify Gen 1 project covering REST, AppSync GraphQL and API Gateway WebSockets. It is published privately on GitHub and deployed in Mumbai. TypeScript, 22 runtime tests, synthesis and all 13 live API check groups pass.
 
 ```bash
 npm ci
@@ -24,3 +24,10 @@ Read [the implementation guide](docs/IMPLEMENTATION.md) for the steps used to bu
 [Private GitHub repository](https://github.com/gowthammail4macair/amplify-gen1-fullstack) · [workflow, endpoints and live checks](docs/CLOUD-DEPLOYMENT.md) · [rough monthly cost](docs/COST-ESTIMATE.md).
 
 The pipeline validates the code, deploys through short-lived GitHub OIDC credentials, and tests Cognito, REST, AppSync and WebSockets against AWS. `evidence/live-smoke.json` records the latest successful cloud check when present. The migration repository uses a separate environment with fresh resources.
+
+### Deployed frontend
+
+- [Open SupportDesk over HTTPS](https://d2i2kf1hg91937.cloudfront.net)
+- [S3 website URL — redirects to HTTPS](http://support-d1zija7gqlw461-website-112097210422.s3-website.ap-south-1.amazonaws.com)
+
+All 15 hosted browser workflow checks passed. The latest full-stack CI passed 22 runtime tests, 13 live API check groups, and five hosting checks. See [deployment evidence](evidence/fullstack-ci.json) and [hosted browser results](evidence/frontend-browser.json). The native browser delete confirmation could not be automated; delete API operations passed in CI.

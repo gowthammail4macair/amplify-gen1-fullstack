@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-04T08:18:52.089Z",
+  "timestamp": "2026-10-04T11:15:27.587Z",
   "scope": "Live AWS HTTPS, Cognito SRP and WebSocket integration",
   "checks": [
     {
@@ -8,6 +8,10 @@
     },
     {
       "name": "REST rejects missing and malformed Cognito tokens",
+      "status": "passed"
+    },
+    {
+      "name": "REST preflight supports the hosted website and localhost, excluding other origins",
       "status": "passed"
     },
     {
@@ -59,8 +63,8 @@
     ],
     "socketsClosed": 3,
     "ticketIds": [
-      "dfd1aad9-9b2d-4e0c-8ed0-c07a85c28321",
-      "29a54af5-5dba-45a7-90d2-a1c19b0e9764"
+      "9c53906d-d47c-4b48-94a8-968a6d47e424",
+      "7eb7a3df-2f10-4460-ac74-fb3051187536"
     ]
   },
   "endpoints": {

@@ -2,9 +2,9 @@
 
 The repository is private on GitHub. `deployment.json` identifies its Amplify application, AWS region, branch/environment and GitHub OIDC role. `.github/workflows/deploy.yml` runs from `main` or manual dispatch and serializes deployments.
 
-The pipeline pins action revisions, Node 22 and npm 11.13.0, installs locked dependencies, runs TypeScript/runtime checks and local synthesis, obtains temporary AWS credentials, deploys the backend, exports actual outputs, and runs `scripts/smoke-test.cjs` against AWS. Small JSON evidence and outputs are uploaded for 14 days. No AWS access key or secret is stored in GitHub. Gen 1 bridges its SDK v2 post-push hook through a dedicated profile containing the job's short-lived OIDC session in mode-0600 temporary files; `finally` removes both files. The user's default profile is untouched. Trust is restricted to this exact repository's immutable owner/repository IDs and its `main` branch.
+The pipeline pins action revisions, Node 22 and npm 11.13.0, installs locked dependencies, runs TypeScript/runtime checks and local synthesis, obtains temporary AWS credentials, prepares the S3/CloudFront hosting stack, deploys the backend, exports actual outputs, runs `scripts/smoke-test.cjs` against AWS, then builds and publishes the frontend. `scripts/check-hosting.cjs` checks hosted asset hashes, the S3 redirect, and denied anonymous access to the asset bucket. Small JSON evidence and outputs are uploaded for 14 days. No AWS access key or secret is stored in GitHub. Gen 1 bridges its SDK v2 post-push hook through a dedicated profile containing the job's short-lived OIDC session in mode-0600 temporary files; `finally` removes both files. The user's default profile is untouched. Trust is restricted to this exact repository's immutable owner/repository IDs and its `main` branch.
 
-The CI provider is GitHub Actions. The earlier infrastructure diagram shows the Amplify-managed build option; this deployment uses the same Gen 1 CLI or Gen 2 pipeline-deploy backend stages in an external pipeline. Amplify Hosting/CDN frontend builds are not configured because this use case is backend-only.
+The CI provider is GitHub Actions. The earlier infrastructure diagram shows the Amplify-managed build option; this deployment uses the same Gen 1 CLI or Gen 2 pipeline-deploy backend stages in an external pipeline. The SupportDesk frontend is now built in the same workflow and published to a separate private S3 bucket behind CloudFront. A second empty S3 website bucket redirects visitors to that HTTPS site. This hosting stack is defined in `frontend/hosting-template.json`; this project does not use the Amplify Hosting build service.
 
 The smoke check creates two temporary Cognito owners and an Agents member without sending invitations, authenticates using SRP, verifies REST owner CRUD and Cognito rejection, checks the custom Agents authorizer, verifies generated AppSync and custom Lambda resolvers against shared DynamoDB data, and tests authenticated WebSocket responses, denied ownership and malformed messages. Finally it closes sockets and removes tickets and users. Unit checks additionally cover JWT issuer/audience/signature/expiry and expired WebSocket identity handling; token expiry over a real hour is not part of the live check.
 
@@ -33,3 +33,23 @@ The public migration assessment of this synchronized source succeeded and report
 ## Visible browser verification — 2026-10-04
 
 A local browser page at `http://localhost:3000` made direct requests to the deployed AWS services through real sign-in forms and buttons. All 17 final browser checks passed: three Cognito identities, REST create/update/read, default GraphQL create/read, custom Lambda summary/close, WebSocket connect/message/disconnect, cross-owner REST/GraphQL denial, and custom-authorizer agent allow/non-agent deny. No backend change was needed for Gen 1. See `evidence/browser-live.json`, including the original failed CORS attempt where applicable and its successful retry. The walkthrough removed only its exact sample ticket IDs and the two extra identities per pool; the Ticket Owner account remains for the user’s manual testing. Passwords and JWTs are excluded from evidence.
+
+## S3 and HTTPS frontend
+
+Frontend source: [`frontend/`](../frontend/README.md). Hosting outputs: [`hosting.json`](../frontend/hosting.json).
+
+- HTTPS website: https://d2i2kf1hg91937.cloudfront.net
+- S3 website redirect: http://support-d1zija7gqlw461-website-112097210422.s3-website.ap-south-1.amazonaws.com
+- Private assets bucket: `support-d1zija7gqlw461-assets-112097210422`
+- Separate website redirect bucket: `support-d1zija7gqlw461-website-112097210422`
+- Hosting stack: `support-d1zija7gqlw461-frontend`
+
+These resources belong only to this repository. Its frontend uses its own Cognito pool, REST API, AppSync API, WebSocket API and tables. Frontend bundles contain public client configuration; passwords and AWS deployment credentials are excluded. The GitHub role has an additional scoped `DedicatedFrontendHosting` policy whose checked-in document identifies only this hosting stack, buckets, distribution and origin access control. Initial hosting provisioning used the account deployment credentials; the policy allows ongoing updates to those existing resources.
+
+## Hosted frontend verification
+
+[Latest full-stack CI](https://github.com/gowthammail4macair/amplify-gen1-fullstack/actions/runs/37197677372) passed on source `4816a1c0d8f32ff3b43ab69ef9445b4c1b3c9f67`. It ran 22 runtime tests, 13 live API check groups, and five hosting checks. Served JavaScript, CSS and HTML matched the deployment build hashes; the S3 website returned a 301 to this HTTPS site; direct anonymous S3 asset access returned 403.
+
+The visible hosted-browser walkthrough passed 15 checks: sign-in, REST create/update, generated GraphQL create/read/list, shared records between APIs, Lambda summary/close, WebSocket connect/lookup/disconnect, status filtering, readable custom-authorizer owner denial, and sign-out. Native confirmation/cancel interaction temporarily blocked the original migrated tab. A later browser read showed a successful REST deletion of its selected sample ticket. The cancel path was not verified; REST and GraphQL deletion also passed through CI. Migrated sign-out passed in a fresh tab.
+
+`evidence/frontend-browser.json` records the actual checks and conditional cleanup of only this walkthrough's two exact ticket IDs. The Ticket Owner account and all other observed tickets were preserved. Passwords/JWTs are excluded from evidence.

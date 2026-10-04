@@ -38,10 +38,14 @@ For ten times the API/Lambda/read/write traffic while retaining the same MAUs an
 
 ## Maintenance effort and cost growth
 
-IAM and CloudFormation have no separate project license fee. These are backend-only deployments through GitHub Actions: there is no Amplify Hosting frontend, CodeBuild/CodePipeline subscription, NAT gateway, provisioned Lambda concurrency, dedicated API cache, WAF or custom domain in this estimate. AppSync subscriptions are available in the schema but not included in the example traffic; add $2/million updates and $0.08/million connection minutes if used.
+IAM and CloudFormation have no separate project license fee. The original usage forecast above covers backend deployments through GitHub Actions. The subsequently added static frontend uses private S3 assets and CloudFront, with no Amplify Hosting build service, CodeBuild/CodePipeline subscription, NAT gateway, provisioned Lambda concurrency, dedicated API cache, WAF or custom domain in this estimate. AppSync subscriptions are available in the schema but not included in the example traffic; add $2/million updates and $0.08/million connection minutes if used.
 
 The root production dependency audit reported zero advisories on 4 October 2026 (`evidence/production-audit.json`). Build/CLI dependencies are a separate, older tree and still need periodic security and compatibility review.
 
 Human maintenance is separate. For planning, allow 1–3 engineering hours/month across the demos for dependency/security review, deployment failures, log/storage retention and permission review; multiply by your own hourly rate. This is an effort assumption, not an AWS charge. Gen 1 is in maintenance mode and reaches end of life on May 1, 2027, so a production team must also budget migration work. [AWS announcement](https://github.com/aws-amplify/amplify-cli/issues/14881).
 
 Log groups and retained tables/assets can outlive stack deletion. Current objects with different deployment asset hashes are not removed merely by a noncurrent-version lifecycle rule. Storage estimates need revision as these accumulate. Default list operations scan/filter tickets; sustained multi-tenant usage calls for an owner index and query design. Email/SMS verification, backups/PITR, extra observability, security services and data transfer beyond this assumption add costs if enabled.
+
+## Static frontend hosting added later
+
+Each project now has a dedicated private S3 asset bucket, a CloudFront distribution, and an empty S3 website redirect bucket. The backend forecast above does not include frontend delivery volume. S3 storage/requests, CloudFront requests/transfer, and any additional CI minutes follow the account's applicable pricing and allowances; a zero bill is not guaranteed. Hashed frontend assets are retained so existing tabs keep working; review old assets periodically. No custom domain, paid certificate, or additional frontend server was provisioned.

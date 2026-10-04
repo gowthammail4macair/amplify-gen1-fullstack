@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-10-04T11:30:13.047Z",
+  "scope": "Visible hosted application forms and controls; real AWS services",
+  "project": {
+    "project": "amplify-gen1-fullstack",
+    "url": "https://d2i2kf1hg91937.cloudfront.net/",
+    "checks": [
+      {
+        "name": "Cognito owner sign-in and REST ticket queue",
+        "status": "passed"
+      },
+      {
+        "name": "Create ticket through REST",
+        "status": "passed",
+        "visibleResult": "Created ticket with REST \u2014 done."
+      },
+      {
+        "name": "Update REST ticket title and status",
+        "status": "passed",
+        "visibleResult": "Saved ticket changes with REST \u2014 done."
+      },
+      {
+        "name": "Generated GraphQL resolver reads REST update",
+        "status": "passed",
+        "visibleResult": "Read ticket with GraphQL \u2014 done."
+      },
+      {
+        "name": "Custom AppSync Lambda summary",
+        "status": "passed",
+        "visibleResult": "Generated summary with Lambda \u2014 done."
+      },
+      {
+        "name": "Custom AppSync Lambda closes ticket",
+        "status": "passed",
+        "visibleResult": "Closed ticket with Lambda \u2014 done."
+      },
+      {
+        "name": "Cognito-authenticated WebSocket connection",
+        "status": "passed",
+        "visibleResult": "Connected live channel \u2014 done."
+      },
+      {
+        "name": "WebSocket ticket lookup sees closed DynamoDB record",
+        "status": "passed",
+        "visibleResult": "Read ticket over WebSocket \u2014 done."
+      },
+      {
+        "name": "Create ticket through generated GraphQL resolver",
+        "status": "passed",
+        "visibleResult": "Created ticket with GraphQL \u2014 done."
+      },
+      {
+        "name": "List both REST and GraphQL writes through GraphQL",
+        "status": "passed",
+        "visibleResult": "Loaded tickets with GraphQL \u2014 done."
+      },
+      {
+        "name": "REST list reads generated GraphQL write",
+        "status": "passed",
+        "visibleResult": "Loaded tickets with REST \u2014 done."
+      },
+      {
+        "name": "Status filter displays only matching tickets",
+        "status": "passed"
+      },
+      {
+        "name": "Non-Agent owner receives readable custom-authorizer denial",
+        "status": "passed",
+        "visibleResult": "User is not authorized to access this resource with an explicit deny in an identity-based policy"
+      },
+      {
+        "name": "WebSocket disconnect",
+        "status": "passed",
+        "visibleResult": "Disconnected live channel \u2014 done."
+      },
+      {
+        "name": "Sign out returns to login",
+        "status": "passed"
+      }
+    ],
+    "sampleTickets": [
+      "f459f00d-ff96-4440-8299-cd50deed7e87",
+      "d32e203a-4df0-4fc9-915a-ba0787f30999"
+    ],
+    "summary": "Hosted UI trial gen1 20261004-1640 updated [IN_PROGRESS]",
+    "liveResult": "Live response: Hosted UI trial gen1 20261004-1640 updated \u00b7 Closed",
+    "denialResponse": {
+      "message": "User is not authorized to access this resource with an explicit deny in an identity-based policy"
+    }
+  },
+  "cleanup": {
+    "project": "amplify-gen1-fullstack",
+    "removedExactFixtureIds": [
+      "f459f00d-ff96-4440-8299-cd50deed7e87",
+      "d32e203a-4df0-4fc9-915a-ba0787f30999"
+    ],
+    "deletedOnAudit": [
+      "f459f00d-ff96-4440-8299-cd50deed7e87",
+      "d32e203a-4df0-4fc9-915a-ba0787f30999"
+    ],
+    "alreadyAbsentOnAudit": [],
+    "remainingTicketCount": 4,
+    "preservedAllOtherObservedTicketIds": true,
+    "ticketOwnerAccountRetained": true
+  },
+  "limitations": [
+    "Native confirm/cancel interaction could not be automated. A later read of the original migrated tab showed successful deletion of the selected sample ticket; that outcome is recorded as an observation. The cancel path was not verified. REST and GraphQL delete also passed through CI live API tests."
+  ],
+  "deployment": {
+    "pipeline": "https://github.com/gowthammail4macair/amplify-gen1-fullstack/actions/runs/37197677372",
+    "sourceSha": "4816a1c0d8f32ff3b43ab69ef9445b4c1b3c9f67",
+    "liveApiChecksPassed": 13,
+    "hostingChecksPassed": 5,
+    "url": "https://d2i2kf1hg91937.cloudfront.net",
+    "websiteUrl": "http://support-d1zija7gqlw461-website-112097210422.s3-website.ap-south-1.amazonaws.com"
+  }
+}

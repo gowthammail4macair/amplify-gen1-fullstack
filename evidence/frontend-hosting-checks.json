@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "timestamp": "2026-10-04T11:15:39.346Z",
+  "sourceSha": "4816a1c0d8f32ff3b43ab69ef9445b4c1b3c9f67",
+  "hosting": {
+    "stack": "support-d1zija7gqlw461-frontend",
+    "region": "ap-south-1",
+    "assetsBucket": "support-d1zija7gqlw461-assets-112097210422",
+    "websiteBucket": "support-d1zija7gqlw461-website-112097210422",
+    "websiteUrl": "http://support-d1zija7gqlw461-website-112097210422.s3-website.ap-south-1.amazonaws.com",
+    "url": "https://d2i2kf1hg91937.cloudfront.net",
+    "distributionId": "E1KMLNKNIT86GN"
+  },
+  "checks": [
+    {
+      "name": "HTTPS asset matches build: assets/app-20437c6c8ec2.js",
+      "status": "passed"
+    },
+    {
+      "name": "HTTPS asset matches build: assets/style-012d39db5352.css",
+      "status": "passed"
+    },
+    {
+      "name": "HTTPS asset matches build: index.html",
+      "status": "passed"
+    },
+    {
+      "name": "S3 website redirects to HTTPS frontend",
+      "status": "passed"
+    },
+    {
+      "name": "Direct anonymous S3 asset access denied",
+      "status": "passed"
+    }
+  ]
+}
