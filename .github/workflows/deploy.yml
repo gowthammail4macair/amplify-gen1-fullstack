@@ -35,7 +35,9 @@ jobs:
           role-session-name: amplify-${{ github.run_id }}
           allowed-account-ids: '112097210422'
       - name: Discover Gen 1 runtime plugins
-        run: node node_modules/@aws-amplify/cli-internal/bin/amplify plugin scan --yes
+        run: |
+          node scripts/configure-cli.cjs
+          node node_modules/@aws-amplify/cli-internal/bin/amplify plugin scan --yes
       - name: Deploy Amplify Gen 1 environment
         run: node scripts/deploy.cjs
       - name: Exercise deployed REST, GraphQL and WebSocket APIs
