@@ -13,6 +13,15 @@ async function main() {
   await FeatureFlags.initialize({ getCurrentEnvName: () => 'local' });
   const ctx = { amplify: { loadEnvResourceParameters: () => ({}) }, print: console };
   const auth = await new AmplifyAuthTransform('ticketAuth').transform(ctx);
+  // Check synthesized references, including conditional branches CloudFormation validates.
+  const authDeclarations = new Set([...Object.keys(auth.Parameters || {}), ...Object.keys(auth.Resources || {})]);
+  const checkAuthRefs = (value: any): void => {
+    if (!value || typeof value !== 'object') return;
+    if (value.Ref && !value.Ref.startsWith('AWS::')) assert.ok(authDeclarations.has(value.Ref), `Unresolved Auth reference: ${value.Ref}`);
+    for (const child of Object.values(value)) checkAuthRefs(child);
+  };
+  checkAuthRefs(auth.Resources);
+  assert.ok(!JSON.stringify(auth.Resources).includes('undefined'), 'Auth resource names must have complete CLI inputs');
   const rest = new ApigwStackTransform(ctx, 'supportRest', { resourceName: 'supportRest', getCliInputPayload: () => JSON.parse(readFileSync('amplify/backend/api/supportRest/cli-inputs.json', 'utf8')), isCLIInputsValid: async () => {} });
   rest.generateStack(undefined);
   override(rest.resourceTemplateObj);
