@@ -29,3 +29,7 @@ The CLI initialization scaffolding and managed-policy compatibility fixes are de
 - WebSocket: `wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev`
 
 The public migration assessment of this synchronized source succeeded and reported the unsupported REST override. See `evidence/real-cloud-migration-assess.log`. The Gen 1 app remains unlocked. If a future code change replaces the Cognito pool, update the smoke policy to the new pool ARN before the next live check.
+
+## Visible browser verification — 2026-10-04
+
+A local browser page at `http://localhost:3000` made direct requests to the deployed AWS services through real sign-in forms and buttons. All 17 final browser checks passed: three Cognito identities, REST create/update/read, default GraphQL create/read, custom Lambda summary/close, WebSocket connect/message/disconnect, cross-owner REST/GraphQL denial, and custom-authorizer agent allow/non-agent deny. No backend change was needed for Gen 1. See `evidence/browser-live.json`, including the original failed CORS attempt where applicable and its successful retry. The walkthrough removed only its exact sample ticket IDs and the two extra identities per pool; the Ticket Owner account remains for the user’s manual testing. Passwords and JWTs are excluded from evidence.

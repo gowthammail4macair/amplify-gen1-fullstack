@@ -1,0 +1,577 @@
+{
+  "timestamp": "2026-10-04T09:57:21.383Z",
+  "scope": "Visible browser form and button interactions against deployed AWS APIs",
+  "project": {
+    "project": "Gen 1",
+    "rest": "https://iu6zhvysy7.execute-api.ap-south-1.amazonaws.com/dev",
+    "graphql": "https://zw4vheuavfdzfkaugphptnr22y.appsync-api.ap-south-1.amazonaws.com/graphql",
+    "websocket": "wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev",
+    "checks": [
+      {
+        "label": "Cognito sign-in: Ticket owner",
+        "ok": true,
+        "time": "2026-10-04T09:30:14.930Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Ticket owner",
+          "email": "browser-2f1157b7-owner@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "Cognito sign-in: Support agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:15.699Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Support agent",
+          "email": "browser-2f1157b7-agent@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "Custom authorizer allows support agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:16.878Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:29:00.027Z",
+                "status": "CLOSED",
+                "createdAt": "2026-10-04T09:28:21.857Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "6047863f-4062-4095-bada-8e51e5553328",
+                "title": "Gen 1 browser demo: laptop VPN connection fails"
+              },
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:29:10.968Z",
+                "status": "OPEN",
+                "createdAt": "2026-10-04T09:29:10.968Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "c3e2f55d-1632-4887-8255-53ed35e3aa7c",
+                "title": "Gen 1 GraphQL demo: request a replacement keyboard"
+              },
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:26:05.990Z",
+                "status": "CLOSED",
+                "createdAt": "2026-10-04T09:25:24.146Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "51603bc5-63d3-4628-88da-f80792523906",
+                "title": "Gen 1 browser demo: printer cannot connect to Wi-Fi"
+              }
+            ],
+            "nextToken": null
+          }
+        }
+      },
+      {
+        "label": "Custom authorizer denies non-agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:17.922Z",
+        "data": {
+          "expectedDenial": true,
+          "status": 403,
+          "body": {
+            "message": "User is not authorized to access this resource with an explicit deny in an identity-based policy"
+          }
+        }
+      },
+      {
+        "label": "Cognito sign-in: Ticket owner",
+        "ok": true,
+        "time": "2026-10-04T09:36:40.977Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Ticket owner",
+          "email": "browser-2f1157b7-owner@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "REST creates ticket",
+        "ok": true,
+        "time": "2026-10-04T09:36:43.141Z",
+        "data": {
+          "status": 201,
+          "body": {
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "status": "OPEN",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "createdAt": "2026-10-04T09:36:42.031Z",
+            "updatedAt": "2026-10-04T09:36:42.031Z",
+            "__typename": "Ticket"
+          }
+        }
+      },
+      {
+        "label": "REST updates ticket to IN_PROGRESS",
+        "ok": true,
+        "time": "2026-10-04T09:36:43.676Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "status": "IN_PROGRESS",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "__typename": "Ticket",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "updatedAt": "2026-10-04T09:36:43.613Z",
+            "createdAt": "2026-10-04T09:36:42.031Z"
+          }
+        }
+      },
+      {
+        "label": "GraphQL default resolver reads selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:36:44.229Z",
+        "data": {
+          "data": {
+            "getTicket": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "IN_PROGRESS",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "GraphQL custom Lambda returns ticket summary",
+        "ok": true,
+        "time": "2026-10-04T09:37:04.020Z",
+        "data": {
+          "data": {
+            "ticketSummary": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "IN_PROGRESS",
+              "summary": "Gen 1 final browser check: conference-room display offline [IN_PROGRESS]"
+            }
+          }
+        }
+      },
+      {
+        "label": "GraphQL custom Lambda closes ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:04.531Z",
+        "data": {
+          "data": {
+            "closeTicket": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "CLOSED",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "WebSocket connects with Cognito identity",
+        "ok": true,
+        "time": "2026-10-04T09:37:06.247Z",
+        "data": {
+          "connected": true,
+          "endpoint": "wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev",
+          "identity": "Ticket owner"
+        }
+      },
+      {
+        "label": "WebSocket returns selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:06.844Z",
+        "data": {
+          "type": "ticket",
+          "ticket": {
+            "__typename": "Ticket",
+            "createdAt": "2026-10-04T09:36:42.031Z",
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "status": "CLOSED",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "updatedAt": "2026-10-04T09:37:04.446Z"
+          }
+        }
+      },
+      {
+        "label": "GraphQL default resolver creates ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:14.254Z",
+        "data": {
+          "data": {
+            "createTicket": {
+              "id": "69818b90-8e6b-44ef-84a3-6cb4a504d715",
+              "title": "Gen 1 final GraphQL check: request a spare keyboard",
+              "status": "OPEN",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "REST reads selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:14.777Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "__typename": "Ticket",
+            "updatedAt": "2026-10-04T09:37:14.209Z",
+            "status": "OPEN",
+            "createdAt": "2026-10-04T09:37:14.209Z",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "id": "69818b90-8e6b-44ef-84a3-6cb4a504d715",
+            "title": "Gen 1 final GraphQL check: request a spare keyboard"
+          }
+        }
+      },
+      {
+        "label": "Cognito sign-in: Another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:15.624Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Another owner",
+          "email": "browser-2f1157b7-other@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "REST denies another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.017Z",
+        "data": {
+          "expectedDenial": true,
+          "status": 403,
+          "body": {
+            "message": "Forbidden"
+          }
+        }
+      },
+      {
+        "label": "GraphQL denies another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.395Z",
+        "data": {
+          "expectedDenial": true,
+          "data": {
+            "getTicket": null
+          },
+          "errors": [
+            {
+              "path": [
+                "getTicket"
+              ],
+              "data": null,
+              "errorType": "Unauthorized",
+              "errorInfo": null,
+              "locations": [
+                {
+                  "line": 1,
+                  "column": 16,
+                  "sourceName": null
+                }
+              ],
+              "message": "Not Authorized to access getTicket on type Query"
+            }
+          ]
+        }
+      },
+      {
+        "label": "WebSocket disconnected",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.788Z",
+        "data": {
+          "connected": false
+        }
+      }
+    ],
+    "latestChecks": [
+      {
+        "label": "Cognito sign-in: Ticket owner",
+        "ok": true,
+        "time": "2026-10-04T09:36:40.977Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Ticket owner",
+          "email": "browser-2f1157b7-owner@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "Cognito sign-in: Support agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:15.699Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Support agent",
+          "email": "browser-2f1157b7-agent@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "Custom authorizer allows support agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:16.878Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:29:00.027Z",
+                "status": "CLOSED",
+                "createdAt": "2026-10-04T09:28:21.857Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "6047863f-4062-4095-bada-8e51e5553328",
+                "title": "Gen 1 browser demo: laptop VPN connection fails"
+              },
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:29:10.968Z",
+                "status": "OPEN",
+                "createdAt": "2026-10-04T09:29:10.968Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "c3e2f55d-1632-4887-8255-53ed35e3aa7c",
+                "title": "Gen 1 GraphQL demo: request a replacement keyboard"
+              },
+              {
+                "__typename": "Ticket",
+                "updatedAt": "2026-10-04T09:26:05.990Z",
+                "status": "CLOSED",
+                "createdAt": "2026-10-04T09:25:24.146Z",
+                "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+                "id": "51603bc5-63d3-4628-88da-f80792523906",
+                "title": "Gen 1 browser demo: printer cannot connect to Wi-Fi"
+              }
+            ],
+            "nextToken": null
+          }
+        }
+      },
+      {
+        "label": "Custom authorizer denies non-agent",
+        "ok": true,
+        "time": "2026-10-04T09:30:17.922Z",
+        "data": {
+          "expectedDenial": true,
+          "status": 403,
+          "body": {
+            "message": "User is not authorized to access this resource with an explicit deny in an identity-based policy"
+          }
+        }
+      },
+      {
+        "label": "REST creates ticket",
+        "ok": true,
+        "time": "2026-10-04T09:36:43.141Z",
+        "data": {
+          "status": 201,
+          "body": {
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "status": "OPEN",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "createdAt": "2026-10-04T09:36:42.031Z",
+            "updatedAt": "2026-10-04T09:36:42.031Z",
+            "__typename": "Ticket"
+          }
+        }
+      },
+      {
+        "label": "REST updates ticket to IN_PROGRESS",
+        "ok": true,
+        "time": "2026-10-04T09:36:43.676Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "status": "IN_PROGRESS",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "__typename": "Ticket",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "updatedAt": "2026-10-04T09:36:43.613Z",
+            "createdAt": "2026-10-04T09:36:42.031Z"
+          }
+        }
+      },
+      {
+        "label": "GraphQL default resolver reads selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:36:44.229Z",
+        "data": {
+          "data": {
+            "getTicket": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "IN_PROGRESS",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "GraphQL custom Lambda returns ticket summary",
+        "ok": true,
+        "time": "2026-10-04T09:37:04.020Z",
+        "data": {
+          "data": {
+            "ticketSummary": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "IN_PROGRESS",
+              "summary": "Gen 1 final browser check: conference-room display offline [IN_PROGRESS]"
+            }
+          }
+        }
+      },
+      {
+        "label": "GraphQL custom Lambda closes ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:04.531Z",
+        "data": {
+          "data": {
+            "closeTicket": {
+              "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+              "title": "Gen 1 final browser check: conference-room display offline",
+              "status": "CLOSED",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "WebSocket connects with Cognito identity",
+        "ok": true,
+        "time": "2026-10-04T09:37:06.247Z",
+        "data": {
+          "connected": true,
+          "endpoint": "wss://b36pvu2da7.execute-api.ap-south-1.amazonaws.com/dev",
+          "identity": "Ticket owner"
+        }
+      },
+      {
+        "label": "WebSocket returns selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:06.844Z",
+        "data": {
+          "type": "ticket",
+          "ticket": {
+            "__typename": "Ticket",
+            "createdAt": "2026-10-04T09:36:42.031Z",
+            "id": "4bcfb8e2-f1fe-40b4-b2ec-a0628e90e535",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "status": "CLOSED",
+            "title": "Gen 1 final browser check: conference-room display offline",
+            "updatedAt": "2026-10-04T09:37:04.446Z"
+          }
+        }
+      },
+      {
+        "label": "GraphQL default resolver creates ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:14.254Z",
+        "data": {
+          "data": {
+            "createTicket": {
+              "id": "69818b90-8e6b-44ef-84a3-6cb4a504d715",
+              "title": "Gen 1 final GraphQL check: request a spare keyboard",
+              "status": "OPEN",
+              "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b"
+            }
+          }
+        }
+      },
+      {
+        "label": "REST reads selected ticket",
+        "ok": true,
+        "time": "2026-10-04T09:37:14.777Z",
+        "data": {
+          "status": 200,
+          "body": {
+            "__typename": "Ticket",
+            "updatedAt": "2026-10-04T09:37:14.209Z",
+            "status": "OPEN",
+            "createdAt": "2026-10-04T09:37:14.209Z",
+            "owner": "d163dd1a-9041-70ba-1ccc-d3beeeb2610b::d163dd1a-9041-70ba-1ccc-d3beeeb2610b",
+            "id": "69818b90-8e6b-44ef-84a3-6cb4a504d715",
+            "title": "Gen 1 final GraphQL check: request a spare keyboard"
+          }
+        }
+      },
+      {
+        "label": "Cognito sign-in: Another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:15.624Z",
+        "data": {
+          "authenticated": true,
+          "identity": "Another owner",
+          "email": "browser-2f1157b7-other@example.invalid",
+          "region": "ap-south-1"
+        }
+      },
+      {
+        "label": "REST denies another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.017Z",
+        "data": {
+          "expectedDenial": true,
+          "status": 403,
+          "body": {
+            "message": "Forbidden"
+          }
+        }
+      },
+      {
+        "label": "GraphQL denies another owner",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.395Z",
+        "data": {
+          "expectedDenial": true,
+          "data": {
+            "getTicket": null
+          },
+          "errors": [
+            {
+              "path": [
+                "getTicket"
+              ],
+              "data": null,
+              "errorType": "Unauthorized",
+              "errorInfo": null,
+              "locations": [
+                {
+                  "line": 1,
+                  "column": 16,
+                  "sourceName": null
+                }
+              ],
+              "message": "Not Authorized to access getTicket on type Query"
+            }
+          ]
+        }
+      },
+      {
+        "label": "WebSocket disconnected",
+        "ok": true,
+        "time": "2026-10-04T09:37:16.788Z",
+        "data": {
+          "connected": false
+        }
+      }
+    ]
+  },
+  "cleanup": {
+    "project": "Gen 1",
+    "deletedTickets": 5,
+    "deletedConnections": 0,
+    "deletedUsers": 2,
+    "retainedOwner": "browser-2f1157b7-owner@example.invalid"
+  },
+  "retainedOwnerPurpose": "User requested credentials for their own manual browser testing."
+}
