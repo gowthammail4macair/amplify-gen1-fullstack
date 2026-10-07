@@ -109,6 +109,12 @@ ticket; REST initializes OPEN. Generated AppSync subscriptions are a separate
 protocol: the website's API Gateway notifications come from DynamoDB Streams
 and therefore include REST, generated GraphQL, and workflow Lambda writes.
 
+The generated GraphQL create pipeline includes a `preAuth` slot that sets
+`owner` from verified Cognito claims for every creator, including Agents.
+Submitted create-owner values are ignored, matching REST creation. This avoids
+ownerless Agent tickets when group authorization bypasses the generated owner
+default. Existing update authorization remains unchanged.
+
 ## WebSocket notifications
 
 The `$connect` REQUEST Lambda authorizer verifies a Cognito ID token from this
@@ -170,7 +176,7 @@ Operating-system notification permissions or popups are not configured.
 
 ## Verification
 
-`npm run validate` runs TypeScript checks, 36 local runtime/UI tests, and
+`npm run validate` runs TypeScript checks, 37 local runtime/UI tests, and
 infrastructure synthesis. It performs no deployment. A sandbox command creates
 real AWS resources.
 

@@ -26,7 +26,7 @@ and [API-CONTRACT.md](API-CONTRACT.md) describe the current UI and message proto
   queue and selected comments. The Status selector and Comments form appear
   after selecting a ticket.
 
-Current validation: 36 runtime/UI tests, 17 live API check groups, five hosting
+Current validation: 37 runtime/UI tests, 17 live API check groups, five hosting
 checks, and 12 two-session browser checks per repository. See
 [CI evidence](../evidence/live-feature-ci.json) and
 [browser results and fixture cleanup](../evidence/live-feature-browser.json).
@@ -70,6 +70,8 @@ and filters each ticket page to current Agents owners. Only the REST Lambda gets
 the Cognito SDK, user pool environment variable and pool-scoped membership-read
 permission. The frontend adds an owner filter to GraphQL personal listing and
 retains an explicit personal/Agent queue selection for refresh and live events.
+A `createTicket.preAuth` resolver slot assigns the verified creator as owner
+before group authorization, preventing ownerless GraphQL tickets from Agents.
 
 The API names the Lambda through the `@function` directive instead of importing its stack ARN. Therefore the API stack depends on Auth, while the workflow Lambda can depend on the API's table ID without creating an API/function stack cycle.
 
@@ -101,7 +103,7 @@ The connection table uses PAY_PER_REQUEST, `connectionId` as its key, JWT expiry
 npm run validate
 ```
 
-This runs TypeScript checks, 36 runtime/UI tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
+This runs TypeScript checks, 37 runtime/UI tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
 
 `dist/`, `build/`, local environment metadata and cloud outputs are ignored. Lambda code and all infrastructure inputs are committed. All four functions package their own dependencies during `amplify push`.
 

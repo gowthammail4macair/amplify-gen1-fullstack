@@ -14,7 +14,10 @@ const notifications = new WeakMap();
 const restBase = outputs.custom.rest.endpoint.replace(/\/$/, '');
 const gqlUrl = outputs.data.url;
 const send = (name, input) => admin.send(new cognito[name + 'Command']({ UserPoolId: poolId, ...input }));
-async function test(name, fn) { await fn(); checks.push({ name, status: 'passed' }); console.log('PASS', name); }
+async function test(name, fn) {
+  try { await fn(); checks.push({ name, status: 'passed' }); console.log('PASS', name); }
+  catch (error) { checks.push({ name, status: 'failed', message: error.message }); throw error; }
+}
 async function user(label, agent = false) {
   const email = `smoke-${runId}-${label}@example.invalid`;
   const password = `Smoke!A9${randomUUID()}`;
@@ -99,6 +102,8 @@ async function pushed(ws, id, predicate = () => true) {
       const mine=await rest(agent,'POST','/tickets',{title:'Agent queue smoke '+runId});assert.equal(mine.status,201,JSON.stringify(mine));tickets.push(mine.body.id);
       const peer=await gql(peerAgent,'mutation($input:CreateTicketInput!){createTicket(input:$input){id title status owner}}',{input:{title:'Peer Agent queue smoke '+runId,status:'OPEN'}});
       assert.ok(peer.data?.createTicket?.id,JSON.stringify(peer));tickets.push(peer.data.createTicket.id);
+      const peerClaims=JSON.parse(Buffer.from(peerAgent.split('.')[1],'base64url'));
+      assert.equal(peer.data.createTicket.owner,peerClaims.sub+'::'+peerClaims['cognito:username']);
       const listRest=async(token,path)=>{
         const items=[];let cursor;
         do{const result=await rest(token,'GET',path+(cursor?'?nextToken='+encodeURIComponent(cursor):''));assert.equal(result.status,200,JSON.stringify(result));items.push(...result.body.items);cursor=result.body.nextToken;}while(cursor);
@@ -185,7 +190,11 @@ async function pushed(ws, id, predicate = () => true) {
     for (const ws of sockets) ws.close();
     const ticketCleanup=[];
     for (const id of tickets) if (agent || owner) {
-      const removed=await rest(agent || owner, 'DELETE', '/tickets/' + id).catch(() => ({status:0}));
+      let removed=await rest(agent || owner, 'DELETE', '/tickets/' + id).catch(() => ({status:0}));
+      if(![200,404].includes(removed.status)) {
+        const result=await gql(agent || owner,'mutation($input:DeleteTicketInput!){deleteTicket(input:$input){id}}',{input:{id}}).catch(()=>({}));
+        if(result.data?.deleteTicket?.id===id)removed={status:200};
+      }
       ticketCleanup.push({id,status:removed.status});
     }
     const cleanup = await Promise.allSettled(users.map(Username => send('AdminDeleteUser', { Username })));

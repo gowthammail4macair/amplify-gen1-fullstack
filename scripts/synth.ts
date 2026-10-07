@@ -46,6 +46,13 @@ async function main() {
   const schema = readFileSync('amplify/backend/api/supportGraphql/build/schema.graphql', 'utf8');
   for (const operation of ['createTicket', 'getTicket', 'listTickets', 'updateTicket', 'deleteTicket', 'ticketSummary', 'closeTicket', 'listTicketComments', 'addTicketComment']) assert.ok(schema.includes(operation), operation);
   assert.ok(readdirSync('amplify/backend/api/supportGraphql/build/resolvers').some(f => f.includes('createTicket')));
+  const ownerSlot = 'resolvers/Mutation.createTicket.preAuth.1.req.vtl';
+  assert.equal(readFileSync(`amplify/backend/api/supportGraphql/build/${ownerSlot}`, 'utf8'), readFileSync(`amplify/backend/api/supportGraphql/${ownerSlot}`, 'utf8'));
+  const ticketStack = JSON.parse(readFileSync('amplify/backend/api/supportGraphql/build/stacks/Ticket.json', 'utf8'));
+  const createResolver = Object.values(ticketStack.Resources).find((r: any) => r.Type === 'AWS::AppSync::Resolver' && r.Properties.FieldName === 'createTicket') as any;
+  const createPipeline = createResolver.Properties.PipelineConfig.Functions.map((f: any) => f['Fn::GetAtt'][0]);
+  const ownerSlotIndex = createPipeline.findIndex((name: string) => name.includes('createTicketpreAuth'));
+  assert.ok(ownerSlotIndex >= 0 && ownerSlotIndex < createPipeline.findIndex((name: string) => name.includes('createTicketauth')));
   const body = restTemplate.Resources.supportRest.Properties.Body;
   assert.deepEqual(Object.keys(body.paths).sort(), ['/tickets', '/tickets/{id}', '/tickets/{id}/comments', '/admin/tickets'].sort());
   assert.deepEqual(body.paths['/admin/tickets'].get.security, [{ AgentAuthorizer: [] }]);

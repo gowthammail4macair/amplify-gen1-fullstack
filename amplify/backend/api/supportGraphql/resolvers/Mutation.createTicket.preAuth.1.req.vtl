@@ -1,0 +1,9 @@
+#if( $util.authType() == "User Pool Authorization" )
+  #set( $sub = $ctx.identity.claims.get("sub") )
+  #set( $username = $util.defaultIfNull($ctx.identity.claims.get("username"), $ctx.identity.claims.get("cognito:username")) )
+  #if( $util.isNullOrEmpty($sub) || $util.isNullOrEmpty($username) )
+    $util.unauthorized()
+  #end
+  $util.qr($ctx.args.input.put("owner", "$sub::$username"))
+#end
+$util.toJson({"version":"2018-05-29","payload":{}})
