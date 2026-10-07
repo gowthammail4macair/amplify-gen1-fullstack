@@ -45,6 +45,11 @@ function restoreDraft(value){
   if(value.title!==undefined)$('edit-title').value=value.title;
   if(value.status!==undefined)$('edit-status').value=value.status;
 }
+function removeFromQueue(id){
+  const edits=draft();state.tickets=state.tickets.filter(ticket=>ticket.id!==id);
+  if(state.selected?.id===id)state.selected=null;
+  renderTickets();renderDetails();restoreDraft(edits);
+}
 function merge(ticket,select=true){
   const edits=select?null:draft(),i=state.tickets.findIndex(t=>t.id===ticket.id);
   if(i>=0&&state.tickets[i].updatedAt&&ticket.updatedAt&&state.tickets[i].updatedAt>ticket.updatedAt)return;
@@ -125,18 +130,14 @@ async function flushLive(){
         if(!event.ticket?.id)continue;
         const belongs=state.queue==='mine'?event.ticket.owner===state.profile.owner:state.agentOwners.has(event.ticket.owner);
         if(!belongs){
-          state.tickets=state.tickets.filter(ticket=>ticket.id!==event.ticket.id);
-          if(state.selected?.id===event.ticket.id)state.selected=null;
-          renderTickets();renderDetails();
+          removeFromQueue(event.ticket.id);
         }else{
           merge(event.ticket,false);
           if(event.commentsChanged&&state.selected?.id===event.ticket.id)await loadComments();
         }
         label=event.change==='created'?'New ticket: '+event.ticket.title:event.change==='commentAdded'?'New comment on: '+event.ticket.title:'Ticket updated: '+event.ticket.title+' · '+prettyStatus(event.ticket.status);
       }else if(event.type==='ticketRemoved'){
-        state.tickets=state.tickets.filter(t=>t.id!==event.ticketId);
-        if(state.selected?.id===event.ticketId)state.selected=null;
-        renderTickets();renderDetails();label='Ticket removed: '+event.ticketId;
+        removeFromQueue(event.ticketId);label='Ticket removed: '+event.ticketId;
       }else continue;
       if(epoch!==state.sessionVersion||!state.profile)break;
       state.notifications.unshift(label);state.notifications=state.notifications.slice(0,5);

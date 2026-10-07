@@ -44,9 +44,13 @@ test('Agent UI separates queues across GraphQL, refresh, pagination, reconnect a
   const settle=()=>new Promise(resolve=>setImmediate(resolve));
   await element('sign-in-form').onsubmit({preventDefault(){}});await settle();
   assert.equal(element('queue-title').textContent,'My tickets');assert.equal(element('total-count').textContent,1);
+  await element('ticket-list').children[0].children[0].onclick();element('edit-title').value='Unsaved Agent draft';
   for(const ticket of [peer,customer])onEvent({type:'ticketChanged',eventId:'mine-'+ticket.id,change:'created',ticket});
   await settle();assert.equal(element('total-count').textContent,1);
   assert.deepEqual(element('live-events').children.map(li=>li.textContent),['New ticket: Customer','New ticket: Peer Agent']);
+  assert.equal(element('edit-title').value,'Unsaved Agent draft');
+  onEvent({type:'ticketRemoved',eventId:'foreign-removed',ticketId:'customer'});await settle();
+  assert.equal(element('edit-title').value,'Unsaved Agent draft');assert.equal(element('total-count').textContent,1);
   element('list-api').value='GraphQL';await element('list-api').onchange();
   assert.equal(calls.at(-1).owner,own.owner);assert.equal(calls.at(-1).source,'GraphQL');
   await element('agent-queue').onclick();
