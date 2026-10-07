@@ -5,6 +5,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
 const { execFileSync } = require('node:child_process');
+const { setTimeout: delay } = require('node:timers/promises');
 const cfg = require('../deployment.json');
 const meta = JSON.parse(fs.readFileSync('amplify/backend/amplify-meta.json'));
 const names = ['ticketAuthorizer', 'ticketRest', 'ticketWorkflow', 'ticketSocketHandler'];
@@ -20,9 +21,19 @@ const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'deployed-ticket-lambdas
       const deployed = JSON.parse(execFileSync('aws', ['lambda', 'get-function', '--function-name', functionName, '--region', cfg.region, '--output', 'json'], { encoding: 'utf8' }));
       assert.equal(deployed.Configuration.LastUpdateStatus, 'Successful', `${name}: deployment not complete`);
       assert.equal(deployed.Configuration.Runtime, 'nodejs22.x');
-      const response = await fetch(deployed.Code.Location, { signal: AbortSignal.timeout(30000) });
-      assert.ok(response.ok, `${name}: could not download deployed package`);
-      const bytes = Buffer.from(await response.arrayBuffer());
+      let bytes;
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          const response = await fetch(deployed.Code.Location, { signal: AbortSignal.timeout(30000) });
+          assert.ok(response.ok, `${name}: package download returned HTTP ${response.status}`);
+          bytes = Buffer.from(await response.arrayBuffer());
+          break;
+        } catch (error) {
+          if (attempt === 3) throw new Error(`${name}: package download failed after three attempts (${error.cause?.code || error.name})`);
+          console.log(`Retrying ${name} package download after attempt ${attempt}`);
+          await delay(attempt * 2000);
+        }
+      }
       assert.equal(createHash('sha256').update(bytes).digest('base64'), deployed.Configuration.CodeSha256, `${name}: package checksum mismatch`);
       const archive = path.join(temporary, `${name}.zip`);
       fs.writeFileSync(archive, bytes);
