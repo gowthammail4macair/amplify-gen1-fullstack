@@ -40,7 +40,7 @@ test('Browser push updates the queue/status, preserves drafts, and renders persi
   const api={list:async()=>({items:[],nextToken:null}),comments:async()=>({items:comments}),addComment:async(id,body)=>{posted={id,body};const c={id:'c1',body,author:'Alice',createdAt:'2026-10-07T00:02:00.000Z'};comments.push(c);return c;}};
   const scope={document:{getElementById:element,createElement:()=>new Element(),querySelectorAll:()=>[]},
     __APP_CONFIG__:{auth:{},api:{websocket:'wss://example.invalid'},project:{label:'Test',repository:'https://example.invalid'}},
-    authentication:()=>({signIn:async()=>({email:profileEmail}),token:async()=>'',signOut(){}}),ticketApi:()=>api,
+    authentication:()=>({signIn:async()=>({email:profileEmail,owner:profileEmail.startsWith('alice')?'alice::alice':'bob::bob',groups:[]}),token:async()=>'',signOut(){}}),ticketApi:()=>api,
     liveChannel:(url,token,state,event)=>{onState=state;onEvent=event;return{connect:async()=>onState(true),disconnect:()=>onState(false)};},
     window:{addEventListener(){}},crypto:{randomUUID:()=> 'sync'},queueMicrotask,Date,JSON,Set,Map,console};
   vm.createContext(scope);

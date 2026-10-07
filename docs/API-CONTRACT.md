@@ -40,14 +40,14 @@ flowchart LR
 
 | Endpoint | Authorization | Behavior |
 | --- | --- | --- |
-| `GET /tickets` | Cognito user-pool authorizer | Strongly consistent, paginated scan of owned tickets; Agents can list all |
+| `GET /tickets` | Cognito user-pool authorizer | Strongly consistent, paginated scan of the signed-in user's tickets, including for Agents |
 | `POST /tickets` | Cognito user-pool authorizer | Create OPEN ticket with verified owner |
 | `GET /tickets/{id}` | Cognito user-pool authorizer | Read owned ticket, or any ticket as an Agent |
 | `PATCH /tickets/{id}` | Cognito user-pool authorizer | Update title/status after an ownership check |
 | `DELETE /tickets/{id}` | Cognito user-pool authorizer | Delete the ticket and its embedded comments after an ownership check |
 | `GET /tickets/{id}/comments` | Cognito user-pool authorizer | Return `{"items":[...]}` after a ticket access check |
 | `POST /tickets/{id}/comments` | Cognito user-pool authorizer | Append `{"body":"Comment text"}`; return the new comment with HTTP 201 |
-| `GET /admin/tickets` | Custom TOKEN Lambda authorizer | Verify the Cognito token and require the Agents group |
+| `GET /admin/tickets` | Custom TOKEN Lambda authorizer | Require Agents membership; return only tickets owned by current Agents group members |
 | `OPTIONS` | Public preflight | Allow the configured localhost and hosted-site origins |
 
 Send the Cognito **ID token** in `Authorization`. REST titles contain 1–200
@@ -60,6 +60,17 @@ The stored owner uses `sub::username`. Agents have full model access. Generated
 GraphQL owner rules permit ownership reassignment; REST and custom workflows
 do not accept owner changes. The old owner receives only a ticket-removal
 notification when access changes.
+
+The website's **My tickets** view uses the signed-in owner filter for both REST
+and generated GraphQL listing, even for Agents. **Agent queue** uses the custom
+REST endpoint and includes tickets from all current Agents members, excluding
+customer tickets. Cognito group membership is read in pages on each Agent queue
+request; existing REST and GraphQL tickets need no backfill. Queue membership
+follows the ticket's stored owner and current Cognito group membership.
+The Agent response includes the permitted `agentOwners` so live events can be
+filtered without losing loaded pages. Refresh and reconnect refresh that
+membership snapshot. Pagination and live updates retain the selected queue.
+Agents still have permission to read and manage customer tickets by ID.
 
 ## GraphQL
 
@@ -159,7 +170,7 @@ Operating-system notification permissions or popups are not configured.
 
 ## Verification
 
-`npm run validate` runs TypeScript checks, 30 local runtime/UI tests, and
+`npm run validate` runs TypeScript checks, 36 local runtime/UI tests, and
 infrastructure synthesis. It performs no deployment. A sandbox command creates
 real AWS resources.
 

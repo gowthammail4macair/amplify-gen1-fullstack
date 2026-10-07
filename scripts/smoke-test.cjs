@@ -71,9 +71,9 @@ async function pushed(ws, id, predicate = () => true) {
   throw new Error('No WebSocket push received for ticket ' + id);
 }
 (async () => {
-  let owner, other, agent, ticket, graphqlTicket;
+  let owner, other, agent, peerAgent, ticket, graphqlTicket;
   try {
-    await test('Cognito SRP login: two owners and an Agents member', async () => { owner = await user('owner'); other = await user('other'); agent = await user('agent', true); });
+    await test('Cognito SRP login: two owners and two Agents members', async () => { owner = await user('owner'); other = await user('other'); agent = await user('agent', true); peerAgent = await user('peer-agent', true); });
     await test('REST rejects missing and malformed Cognito tokens', async () => { for (const t of ['', 'invalid']) assert.ok([401,403].includes((await rest(t, 'GET', '/tickets')).status)); });
     await test('REST preflight supports the hosted website and localhost, excluding other origins', async () => {
       const { allowedOrigins } = require('../frontend/origins.cjs');
@@ -94,6 +94,35 @@ async function pushed(ws, id, predicate = () => true) {
       assert.ok(r.data?.createTicket?.id, JSON.stringify(r)); graphqlTicket = r.data.createTicket; tickets.push(graphqlTicket.id);
       r = await gql(owner, 'mutation($input:UpdateTicketInput!){updateTicket(input:$input){id status}}', { input: { id: graphqlTicket.id, status: 'IN_PROGRESS' } });
       assert.equal(r.data?.updateTicket?.status, 'IN_PROGRESS', JSON.stringify(r)); assert.equal((await rest(owner, 'GET', '/tickets/' + graphqlTicket.id)).body.status, 'IN_PROGRESS');
+    });
+    await test('Personal REST/GraphQL lists separate two Agents; Agent queue includes only Agents tickets', async () => {
+      const mine=await rest(agent,'POST','/tickets',{title:'Agent queue smoke '+runId});assert.equal(mine.status,201,JSON.stringify(mine));tickets.push(mine.body.id);
+      const peer=await gql(peerAgent,'mutation($input:CreateTicketInput!){createTicket(input:$input){id title status owner}}',{input:{title:'Peer Agent queue smoke '+runId,status:'OPEN'}});
+      assert.ok(peer.data?.createTicket?.id,JSON.stringify(peer));tickets.push(peer.data.createTicket.id);
+      const listRest=async(token,path)=>{
+        const items=[];let cursor;
+        do{const result=await rest(token,'GET',path+(cursor?'?nextToken='+encodeURIComponent(cursor):''));assert.equal(result.status,200,JSON.stringify(result));items.push(...result.body.items);cursor=result.body.nextToken;}while(cursor);
+        return items;
+      };
+      const personal=await listRest(agent,'/tickets');
+      assert.ok(personal.some(t=>t.id===mine.body.id));assert.ok(personal.every(t=>t.owner===mine.body.owner));
+      const peerPersonal=await listRest(peerAgent,'/tickets');
+      assert.ok(peerPersonal.some(t=>t.id===peer.data.createTicket.id));assert.ok(peerPersonal.every(t=>t.owner===peer.data.createTicket.owner));
+      const ownGraphql=[];let cursor;
+      do{
+        const result=await gql(agent,'query($filter:ModelTicketFilterInput,$nextToken:String){listTickets(filter:$filter,nextToken:$nextToken,limit:50){items{id owner} nextToken}}',{filter:{owner:{eq:mine.body.owner}},nextToken:cursor||null});
+        assert.ok(!result.errors,JSON.stringify(result));ownGraphql.push(...result.data.listTickets.items.filter(Boolean));cursor=result.data.listTickets.nextToken;
+      }while(cursor);
+      assert.ok(ownGraphql.some(t=>t.id===mine.body.id));assert.ok(ownGraphql.every(t=>t.owner===mine.body.owner));
+      const queue=await listRest(agent,'/admin/tickets');
+      assert.ok(queue.some(t=>t.id===mine.body.id));assert.ok(queue.some(t=>t.id===peer.data.createTicket.id));
+      assert.ok(!queue.some(t=>[ticket.id,graphqlTicket.id].includes(t.id)));
+      const members=[];let memberCursor;
+      do{const result=await send('ListUsersInGroup',{GroupName:'Agents',NextToken:memberCursor});members.push(...result.Users);memberCursor=result.NextToken;}while(memberCursor);
+      const owners=new Set(members.map(u=>u.Attributes.find(a=>a.Name==='sub').Value+'::'+u.Username));
+      assert.ok(queue.every(t=>owners.has(t.owner)));
+      assert.deepEqual(new Set((await listRest(peerAgent,'/admin/tickets')).map(t=>t.id)),new Set(queue.map(t=>t.id)));
+      assert.equal((await rest(owner,'GET','/admin/tickets')).status,403);
     });
     await test('AppSync custom Lambda summary/close and cross-owner denial', async () => {
       const query = 'query($id:ID!){ticketSummary(id:$id){id summary status}}';
@@ -154,11 +183,16 @@ async function pushed(ws, id, predicate = () => true) {
     await test('REST cross-owner delete denied; owner delete succeeds', async () => { assert.equal((await rest(other, 'DELETE', '/tickets/' + ticket.id)).status, 403); assert.equal((await rest(owner, 'DELETE', '/tickets/' + ticket.id)).status, 200); assert.equal((await rest(owner, 'GET', '/tickets/' + ticket.id)).status, 404); });
   } finally {
     for (const ws of sockets) ws.close();
-    for (const id of tickets) if (owner) await rest(owner, 'DELETE', '/tickets/' + id).catch(() => {});
+    const ticketCleanup=[];
+    for (const id of tickets) if (agent || owner) {
+      const removed=await rest(agent || owner, 'DELETE', '/tickets/' + id).catch(() => ({status:0}));
+      ticketCleanup.push({id,status:removed.status});
+    }
     const cleanup = await Promise.allSettled(users.map(Username => send('AdminDeleteUser', { Username })));
     fs.mkdirSync('evidence', { recursive: true });
-    const report = { timestamp: new Date().toISOString(), scope: 'Live AWS HTTPS, Cognito SRP and WebSocket integration', checks, cleanup: { users: cleanup.map(r => r.status), socketsClosed: sockets.length, ticketIds: tickets }, endpoints: { rest: restBase, graphql: gqlUrl, websocket: outputs.custom.websocket.endpoint } };
+    const report = { timestamp: new Date().toISOString(), scope: 'Live AWS HTTPS, Cognito SRP and WebSocket integration', checks, cleanup: { users: cleanup.map(r => r.status), socketsClosed: sockets.length, ticketIds: tickets, ticketResults: ticketCleanup }, endpoints: { rest: restBase, graphql: gqlUrl, websocket: outputs.custom.websocket.endpoint } };
     fs.writeFileSync('evidence/live-smoke.json', JSON.stringify(report, null, 2) + '\n');
     if (cleanup.some(r => r.status !== 'fulfilled')) throw new Error('Smoke test user cleanup failed');
+    if (ticketCleanup.some(r => ![200,404].includes(r.status))) throw new Error('Smoke test ticket cleanup failed');
   }
 })().catch(error => { console.error(error.message); process.exitCode = 1; });

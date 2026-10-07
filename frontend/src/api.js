@@ -6,7 +6,7 @@ export function authentication(config) {
   const storage={getItem(){return null;},setItem(){},removeItem(){},clear(){}};
   const pool=new CognitoUserPool({UserPoolId:config.poolId,ClientId:config.clientId,Storage:storage});
   let user,session;
-  const profile=()=>{const p=session.getIdToken().decodePayload();return {email:p.email||p['cognito:username'],groups:p['cognito:groups']||[]};};
+  const profile=()=>{const p=session.getIdToken().decodePayload();return {email:p.email||p['cognito:username'],owner:p.sub+'::'+p['cognito:username'],groups:p['cognito:groups']||[]};};
   return {
     signIn(email,password){return new Promise((resolve,reject)=>{user=new CognitoUser({Username:email,Pool:pool,Storage:storage});user.authenticateUser(new AuthenticationDetails({Username:email,Password:password}),{onSuccess(s){session=s;resolve(profile());},onFailure:reject,newPasswordRequired(){reject(new Error('This account requires a password update. Complete the update with your administrator first.'));}});});},
     async token(){if(!session)throw new Error('Please sign in.');if(session.getIdToken().getExpiration()*1000<Date.now()+30000){session=await new Promise((resolve,reject)=>user.refreshSession(session.getRefreshToken(),(error,s)=>error?reject(error):resolve(s)));}return session.getIdToken().getJwtToken();},
@@ -24,7 +24,11 @@ export function ticketApi(config,getToken,request=fetch) {
   }
   const fields='id title status owner createdAt updatedAt';
   return {
-    list(source,nextToken){return source==='GraphQL'?graphql(`query($nextToken:String){listTickets(limit:50,nextToken:$nextToken){items{${fields}} nextToken}}`,{nextToken:nextToken||null}).then(d=>({...d.listTickets,items:d.listTickets.items.filter(Boolean)})):rest('GET','/tickets'+(nextToken?'?nextToken='+encodeURIComponent(nextToken):''));},
+    list(source,nextToken,owner){
+      if(source!=='GraphQL')return rest('GET','/tickets'+(nextToken?'?nextToken='+encodeURIComponent(nextToken):''));
+      if(!owner)throw new Error('Please sign in to load your tickets.');
+      return graphql(`query($nextToken:String,$filter:ModelTicketFilterInput){listTickets(limit:50,nextToken:$nextToken,filter:$filter){items{${fields}} nextToken}}`,{nextToken:nextToken||null,filter:{owner:{eq:owner}}}).then(d=>({...d.listTickets,items:d.listTickets.items.filter(Boolean)}));
+    },
     create(title,source){return source==='GraphQL'?graphql(`mutation($input:CreateTicketInput!){createTicket(input:$input){${fields}}}`,{input:{title,status:'OPEN'}}).then(d=>d.createTicket):rest('POST','/tickets',{title});},
     read(id,source='REST'){return source==='GraphQL'?graphql(`query($id:ID!){getTicket(id:$id){${fields}}}`,{id}).then(d=>{if(!d.getTicket)throw new ApiError('Ticket not found or access denied.',d,404);return d.getTicket;}):rest('GET','/tickets/'+encodeURIComponent(id));},
     update(id,changes){return rest('PATCH','/tickets/'+encodeURIComponent(id),changes);},
@@ -33,7 +37,7 @@ export function ticketApi(config,getToken,request=fetch) {
     addComment(id,body){return rest('POST','/tickets/'+encodeURIComponent(id)+'/comments',{body});},
     summary(id){return graphql('query($id:ID!){ticketSummary(id:$id){id title status summary}}',{id}).then(d=>d.ticketSummary);},
     close(id){return graphql(`mutation($id:ID!){closeTicket(id:$id){${fields}}}`,{id}).then(d=>d.closeTicket);},
-    agents(){return rest('GET','/admin/tickets');}
+    agents(nextToken){return rest('GET','/admin/tickets'+(nextToken?'?nextToken='+encodeURIComponent(nextToken):''));}
   };
 }
 export function liveChannel(url,getToken,onState,onEvent) {

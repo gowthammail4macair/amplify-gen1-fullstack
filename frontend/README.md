@@ -38,13 +38,15 @@ The REST origin allowlist supports both localhost:3000 and this hosted origin.
 
 [Current architecture and browser-notification diagrams](../docs/CURRENT-DIAGRAMS.md) show how API writes update another signed-in browser.
 
-- Create and list tickets through REST or generated GraphQL resolvers.
+- Create and list your own tickets through REST or generated GraphQL resolvers, including when signed in as an Agent.
 - Edit through REST, then read the same record through GraphQL.
 - Get a summary and close a ticket using custom AppSync Lambda resolvers.
 - Receive new-ticket, status, and comment notifications automatically through API Gateway WebSocket.
 - Add persistent comments under the selected ticket and update its status with Save changes.
-- Open the agent queue with the custom REST Lambda authorizer. Owners receive a
-  readable authorization denial; members of the Agents Cognito group can use it.
+- Open the Agent queue to see tickets created by all current Agents members.
+  Customer tickets are excluded, and customers cannot open this queue.
+- Return to My tickets with its button; refresh, pagination, reconnect and live
+  notifications retain the selected view.
 - Delete only a selected ticket, with an explicit confirmation dialog.
 
 WebSocket notifications update other authorized connected browsers automatically.

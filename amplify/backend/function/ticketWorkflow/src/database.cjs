@@ -5,7 +5,7 @@ function createDatabase(doc = client, table = process.env.TICKET_TABLE) {
   return {
     async get(id) { return (await doc.send(new GetCommand({ TableName: table, Key: { id }, ConsistentRead: true }))).Item; },
     async create(ticket) { await doc.send(new PutCommand({ TableName: table, Item: ticket, ConditionExpression: 'attribute_not_exists(id)' })); return ticket; },
-    async list(user, cursor) {
+    async list(user, cursor, agentOwners) {
       let start;
       if (cursor) {
         try {
@@ -14,10 +14,12 @@ function createDatabase(doc = client, table = process.env.TICKET_TABLE) {
           start = value;
         } catch { const { HttpError } = require('./domain.cjs'); throw new HttpError(400, 'Invalid cursor'); }
       }
-      const admin = user.groups.includes('Agents');
+      const owners = new Set(agentOwners || [user.owner]);
+      if (!owners.size) return { items: [], nextToken: null };
       const result = await doc.send(new ScanCommand({ TableName: table, Limit: 50, ExclusiveStartKey: start, ConsistentRead: true,
-        ...(admin ? {} : { FilterExpression: '#owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': user.owner } }) }));
-      return { items: result.Items || [], nextToken: result.LastEvaluatedKey ? Buffer.from(JSON.stringify(result.LastEvaluatedKey)).toString('base64url') : null };
+        ...(agentOwners ? {} : { FilterExpression: '#owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': user.owner } }) }));
+      // ponytail: filter each bounded Agent page in memory; an owner index can replace the demo scan at scale.
+      return { items: (result.Items || []).filter(ticket => owners.has(ticket.owner)), nextToken: result.LastEvaluatedKey ? Buffer.from(JSON.stringify(result.LastEvaluatedKey)).toString('base64url') : null };
     },
     async update(ticket, changes) {
       const fields = { ...changes, updatedAt: new Date().toISOString() };

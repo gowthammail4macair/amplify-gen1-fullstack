@@ -124,6 +124,13 @@
           ],
           "category": "api",
           "resourceName": "supportGraphql"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "ticketAuth"
         }
       ],
       "providerPlugin": "awscloudformation",

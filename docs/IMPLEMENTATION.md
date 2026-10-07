@@ -26,7 +26,7 @@ and [API-CONTRACT.md](API-CONTRACT.md) describe the current UI and message proto
   queue and selected comments. The Status selector and Comments form appear
   after selecting a ticket.
 
-Current validation: 30 runtime/UI tests, 17 live API check groups, five hosting
+Current validation: 36 runtime/UI tests, 17 live API check groups, five hosting
 checks, and 12 two-session browser checks per repository. See
 [CI evidence](../evidence/live-feature-ci.json) and
 [browser results and fixture cleanup](../evidence/live-feature-browser.json).
@@ -45,7 +45,7 @@ A support-ticket owner creates and manages tickets. Agents have additional admin
 
 I authored the Gen 1 category inputs and function templates under `amplify/backend/`, using CLI 14.5.1 structures. This initial construction was offline; the later CI deployment uses actual `amplify init`/`push` against the configured environment. `amplify/.config/project-config.json` describes the JavaScript project. `amplify/cli.json` enables GraphQL Transformer v2 and the default `sub::username` owner claim.
 
-`backend-config.json` records category dependencies. The official CLI is a pinned development dependency. `scripts/prepare-local.cjs` creates ignored local metadata only when missing and copies each handler's required canonical `src/*.cjs` modules into its Lambda `src/` folder, removing obsolete `.cjs` copies. The authorizer includes `authorizer` and `domain`; REST and workflow include their handler, `domain`, and `database`; the socket includes `websocket`, `domain`, `database`, and `notifications`. Function manifests contain only the libraries those files import. `test/lambda-packages.test.cjs` checks the dependency graph and reruns the backend suites using isolated copies with only declared dependencies available. It does not fabricate an AWS app ID, stack or credentials.
+`backend-config.json` records category dependencies. The official CLI is a pinned development dependency. `scripts/prepare-local.cjs` creates ignored local metadata only when missing and copies each handler's required canonical `src/*.cjs` modules into its Lambda `src/` folder, removing obsolete `.cjs` copies. The authorizer includes `authorizer` and `domain`; REST includes `rest`, `domain`, `database`, and `agents`; workflow includes `workflow`, `domain`, and `database`; the socket includes `websocket`, `domain`, `database`, and `notifications`. Function manifests contain only the libraries those files import. `test/lambda-packages.test.cjs` checks the dependency graph and reruns the backend suites using isolated copies with only declared dependencies available. It does not fabricate an AWS app ID, stack or credentials.
 
 ```bash
 npm ci
@@ -63,6 +63,13 @@ The local synthesis script invokes the **official** `AmplifyAuthTransform` to bu
 `api/supportGraphql/schema.graphql` contains `Ticket @model`, owner and Agents `@auth` rules, and a TicketStatus enum. Amplify generates the Ticket DynamoDB table, CRUD resolvers, auth pipeline functions and subscription fields. `ticketSummary`, `closeTicket`, `listTicketComments`, and `addTicketComment` use `@function(name: "ticketWorkflow-${env}")`.
 
 `function/ticketWorkflow/` contains a native Lambda definition. Its runtime in `src/workflow.cjs` reads/updates DynamoDB and enforces owner or Agents authorization. The function gets the generated table name from the API ID and environment parameters.
+
+Personal REST listing always filters by the verified owner, including for Agents.
+The custom Agent route uses `src/agents.cjs` to paginate Cognito `ListUsersInGroup`
+and filters each ticket page to current Agents owners. Only the REST Lambda gets
+the Cognito SDK, user pool environment variable and pool-scoped membership-read
+permission. The frontend adds an owner filter to GraphQL personal listing and
+retains an explicit personal/Agent queue selection for refresh and live events.
 
 The API names the Lambda through the `@function` directive instead of importing its stack ARN. Therefore the API stack depends on Auth, while the workflow Lambda can depend on the API's table ID without creating an API/function stack cycle.
 
@@ -94,7 +101,7 @@ The connection table uses PAY_PER_REQUEST, `connectionId` as its key, JWT expiry
 npm run validate
 ```
 
-This runs TypeScript checks, 30 runtime/UI tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
+This runs TypeScript checks, 36 runtime/UI tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
 
 `dist/`, `build/`, local environment metadata and cloud outputs are ignored. Lambda code and all infrastructure inputs are committed. All four functions package their own dependencies during `amplify push`.
 

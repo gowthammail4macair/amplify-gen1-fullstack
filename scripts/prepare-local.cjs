@@ -6,7 +6,7 @@ if (!fs.existsSync('amplify/.config/local-env-info.json')) fs.writeFileSync('amp
 if (!fs.existsSync('amplify/backend/amplify-meta.json')) fs.writeFileSync('amplify/backend/amplify-meta.json', JSON.stringify({ ...config, providers: { awscloudformation: { Region: 'us-east-1' } } }, null, 2));
 // ponytail: explicit file lists keep each Gen 1 package self-contained without bundling other handlers.
 for (const [name, modules] of Object.entries({
-  ticketRest: ['rest', 'domain', 'database'],
+  ticketRest: ['rest', 'domain', 'database', 'agents'],
   ticketAuthorizer: ['authorizer', 'domain'],
   ticketWorkflow: ['workflow', 'domain', 'database'],
   ticketSocketHandler: ['websocket', 'domain', 'database', 'notifications']

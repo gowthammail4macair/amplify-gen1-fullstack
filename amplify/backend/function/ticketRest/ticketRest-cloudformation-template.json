@@ -18,6 +18,9 @@
     },
     "apisupportGraphqlGraphQLAPIIdOutput": {
       "Type": "String"
+    },
+    "authticketAuthUserPoolId": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -89,7 +92,10 @@
                 ]
               ]
             },
-            "ALLOWED_ORIGINS": "[\"http://localhost:3000\",\"https://d2i2kf1hg91937.cloudfront.net\"]"
+            "ALLOWED_ORIGINS": "[\"http://localhost:3000\",\"https://d2i2kf1hg91937.cloudfront.net\"]",
+            "USER_POOL_ID": {
+              "Ref": "authticketAuthUserPoolId"
+            }
           }
         },
         "Role": {
@@ -222,6 +228,31 @@
                     }
                   ]
                 ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "agentMembershipPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "agent-membership",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "cognito-idp:ListUsersInGroup"
+              ],
+              "Resource": {
+                "Fn::Sub": "arn:${AWS::Partition}:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${authticketAuthUserPoolId}"
               }
             }
           ]

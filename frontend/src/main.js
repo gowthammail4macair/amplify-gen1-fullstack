@@ -1,7 +1,7 @@
 import { authentication, ticketApi, liveChannel } from './api.js';
 const config=__APP_CONFIG__, $=id=>document.getElementById(id);
 const auth=authentication(config.auth), api=ticketApi(config.api,()=>auth.token());
-const state={profile:null,tickets:[],selected:null,detailVersion:null,nextToken:null,busy:false,connected:false,livePaused:false,activity:[],notifications:[],pending:[],seen:new Set(),processing:false,commentRequest:0,sessionVersion:0};
+const state={profile:null,queue:'mine',agentOwners:new Set(),tickets:[],selected:null,detailVersion:null,nextToken:null,busy:false,connected:false,livePaused:false,activity:[],notifications:[],pending:[],seen:new Set(),processing:false,commentRequest:0,sessionVersion:0};
 const prettyStatus=value=>({OPEN:'Open',IN_PROGRESS:'In progress',CLOSED:'Closed'}[value]||value);
 const live=liveChannel(config.api.websocket,()=>auth.token(),connected=>{
   state.connected=connected;
@@ -13,6 +13,9 @@ const live=liveChannel(config.api.websocket,()=>auth.token(),connected=>{
 },queueLive);
 function renderControls(){
   document.querySelectorAll('[data-action]').forEach(b=>b.disabled=state.busy);
+  $('my-tickets').disabled=state.busy||state.queue==='mine';
+  $('agent-queue').disabled=state.busy||!state.profile?.groups?.includes('Agents');
+  $('list-api').disabled=state.busy||state.queue==='agents';
   $('sign-out').disabled=state.busy;
   $('connect-live').textContent=state.livePaused?'Resume live updates':'Pause live updates';
 }
@@ -90,14 +93,18 @@ async function loadComments(){
   if(epoch===state.sessionVersion&&state.selected?.id===id&&request===state.commentRequest){state.selected.comments=result.items;renderComments();}
   return result;
 }
-async function load(more=false,keepDraft=false,source=$('list-api').value){
-  const epoch=state.sessionVersion,edits=keepDraft?draft():null,previous=state.selected,result=await api.list(source,more?state.nextToken:null);
+async function load(more=false,keepDraft=false,source=$('list-api').value,queue=state.queue){
+  const epoch=state.sessionVersion,edits=keepDraft?draft():null,previous=state.selected,cursor=more?state.nextToken:null;
+  const result=queue==='agents'?await api.agents(cursor):await api.list(source,cursor,state.profile.owner);
   if(epoch!==state.sessionVersion||!state.profile)return result;
+  state.queue=queue;
+  state.agentOwners=new Set(result.agentOwners||[]);
+  if(queue==='agents')$('list-api').value='REST';
   state.tickets=more?[...new Map([...state.tickets,...result.items].map(t=>[t.id,t])).values()]:result.items;
   state.nextToken=result.nextToken;
   const selected=state.tickets.find(t=>t.id===previous?.id);
   state.selected=selected?Object.assign(selected,{comments:previous.comments||[]}):null;
-  $('queue-title').textContent='My tickets';renderTickets();renderDetails();restoreDraft(edits);
+  $('queue-title').textContent=queue==='agents'?'Agent queue':'My tickets';renderTickets();renderDetails();restoreDraft(edits);
   if(state.selected)await loadComments();
   return result;
 }
@@ -116,6 +123,12 @@ async function flushLive(){
       let label;
       if(event.type==='ticketChanged'){
         if(!event.ticket?.id)continue;
+        const belongs=state.queue==='mine'?event.ticket.owner===state.profile.owner:state.agentOwners.has(event.ticket.owner);
+        if(!belongs){
+          state.tickets=state.tickets.filter(ticket=>ticket.id!==event.ticket.id);
+          if(state.selected?.id===event.ticket.id)state.selected=null;
+          renderTickets();renderDetails();continue;
+        }
         merge(event.ticket,false);
         if(event.commentsChanged&&state.selected?.id===event.ticket.id)await loadComments();
         label=event.change==='created'?'New ticket: '+event.ticket.title:event.change==='commentAdded'?'New comment on: '+event.ticket.title:'Ticket updated: '+event.ticket.title+' · '+prettyStatus(event.ticket.status);
@@ -136,7 +149,7 @@ $('project-badge').textContent=config.project.label;$('environment-label').textC
 $('sign-in-form').onsubmit=async event=>{
   event.preventDefault();if(state.busy)return;state.busy=true;$('login-error').textContent='';$('sign-in').textContent='Signing in…';renderControls();
   try{
-    state.profile=await auth.signIn($('email').value.trim(),$('password').value);state.sessionVersion++;$('password').value='';
+    state.profile=await auth.signIn($('email').value.trim(),$('password').value);state.queue='mine';state.sessionVersion++;$('password').value='';
     $('sign-in-page').hidden=true;$('workspace').hidden=false;$('account-label').textContent=state.profile.email;$('sign-out').hidden=false;
     notice('Signed in. Loading your tickets…');const result=await load();
     notice('Signed in. Your ticket queue is ready.');log('Signed in and loaded tickets',{profile:state.profile,tickets:result});
@@ -145,7 +158,8 @@ $('sign-in-form').onsubmit=async event=>{
   finally{state.busy=false;$('sign-in').textContent='Sign in to workspace →';renderControls();flushLive();}
 };
 $('sign-out').onclick=()=>{
-  state.sessionVersion++;state.livePaused=true;live.disconnect();auth.signOut();state.profile=null;state.tickets=[];state.selected=null;state.nextToken=null;state.activity=[];state.pending=[];state.seen.clear();state.notifications=[];
+  state.sessionVersion++;state.livePaused=true;live.disconnect();auth.signOut();state.profile=null;state.queue='mine';state.agentOwners.clear();state.tickets=[];state.selected=null;state.nextToken=null;state.activity=[];state.pending=[];state.seen.clear();state.notifications=[];
+  $('queue-title').textContent='My tickets';
   $('workspace').hidden=true;$('sign-in-page').hidden=false;$('sign-out').hidden=true;$('account-label').textContent='';$('password').value='';$('api-response').textContent='{}';$('activity').replaceChildren();$('live-events').replaceChildren();
   renderTickets();renderDetails();
 };
@@ -162,5 +176,6 @@ $('refresh-comments').onclick=()=>action('Loaded ticket comments',()=>loadCommen
 $('comment-form').onsubmit=event=>{event.preventDefault();action('Added ticket comment',async()=>{const id=state.selected.id,body=$('new-comment').value.trim();if(!body)throw new Error('Enter a comment.');const comment=await api.addComment(id,body);$('new-comment').value='';await loadComments();return comment;});};
 $('delete-ticket').onclick=()=>{if(!confirm('Permanently delete this ticket? This cannot be undone.'))return;action('Deleted ticket with REST',async()=>{const id=state.selected.id,result=await api.remove(id);state.tickets=state.tickets.filter(t=>t.id!==id);state.selected=null;renderTickets();renderDetails();return result;});};
 $('connect-live').onclick=()=>action(state.livePaused?'Resumed live updates':'Paused live updates',async()=>{state.livePaused=!state.livePaused;if(state.livePaused)live.disconnect();else await live.connect();return {connected:state.connected};});
-$('agent-queue').onclick=()=>action('Opened agent queue',async()=>{const result=await api.agents();state.tickets=result.items;state.nextToken=result.nextToken;state.selected=null;renderTickets();renderDetails();$('queue-title').textContent='Agent queue';return result;});
+$('my-tickets').onclick=()=>action('Opened my tickets',()=>load(false,false,$('list-api').value,'mine'));
+$('agent-queue').onclick=()=>action('Opened agent queue',()=>load(false,false,'REST','agents'));
 window.addEventListener('beforeunload',()=>live.disconnect());

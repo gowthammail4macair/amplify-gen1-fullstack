@@ -1,6 +1,7 @@
 const { HttpError, identity, assertAccess, newTicket, patch, newComment } = require('./domain.cjs');
 const { createDatabase } = require('./database.cjs');
-function createHandler(db = createDatabase()) {
+const { agentOwners } = require('./agents.cjs');
+function createHandler(db = createDatabase(), members = agentOwners) {
   return async event => {
     const allowedOrigins = process.env.ALLOWED_ORIGINS ? JSON.parse(process.env.ALLOWED_ORIGINS) : [process.env.ALLOWED_ORIGIN || 'http://localhost:3000'];
     const origin = event.headers?.origin || event.headers?.Origin;
@@ -16,7 +17,8 @@ function createHandler(db = createDatabase()) {
       const method = event.httpMethod;
       if (path === '/admin/tickets' && method === 'GET') {
         if (!user.groups.includes('Agents')) throw new HttpError(403, 'Agents group required');
-        return reply(200, await db.list(user, event.queryStringParameters?.nextToken));
+        const owners = await members();
+        return reply(200, { ...await db.list(user, event.queryStringParameters?.nextToken, owners), agentOwners: owners });
       }
       if (path === '/tickets' && method === 'GET') return reply(200, await db.list(user, event.queryStringParameters?.nextToken));
       let input;
