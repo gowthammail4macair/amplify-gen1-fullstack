@@ -39,13 +39,14 @@ The REST origin allowlist supports both localhost:3000 and this hosted origin.
 - Create and list tickets through REST or generated GraphQL resolvers.
 - Edit through REST, then read the same record through GraphQL.
 - Get a summary and close a ticket using custom AppSync Lambda resolvers.
-- Connect the live channel and look up a ticket through API Gateway WebSocket.
+- Receive new-ticket, status, and comment notifications automatically through API Gateway WebSocket.
+- Add persistent comments under the selected ticket and update its status with Save changes.
 - Open the agent queue with the custom REST Lambda authorizer. Owners receive a
   readable authorization denial; members of the Agents Cognito group can use it.
 - Delete only a selected ticket, with an explicit confirmation dialog.
 
-WebSocket lookup is request/response; this example does not broadcast ticket
-updates to other connected clients. Existing accounts must be created through
+WebSocket notifications update other authorized connected browsers automatically.
+See [live updates and comments](../docs/LIVE-UPDATES-AND-COMMENTS.md) for the event flow, API routes, validation, and limits. Existing accounts must be created through
 Cognito administration; this demo frontend does not offer public registration.
 
 ## Latest live browser recheck
@@ -57,3 +58,5 @@ selected ticket or its stored content changes. See
 [the recorded results](../evidence/frontend-recheck.json) and
 [browser screenshot](../evidence/frontend-recheck.jpg) for coverage and limitations.
 All new fixtures were cleaned up and the existing demo owner account was retained.
+
+Live notifications and comments supersede the earlier manual lookup walkthrough. The earlier browser reports are historical evidence for that original version.

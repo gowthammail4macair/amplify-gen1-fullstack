@@ -29,16 +29,54 @@ export function ticketApi(config,getToken,request=fetch) {
     read(id,source='REST'){return source==='GraphQL'?graphql(`query($id:ID!){getTicket(id:$id){${fields}}}`,{id}).then(d=>{if(!d.getTicket)throw new ApiError('Ticket not found or access denied.',d,404);return d.getTicket;}):rest('GET','/tickets/'+encodeURIComponent(id));},
     update(id,changes){return rest('PATCH','/tickets/'+encodeURIComponent(id),changes);},
     remove(id){return rest('DELETE','/tickets/'+encodeURIComponent(id));},
+    comments(id){return rest('GET','/tickets/'+encodeURIComponent(id)+'/comments');},
+    addComment(id,body){return rest('POST','/tickets/'+encodeURIComponent(id)+'/comments',{body});},
     summary(id){return graphql('query($id:ID!){ticketSummary(id:$id){id title status summary}}',{id}).then(d=>d.ticketSummary);},
     close(id){return graphql(`mutation($id:ID!){closeTicket(id:$id){${fields}}}`,{id}).then(d=>d.closeTicket);},
     agents(){return rest('GET','/admin/tickets');}
   };
 }
-export function liveChannel(url,getToken,onState) {
-  let socket;
+export function liveChannel(url,getToken,onState,onEvent) {
+  let socket, opening, reconnect, heartbeat, wanted=false, attempt=0, generation=0;
+  function schedule() {
+    if (!wanted || reconnect) return;
+    reconnect=setTimeout(()=>{reconnect=null;connect().catch(()=>{});},Math.min(30000,1000*2**Math.min(attempt++,5)));
+  }
+  async function connect() {
+    wanted=true;
+    if (socket?.readyState===WebSocket.OPEN) return;
+    if (opening) return opening;
+    const epoch=generation;
+    opening=(async()=>{
+      const token=await getToken();
+      if (!wanted || epoch!==generation) return;
+      await new Promise((resolve,reject)=>{
+        const ws=new WebSocket(url+'?token='+encodeURIComponent(token));socket=ws;
+        const timeout=setTimeout(()=>{reject(new Error('Live connection timed out.'));ws.close();},20000);
+        ws.addEventListener('open',()=>{
+          clearTimeout(timeout);
+          if (!wanted || socket!==ws) {ws.close();resolve();return;}
+          attempt=0;clearTimeout(reconnect);reconnect=null;
+          heartbeat=setInterval(()=>{if(ws.readyState===WebSocket.OPEN)ws.send(JSON.stringify({action:'ping'}));},240000);
+          onState(true);resolve();
+        },{once:true});
+        ws.addEventListener('message',event=>{
+          if(socket!==ws || !wanted)return;
+          try {const message=JSON.parse(event.data);if(['ticketChanged','ticketRemoved'].includes(message.type))onEvent(message);}catch{}
+        });
+        ws.addEventListener('error',()=>{clearTimeout(timeout);reject(new Error('Live updates could not connect.'));ws.close();},{once:true});
+        ws.addEventListener('close',()=>{
+          clearTimeout(timeout);
+          reject(new Error('Live connection closed.'));
+          if(socket!==ws)return;
+          clearInterval(heartbeat);socket=null;onState(false);schedule();reject(new Error('Live connection closed.'));
+        });
+      });
+    })().catch(error=>{if(epoch===generation){onState(false);schedule();}throw error;}).finally(()=>{if(epoch===generation)opening=null;});
+    return opening;
+  }
   return {
-    async connect(){if(socket?.readyState===WebSocket.OPEN)return;const token=await getToken();await new Promise((resolve,reject)=>{socket=new WebSocket(url+'?token='+encodeURIComponent(token));const timeout=setTimeout(()=>{socket.close();reject(new Error('Live connection timed out.'));},20000);socket.addEventListener('open',()=>{clearTimeout(timeout);onState(true);resolve();},{once:true});socket.addEventListener('error',()=>{clearTimeout(timeout);onState(false);reject(new Error('The live connection could not be opened.'));},{once:true});socket.addEventListener('close',()=>onState(false));});},
-    read(id){return new Promise((resolve,reject)=>{if(socket?.readyState!==WebSocket.OPEN)return reject(new Error('Connect the live channel first.'));const ws=socket;const timer=setTimeout(()=>{ws.removeEventListener('message',receive);reject(new Error('No response from the live channel.'));},20000);function receive(event){clearTimeout(timer);try{const result=JSON.parse(event.data);if(result.type!=='ticket')reject(new ApiError(result.message||'Live lookup failed.',result));else resolve(result.ticket);}catch(error){reject(error);}}ws.addEventListener('message',receive,{once:true});ws.send(JSON.stringify({action:'getTicket',id}));});},
-    disconnect(){socket?.close();socket=null;onState(false);}
+    connect,
+    disconnect(){wanted=false;generation++;opening=null;clearTimeout(reconnect);reconnect=null;clearInterval(heartbeat);const ws=socket;socket=null;ws?.close();onState(false);}
   };
 }

@@ -18,6 +18,7 @@ export function override(resources: AmplifyApiRestResourceStackTemplate) {
   body.paths = {
     '/tickets': { get: method('Cognito'), post: method('Cognito'), options },
     '/tickets/{id}': { get: method('Cognito', true), patch: method('Cognito', true), delete: method('Cognito', true), options },
+    '/tickets/{id}/comments': { get: method('Cognito', true), post: method('Cognito', true), options },
     '/admin/tickets': { get: method('AgentAuthorizer'), options }
   };
   resources.restApi.addPropertyOverride('Body', body);

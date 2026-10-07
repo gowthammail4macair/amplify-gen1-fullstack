@@ -1,9 +1,14 @@
-const { identity, assertAccess, HttpError } = require('./domain.cjs');
+const { identity, assertAccess, HttpError, newComment } = require('./domain.cjs');
 const { createDatabase } = require('./database.cjs');
 function createHandler(db = createDatabase()) {
   return async event => {
     const user = identity(event.identity?.claims);
     const field = event.fieldName || event.info?.fieldName;
+    if (field === 'listTicketComments' || field === 'addTicketComment') {
+      const ticket = await db.get(event.arguments.id); assertAccess(ticket, user);
+      if (field === 'listTicketComments') return ticket.comments || [];
+      return db.addComment(ticket, newComment(event.arguments, user, ticket));
+    }
     if (field === 'ticketSummary') {
       const ticket = await db.get(event.arguments.id); assertAccess(ticket, user);
       return { id: ticket.id, title: ticket.title, status: ticket.status, summary: `${ticket.title} [${ticket.status}]` };

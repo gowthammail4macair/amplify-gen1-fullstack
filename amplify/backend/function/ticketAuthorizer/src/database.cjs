@@ -15,7 +15,7 @@ function createDatabase(doc = client, table = process.env.TICKET_TABLE) {
         } catch { const { HttpError } = require('./domain.cjs'); throw new HttpError(400, 'Invalid cursor'); }
       }
       const admin = user.groups.includes('Agents');
-      const result = await doc.send(new ScanCommand({ TableName: table, Limit: 50, ExclusiveStartKey: start,
+      const result = await doc.send(new ScanCommand({ TableName: table, Limit: 50, ExclusiveStartKey: start, ConsistentRead: true,
         ...(admin ? {} : { FilterExpression: '#owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': user.owner } }) }));
       return { items: result.Items || [], nextToken: result.LastEvaluatedKey ? Buffer.from(JSON.stringify(result.LastEvaluatedKey)).toString('base64url') : null };
     },
@@ -25,6 +25,14 @@ function createDatabase(doc = client, table = process.env.TICKET_TABLE) {
       const setters = Object.entries(fields).map(([key, value], i) => { names[`#f${i}`] = key; values[`:v${i}`] = value; return `#f${i} = :v${i}`; });
       return (await doc.send(new UpdateCommand({ TableName: table, Key: { id: ticket.id }, UpdateExpression: `SET ${setters.join(', ')}`,
         ConditionExpression: 'attribute_exists(id) AND #owner = :owner', ExpressionAttributeNames: names, ExpressionAttributeValues: values, ReturnValues: 'ALL_NEW' }))).Attributes;
+    },
+    async addComment(ticket, comment) {
+      await doc.send(new UpdateCommand({ TableName: table, Key: { id: ticket.id },
+        UpdateExpression: 'SET #comments = list_append(if_not_exists(#comments, :empty), :comment), #updated = :now',
+        ConditionExpression: 'attribute_exists(id) AND #owner = :owner AND (attribute_not_exists(#comments) OR size(#comments) < :limit)',
+        ExpressionAttributeNames: { '#owner': 'owner', '#comments': 'comments', '#updated': 'updatedAt' },
+        ExpressionAttributeValues: { ':owner': ticket.owner, ':empty': [], ':comment': [comment], ':now': comment.createdAt, ':limit': 100 } }));
+      return comment;
     },
     async delete(ticket) { await doc.send(new DeleteCommand({ TableName: table, Key: { id: ticket.id }, ConditionExpression: 'attribute_exists(id) AND #owner = :owner', ExpressionAttributeNames: { '#owner': 'owner' }, ExpressionAttributeValues: { ':owner': ticket.owner } })); }
   };

@@ -10,6 +10,7 @@ const poolId = outputs.auth.user_pool_id, clientId = outputs.auth.user_pool_clie
 const admin = new cognito.CognitoIdentityProviderClient({ region });
 const pool = new CognitoUserPool({ UserPoolId: poolId, ClientId: clientId });
 const runId = randomUUID().slice(0, 8), users = [], tickets = [], sockets = [], checks = [];
+const notifications = new WeakMap();
 const restBase = outputs.custom.rest.endpoint.replace(/\/$/, '');
 const gqlUrl = outputs.data.url;
 const send = (name, input) => admin.send(new cognito[name + 'Command']({ UserPoolId: poolId, ...input }));
@@ -38,6 +39,11 @@ async function gql(token, query, variables = {}) {
 function connect(token) {
   return new Promise((resolve, reject) => {
     const ws = new WebSocket(outputs.custom.websocket.endpoint + '?token=' + encodeURIComponent(token));
+    notifications.set(ws, []);
+    ws.addEventListener('message', event => {
+      const value = JSON.parse(event.data);
+      if (['ticketChanged','ticketRemoved'].includes(value.type)) notifications.get(ws).push(value);
+    });
     const timer = setTimeout(() => { ws.close(); reject(new Error('WebSocket connect timeout')); }, 20000);
     ws.addEventListener('open', () => { clearTimeout(timer); sockets.push(ws); resolve(ws); }, { once: true });
     ws.addEventListener('error', () => { clearTimeout(timer); reject(new Error('WebSocket authorization/connection failed')); }, { once: true });
@@ -45,10 +51,24 @@ function connect(token) {
 }
 function message(ws, value) {
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error('WebSocket response timeout')), 20000);
-    ws.addEventListener('message', e => { clearTimeout(timer); resolve(JSON.parse(e.data)); }, { once: true });
+    const timer = setTimeout(() => {ws.removeEventListener('message',receive);reject(new Error('WebSocket response timeout'));}, 20000);
+    function receive(e) {
+      const value = JSON.parse(e.data);
+      if (!['ticket','error'].includes(value.type)) return;
+      clearTimeout(timer);ws.removeEventListener('message',receive);resolve(value);
+    }
+    ws.addEventListener('message', receive);
     ws.send(JSON.stringify(value));
   });
+}
+async function pushed(ws, id, predicate = () => true) {
+  const deadline = Date.now() + 45000;
+  while (Date.now() < deadline) {
+    const event = notifications.get(ws).find(e => e.ticket?.id === id && predicate(e));
+    if (event) return event;
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+  throw new Error('No WebSocket push received for ticket ' + id);
 }
 (async () => {
   let owner, other, agent, ticket, graphqlTicket;
@@ -57,7 +77,7 @@ function message(ws, value) {
     await test('REST rejects missing and malformed Cognito tokens', async () => { for (const t of ['', 'invalid']) assert.ok([401,403].includes((await rest(t, 'GET', '/tickets')).status)); });
     await test('REST preflight supports the hosted website and localhost, excluding other origins', async () => {
       const { allowedOrigins } = require('../frontend/origins.cjs');
-      for (const origin of allowedOrigins) for (const path of ['/tickets', '/tickets/any-id', '/admin/tickets']) {
+      for (const origin of allowedOrigins) for (const path of ['/tickets', '/tickets/any-id', '/tickets/any-id/comments', '/admin/tickets']) {
         const r = await fetch(restBase + path, { method: 'OPTIONS', headers: { Origin: origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'Authorization,Content-Type' } });
         assert.equal(r.status, 204); assert.equal(r.headers.get('access-control-allow-origin'), origin);
       }
@@ -83,12 +103,52 @@ function message(ws, value) {
       assert.equal((await rest(owner, 'GET', '/tickets/' + ticket.id)).body.status, 'CLOSED');
     });
     await test('WebSocket rejects invalid Cognito JWT at $connect', async () => { await assert.rejects(connect('invalid')); });
+    await test('REST and GraphQL comments persist with verified authors and ticket authorization', async () => {
+      const r = await rest(owner,'POST','/tickets/'+ticket.id+'/comments',{body:'REST comment '+runId,author:'spoof',authorId:'spoof'});
+      assert.equal(r.status,201,JSON.stringify(r));assert.notEqual(r.body.authorId,'spoof');assert.notEqual(r.body.author,'spoof');
+      const fields='id body authorId author createdAt';
+      let result=await gql(owner,'query($id:ID!){listTicketComments(id:$id){'+fields+'}}',{id:ticket.id});
+      assert.equal(result.data?.listTicketComments?.[0]?.id,r.body.id,JSON.stringify(result));
+      result=await gql(owner,'mutation($id:ID!,$body:String!){addTicketComment(id:$id,body:$body){'+fields+'}}',{id:ticket.id,body:'GraphQL comment '+runId});
+      assert.ok(result.data?.addTicketComment?.id,JSON.stringify(result));
+      const updated=await gql(owner,'mutation($input:UpdateTicketInput!){updateTicket(input:$input){id status}}',{input:{id:ticket.id,title:'Live smoke '+runId+' updated'}});
+      assert.equal(updated.data?.updateTicket?.status,'CLOSED',JSON.stringify(updated));
+      assert.equal((await rest(owner,'GET','/tickets/'+ticket.id+'/comments')).body.items.length,2);
+      for(const method of ['GET','POST'])assert.equal((await rest(other,method,'/tickets/'+ticket.id+'/comments',{body:'forbidden'})).status,403);
+      for(const query of ['query($id:ID!){listTicketComments(id:$id){id}}','mutation($id:ID!){addTicketComment(id:$id,body:"forbidden"){id}}']){
+        const denied=await gql(other,query,{id:ticket.id});assert.ok(denied.errors?.length,JSON.stringify(denied));
+      }
+      assert.equal((await rest(owner,'POST','/tickets/'+ticket.id+'/comments',{body:''})).status,400);
+    });
     await test('WebSocket owner response, other-owner denial and Agents access', async () => {
       const ownSocket = await connect(owner), otherSocket = await connect(other), agentSocket = await connect(agent);
       const r = await message(ownSocket, { action: 'getTicket', id: ticket.id }); assert.equal(r.type, 'ticket', JSON.stringify(r)); assert.equal(r.ticket.status, 'CLOSED');
       const denied = await message(otherSocket, { action: 'getTicket', id: ticket.id }); assert.equal(denied.type, 'error'); assert.equal(denied.message, 'Forbidden');
       assert.equal((await message(agentSocket, { action: 'getTicket', id: ticket.id })).type, 'ticket');
       assert.equal((await message(ownSocket, { action: 'bad' })).type, 'error');
+      await test('WebSocket pushes REST ticket creation and status updates to owner and Agents', async()=>{
+        const created=await rest(owner,'POST','/tickets',{title:'Push REST '+runId});assert.equal(created.status,201,JSON.stringify(created));tickets.push(created.body.id);
+        await pushed(ownSocket,created.body.id,e=>e.change==='created');await pushed(agentSocket,created.body.id,e=>e.change==='created');
+        const updated=await rest(owner,'PATCH','/tickets/'+created.body.id,{status:'IN_PROGRESS'});assert.equal(updated.status,200);
+        await pushed(ownSocket,created.body.id,e=>e.ticket.status==='IN_PROGRESS');await pushed(agentSocket,created.body.id,e=>e.ticket.status==='IN_PROGRESS');
+      });
+      await test('WebSocket pushes generated GraphQL creates/updates and custom Lambda status changes', async()=>{
+        let r=await gql(owner,'mutation($input:CreateTicketInput!){createTicket(input:$input){id status}}',{input:{title:'Push GraphQL '+runId,status:'OPEN'}});
+        const id=r.data?.createTicket?.id;assert.ok(id,JSON.stringify(r));tickets.push(id);
+        await pushed(ownSocket,id,e=>e.change==='created');await pushed(agentSocket,id,e=>e.change==='created');
+        r=await gql(owner,'mutation($input:UpdateTicketInput!){updateTicket(input:$input){id status}}',{input:{id,status:'IN_PROGRESS'}});
+        assert.equal(r.data?.updateTicket?.status,'IN_PROGRESS',JSON.stringify(r));await pushed(ownSocket,id,e=>e.ticket.status==='IN_PROGRESS');
+        r=await gql(owner,'mutation($id:ID!){closeTicket(id:$id){id status}}',{id});assert.equal(r.data?.closeTicket?.status,'CLOSED',JSON.stringify(r));
+        await pushed(ownSocket,id,e=>e.ticket.status==='CLOSED');await pushed(agentSocket,id,e=>e.ticket.status==='CLOSED');
+        r=await rest(owner,'POST','/tickets/'+id+'/comments',{body:'Push comment '+runId});assert.equal(r.status,201);
+        await pushed(ownSocket,id,e=>e.change==='commentAdded'&&e.commentsChanged);await pushed(agentSocket,id,e=>e.change==='commentAdded');
+      });
+      await test('WebSocket push does not expose another owner tickets or comment bodies',async()=>{
+        await new Promise(resolve=>setTimeout(resolve,1000));
+        assert.ok(!notifications.get(otherSocket).some(e=>tickets.includes(e.ticket?.id)||tickets.includes(e.ticketId)));
+        assert.ok(notifications.get(ownSocket).length>0);
+        assert.ok(notifications.get(ownSocket).every(e=>!e.ticket?.comments));
+      });
     });
     await test('AppSync generated delete resolver removes ticket', async () => { const r = await gql(owner, 'mutation($input:DeleteTicketInput!){deleteTicket(input:$input){id}}', { input: { id: graphqlTicket.id } }); assert.equal(r.data?.deleteTicket?.id, graphqlTicket.id, JSON.stringify(r)); });
     await test('REST cross-owner delete denied; owner delete succeeds', async () => { assert.equal((await rest(other, 'DELETE', '/tickets/' + ticket.id)).status, 403); assert.equal((await rest(owner, 'DELETE', '/tickets/' + ticket.id)).status, 200); assert.equal((await rest(owner, 'GET', '/tickets/' + ticket.id)).status, 404); });

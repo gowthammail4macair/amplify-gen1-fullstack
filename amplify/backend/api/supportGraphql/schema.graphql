@@ -9,12 +9,19 @@ type Ticket @model @auth(rules: [
   owner: String
 }
 type TicketSummary { id: ID!, title: String!, status: TicketStatus!, summary: String! }
+type TicketComment { id: ID!, body: String!, authorId: String!, author: String!, createdAt: AWSDateTime! }
 type Query {
+  listTicketComments(id: ID!): [TicketComment!]
+    @function(name: "ticketWorkflow-${env}")
+    @auth(rules: [{allow: private, provider: userPools}])
   ticketSummary(id: ID!): TicketSummary
     @function(name: "ticketWorkflow-${env}")
     @auth(rules: [{allow: private, provider: userPools}])
 }
 type Mutation {
+  addTicketComment(id: ID!, body: String!): TicketComment
+    @function(name: "ticketWorkflow-${env}")
+    @auth(rules: [{allow: private, provider: userPools}])
   closeTicket(id: ID!): Ticket
     @function(name: "ticketWorkflow-${env}")
     @auth(rules: [{allow: private, provider: userPools}])

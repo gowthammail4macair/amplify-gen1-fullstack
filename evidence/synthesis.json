@@ -8,11 +8,14 @@
     "updateTicket",
     "deleteTicket",
     "ticketSummary",
-    "closeTicket"
+    "closeTicket",
+    "listTicketComments",
+    "addTicketComment"
   ],
   "restPaths": [
     "/tickets",
     "/tickets/{id}",
+    "/tickets/{id}/comments",
     "/admin/tickets"
   ],
   "websocketRoutes": [

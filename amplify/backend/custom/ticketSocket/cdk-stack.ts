@@ -2,7 +2,8 @@ import * as cdk from 'aws-cdk-lib';
 import * as AmplifyHelpers from '@aws-amplify/cli-extensibility-helper';
 import { Construct } from 'constructs';
 import { CfnApi, CfnAuthorizer, CfnIntegration, CfnRoute, CfnStage } from 'aws-cdk-lib/aws-apigatewayv2';
-import { CfnPermission } from 'aws-cdk-lib/aws-lambda';
+import { CfnPermission, CfnEventSourceMapping } from 'aws-cdk-lib/aws-lambda';
+import { CfnPolicy } from 'aws-cdk-lib/aws-iam';
 import { Table, AttributeType, BillingMode } from 'aws-cdk-lib/aws-dynamodb';
 import { CfnUserPoolGroup } from 'aws-cdk-lib/aws-cognito';
 
@@ -15,11 +16,25 @@ export class cdkStack extends cdk.Stack {
       amplifyResourceProps!.category, amplifyResourceProps!.resourceName, [
         { category: 'auth', resourceName: 'ticketAuth' },
         { category: 'function', resourceName: 'ticketSocketHandler' },
-        { category: 'function', resourceName: 'ticketAuthorizer' }
+        { category: 'function', resourceName: 'ticketAuthorizer' },
+        { category: 'api', resourceName: 'supportGraphql' }
       ]);
     const poolId = cdk.Fn.ref(dependencies.auth.ticketAuth.UserPoolId);
     const handlerArn = cdk.Fn.ref(dependencies.function.ticketSocketHandler.Arn);
     const authorizerArn = cdk.Fn.ref(dependencies.function.ticketAuthorizer.Arn);
+    const apiId = cdk.Fn.ref(dependencies.api.supportGraphql.GraphQLAPIIdOutput);
+    const streamArn = cdk.Fn.importValue(cdk.Fn.join(':', [apiId, 'GetAtt:TicketTable:StreamArn']));
+    const streamPolicy = new CfnPolicy(this, 'TicketStreamPolicy', {
+      policyName: 'ticket-stream-notifications',
+      roles: [cdk.Fn.ref(dependencies.function.ticketSocketHandler.LambdaExecutionRole)],
+      policyDocument: { Version: '2012-10-17', Statement: [{ Effect: 'Allow',
+        Action: ['dynamodb:DescribeStream','dynamodb:GetRecords','dynamodb:GetShardIterator'], Resource: streamArn }] }
+    });
+    const mapping = new CfnEventSourceMapping(this, 'TicketNotifications', {
+      functionName: handlerArn, eventSourceArn: streamArn, startingPosition: 'LATEST', batchSize: 10,
+      bisectBatchOnFunctionError: true, maximumRetryAttempts: 3, maximumRecordAgeInSeconds: 3600
+    });
+    mapping.addDependency(streamPolicy);
     new CfnUserPoolGroup(this, 'Agents', { userPoolId: poolId, groupName: 'Agents' });
     new Table(this, 'Connections', { tableName: cdk.Fn.join('', ['Connections-', poolId]),
       partitionKey: { name: 'connectionId', type: AttributeType.STRING }, billingMode: BillingMode.PAY_PER_REQUEST,

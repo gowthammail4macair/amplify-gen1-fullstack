@@ -1,4 +1,4 @@
-const { HttpError, identity, assertAccess, newTicket, patch } = require('./domain.cjs');
+const { HttpError, identity, assertAccess, newTicket, patch, newComment } = require('./domain.cjs');
 const { createDatabase } = require('./database.cjs');
 function createHandler(db = createDatabase()) {
   return async event => {
@@ -25,6 +25,12 @@ function createHandler(db = createDatabase()) {
         if (!input || typeof input !== 'object' || Array.isArray(input)) throw new HttpError(400, 'Expected JSON object');
       }
       if (path === '/tickets' && method === 'POST') return reply(201, await db.create(newTicket(input, user)));
+      const commentPath = /^\/tickets\/([^/]+)\/comments$/.exec(path);
+      if (commentPath && ['GET', 'POST'].includes(method)) {
+        const ticket = await db.get(commentPath[1]); assertAccess(ticket, user);
+        if (method === 'GET') return reply(200, { items: ticket.comments || [] });
+        return reply(201, await db.addComment(ticket, newComment(input, user, ticket)));
+      }
       const match = /^\/tickets\/([^/]+)$/.exec(path);
       if (match && ['GET', 'PATCH', 'DELETE'].includes(method)) {
         const ticket = await db.get(match[1]); assertAccess(ticket, user);

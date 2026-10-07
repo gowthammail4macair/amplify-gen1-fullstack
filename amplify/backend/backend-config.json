@@ -85,6 +85,14 @@
           ],
           "category": "function",
           "resourceName": "ticketAuthorizer"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "supportGraphql"
         }
       ],
       "providerPlugin": "awscloudformation",

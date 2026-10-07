@@ -5,6 +5,7 @@ const { createDatabase } = require('./database.cjs');
 const { assertAccess, HttpError } = require('./domain.cjs');
 function createHandler({ db = createDatabase(), doc = DynamoDBDocumentClient.from(new DynamoDBClient({})), management } = {}) {
   return async event => {
+    if (Array.isArray(event.Records)) return require('./notifications.cjs').createHandler({ doc, management })(event);
     const { routeKey, connectionId, domainName, stage } = event.requestContext;
     const TableName = process.env.CONNECTIONS_TABLE;
     const manager = management || new ApiGatewayManagementApiClient({ endpoint: `https://${domainName}/${stage}` });
@@ -13,7 +14,8 @@ function createHandler({ db = createDatabase(), doc = DynamoDBDocumentClient.fro
     if (routeKey === '$connect') {
       const a = event.requestContext.authorizer;
       if (!a?.owner || Number(a.expiresAt) <= Math.floor(Date.now() / 1000)) return { statusCode: 401, body: 'Unauthorized' };
-      await doc.send(new PutCommand({ TableName, Item: { connectionId, owner: a.owner, groups: a.groups || '', expiresAt: Number(a.expiresAt) } }));
+      await doc.send(new PutCommand({ TableName, Item: { connectionId, owner: a.owner, groups: a.groups || '', expiresAt: Number(a.expiresAt),
+        endpoint: `https://${domainName}/${stage}` } }));
       return { statusCode: 200, body: '' };
     }
     const connection = (await doc.send(new GetCommand({ TableName, Key: { connectionId }, ConsistentRead: true }))).Item;
@@ -25,10 +27,14 @@ function createHandler({ db = createDatabase(), doc = DynamoDBDocumentClient.fro
     let message;
     try {
       const input = JSON.parse(event.body || '{}');
-      if (routeKey !== 'getTicket' || input.action !== 'getTicket' || typeof input.id !== 'string' || !input.id) throw new HttpError(400, 'Send {action:"getTicket",id:"..."}');
-      const ticket = await db.get(input.id);
-      assertAccess(ticket, { owner: connection.owner, groups: connection.groups.split(',') });
-      message = { type: 'ticket', ticket };
+      if (input.action === 'ping') message = { type: 'pong' };
+      else {
+        if (routeKey !== 'getTicket' || input.action !== 'getTicket' || typeof input.id !== 'string' || !input.id) throw new HttpError(400, 'Unknown WebSocket action');
+        const ticket = await db.get(input.id);
+        assertAccess(ticket, { owner: connection.owner, groups: (connection.groups || '').split(',') });
+        const { comments, ...metadata } = ticket;
+        message = { type: 'ticket', ticket: metadata };
+      }
     } catch (error) {
       message = { type: 'error', message: error instanceof SyntaxError ? 'Invalid JSON' : error.statusCode ? error.message : 'Internal server error' };
     }
