@@ -38,6 +38,12 @@ Pause/Resume control. No manual ticket lookup is required. New tickets and
 status/title changes update the queue and counters. The selected ticket's status
 and comments update automatically; unsaved form edits stay in place.
 
+Queue filters apply to the ticket list and counters. The notification feed is
+independent: customers receive their own ticket updates, including edits made
+by Agents, and Agents receive updates for all tickets. An authorized event from
+outside the selected queue appears in the feed without inserting its ticket
+into the filtered list.
+
 Select a ticket to reveal its status editor and Comments section. Choose Open,
 In progress, or Closed and click Save changes. Enter a comment and click Add
 comment. Comments show the verified author and timestamp and persist across

@@ -73,6 +73,10 @@ The Agent response includes the permitted `agentOwners` so live events can be
 filtered without losing loaded pages. Refresh and reconnect refresh that
 membership snapshot. Pagination and live updates retain the selected queue.
 Agents still have permission to read and manage customer tickets by ID.
+The notification feed shows all events authorized for the signed-in account,
+independently of the selected queue. Agents receive customer ticket updates
+without adding those tickets to their personal or Agent-created lists. Customers
+receive updates to their own tickets regardless of who made the change.
 
 ## GraphQL
 

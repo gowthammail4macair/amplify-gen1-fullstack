@@ -46,6 +46,7 @@ test('Agent UI separates queues across GraphQL, refresh, pagination, reconnect a
   assert.equal(element('queue-title').textContent,'My tickets');assert.equal(element('total-count').textContent,1);
   for(const ticket of [peer,customer])onEvent({type:'ticketChanged',eventId:'mine-'+ticket.id,change:'created',ticket});
   await settle();assert.equal(element('total-count').textContent,1);
+  assert.deepEqual(element('live-events').children.map(li=>li.textContent),['New ticket: Customer','New ticket: Peer Agent']);
   element('list-api').value='GraphQL';await element('list-api').onchange();
   assert.equal(calls.at(-1).owner,own.owner);assert.equal(calls.at(-1).source,'GraphQL');
   await element('agent-queue').onclick();
@@ -60,6 +61,8 @@ test('Agent UI separates queues across GraphQL, refresh, pagination, reconnect a
   assert.equal(element('queue-title').textContent,'Agent queue');assert.equal(element('total-count').textContent,3);
   onEvent({type:'ticketChanged',eventId:'queue-customer',change:'created',ticket:customer});await settle();
   assert.equal(element('total-count').textContent,3);assert.ok(!element('ticket-list').children.some(li=>li.children[0].children[0].textContent==='Customer'));
+  onEvent({type:'ticketChanged',eventId:'customer-status',change:'updated',ticket:{...customer,status:'CLOSED'}});await settle();
+  assert.equal(element('total-count').textContent,3);assert.equal(element('live-events').children[0].textContent,'Ticket updated: Customer · Closed');
   await element('my-tickets').onclick();assert.equal(element('queue-title').textContent,'My tickets');assert.equal(element('total-count').textContent,1);
   assert.equal(element('list-api').disabled,false);await element('refresh').onclick();assert.equal(calls.at(-1).queue,'mine');
   onEvent({type:'ticketChanged',eventId:'owner-changed',change:'updated',ticket:{...own,owner:peer.owner}});await settle();

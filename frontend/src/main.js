@@ -127,15 +127,16 @@ async function flushLive(){
         if(!belongs){
           state.tickets=state.tickets.filter(ticket=>ticket.id!==event.ticket.id);
           if(state.selected?.id===event.ticket.id)state.selected=null;
-          renderTickets();renderDetails();continue;
+          renderTickets();renderDetails();
+        }else{
+          merge(event.ticket,false);
+          if(event.commentsChanged&&state.selected?.id===event.ticket.id)await loadComments();
         }
-        merge(event.ticket,false);
-        if(event.commentsChanged&&state.selected?.id===event.ticket.id)await loadComments();
         label=event.change==='created'?'New ticket: '+event.ticket.title:event.change==='commentAdded'?'New comment on: '+event.ticket.title:'Ticket updated: '+event.ticket.title+' · '+prettyStatus(event.ticket.status);
       }else if(event.type==='ticketRemoved'){
         state.tickets=state.tickets.filter(t=>t.id!==event.ticketId);
         if(state.selected?.id===event.ticketId)state.selected=null;
-        renderTickets();renderDetails();label='Ticket removed from your queue.';
+        renderTickets();renderDetails();label='Ticket removed: '+event.ticketId;
       }else continue;
       if(epoch!==state.sessionVersion||!state.profile)break;
       state.notifications.unshift(label);state.notifications=state.notifications.slice(0,5);
