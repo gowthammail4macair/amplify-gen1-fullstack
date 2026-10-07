@@ -103,7 +103,8 @@ async function pushed(ws, id, predicate = () => true) {
       const peer=await gql(peerAgent,'mutation($input:CreateTicketInput!){createTicket(input:$input){id title status owner}}',{input:{title:'Peer Agent queue smoke '+runId,status:'OPEN'}});
       assert.ok(peer.data?.createTicket?.id,JSON.stringify(peer));tickets.push(peer.data.createTicket.id);
       const peerClaims=JSON.parse(Buffer.from(peerAgent.split('.')[1],'base64url'));
-      assert.equal(peer.data.createTicket.owner,peerClaims.sub+'::'+peerClaims['cognito:username']);
+      const peerStored=await rest(peerAgent,'GET','/tickets/'+peer.data.createTicket.id);
+      assert.equal(peerStored.status,200);assert.equal(peerStored.body.owner,peerClaims.sub+'::'+peerClaims['cognito:username']);
       const listRest=async(token,path)=>{
         const items=[];let cursor;
         do{const result=await rest(token,'GET',path+(cursor?'?nextToken='+encodeURIComponent(cursor):''));assert.equal(result.status,200,JSON.stringify(result));items.push(...result.body.items);cursor=result.body.nextToken;}while(cursor);
@@ -112,13 +113,14 @@ async function pushed(ws, id, predicate = () => true) {
       const personal=await listRest(agent,'/tickets');
       assert.ok(personal.some(t=>t.id===mine.body.id));assert.ok(personal.every(t=>t.owner===mine.body.owner));
       const peerPersonal=await listRest(peerAgent,'/tickets');
-      assert.ok(peerPersonal.some(t=>t.id===peer.data.createTicket.id));assert.ok(peerPersonal.every(t=>t.owner===peer.data.createTicket.owner));
+      assert.ok(peerPersonal.some(t=>t.id===peer.data.createTicket.id));assert.ok(peerPersonal.every(t=>t.owner===peerStored.body.owner));
       const ownGraphql=[];let cursor;
       do{
         const result=await gql(agent,'query($filter:ModelTicketFilterInput,$nextToken:String){listTickets(filter:$filter,nextToken:$nextToken,limit:50){items{id owner} nextToken}}',{filter:{owner:{eq:mine.body.owner}},nextToken:cursor||null});
         assert.ok(!result.errors,JSON.stringify(result));ownGraphql.push(...result.data.listTickets.items.filter(Boolean));cursor=result.data.listTickets.nextToken;
       }while(cursor);
-      assert.ok(ownGraphql.some(t=>t.id===mine.body.id));assert.ok(ownGraphql.every(t=>t.owner===mine.body.owner));
+      // Generated GraphQL owner fields return the username; REST exposes the stored sub::username.
+      assert.deepEqual(new Set(ownGraphql.map(t=>t.id)),new Set(personal.map(t=>t.id)));
       const queue=await listRest(agent,'/admin/tickets');
       assert.ok(queue.some(t=>t.id===mine.body.id));assert.ok(queue.some(t=>t.id===peer.data.createTicket.id));
       assert.ok(!queue.some(t=>[ticket.id,graphqlTicket.id].includes(t.id)));

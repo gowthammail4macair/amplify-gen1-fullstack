@@ -56,8 +56,10 @@ authorizer validates signature, issuer, app-client audience, expiry, and
 `token_use`; its exact-method ARN policy has caching disabled. Conditional
 writes protect ownership. Follow `nextToken` even when a scan page is empty.
 
-The stored owner uses `sub::username`. Agents have full model access. Generated
-GraphQL owner rules permit ownership reassignment; REST and custom workflows
+The stored owner uses `sub::username`. Generated GraphQL owner fields return
+the username portion; list filters use the stored composite value. Agents have
+full model access. Generated GraphQL owner rules permit ownership reassignment;
+REST and custom workflows
 do not accept owner changes. The old owner receives only a ticket-removal
 notification when access changes.
 

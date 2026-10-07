@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-07T08:27:49.786Z",
+  "timestamp": "2026-10-07T17:24:53.002Z",
   "scope": "Live AWS HTTPS, Cognito SRP and WebSocket integration",
   "checks": [
     {
-      "name": "Cognito SRP login: two owners and an Agents member",
+      "name": "Cognito SRP login: two owners and two Agents members",
       "status": "passed"
     },
     {
@@ -32,6 +32,10 @@
     },
     {
       "name": "AppSync generated create/update resolvers write shared DynamoDB",
+      "status": "passed"
+    },
+    {
+      "name": "Personal REST/GraphQL lists separate two Agents; Agent queue includes only Agents tickets",
       "status": "passed"
     },
     {
@@ -75,14 +79,43 @@
     "users": [
       "fulfilled",
       "fulfilled",
+      "fulfilled",
       "fulfilled"
     ],
     "socketsClosed": 3,
     "ticketIds": [
-      "ac4c791e-056d-488c-aead-6a0fbf8bb05b",
-      "e299fc68-1b3a-43f1-9d42-ea7a3273ca56",
-      "de437cc8-3b33-4f96-9941-d09e48516d29",
-      "4e18f7c3-d846-47d6-bc7f-738a00ffe6d7"
+      "11ba2ace-97e7-4bea-b36a-5bed0cc10f3f",
+      "b86cb180-897b-4d98-bc9e-cb9c653dbee8",
+      "830f33a5-da47-4156-b20e-07ab889ab203",
+      "25431845-be41-485b-a96a-a01e681af021",
+      "b90cf35e-b11b-47e9-b134-82caa26b1c03",
+      "61b568a7-e2ac-4d24-8aaa-69e50bb6c10c"
+    ],
+    "ticketResults": [
+      {
+        "id": "11ba2ace-97e7-4bea-b36a-5bed0cc10f3f",
+        "status": 404
+      },
+      {
+        "id": "b86cb180-897b-4d98-bc9e-cb9c653dbee8",
+        "status": 404
+      },
+      {
+        "id": "830f33a5-da47-4156-b20e-07ab889ab203",
+        "status": 200
+      },
+      {
+        "id": "25431845-be41-485b-a96a-a01e681af021",
+        "status": 200
+      },
+      {
+        "id": "b90cf35e-b11b-47e9-b134-82caa26b1c03",
+        "status": 200
+      },
+      {
+        "id": "61b568a7-e2ac-4d24-8aaa-69e50bb6c10c",
+        "status": 200
+      }
     ]
   },
   "endpoints": {
