@@ -1,10 +1,23 @@
 # CI/CD, infrastructure and migration diagrams
 
+## Current runtime notification architecture
+
+![Current DynamoDB Streams to WebSocket push architecture](support-ticket-live-updates.png)
+
+![Two-browser status and comment notification sequence](ticket-live-notifications-sequence.png)
+
+These current images supersede the original lookup illustration for runtime
+behavior. See [diagram details and editable sources](CURRENT-DIAGRAMS.md).
+The earlier CI/CD and migration pictures below preserve the original local
+milestone. Current validation runs 30 runtime/UI tests, synthesis, 17 live API
+check groups, five hosting checks, and 12 two-session browser checks per project.
+
+
 ## Gen 1 and Gen 2 CI/CD
 
 ![Gen 1 and Gen 2 CI/CD and infrastructure management](ci-cd-infrastructure-gen1-gen2.png)
 
-The diagrams were created during the initial local validation phase and preserve that historical status banner. The repositories now include connected GitHub Actions backend deployment pipelines; see [cloud results](CLOUD-DEPLOYMENT.md) for the current implementation. The CI diagram shows the Amplify-managed build option. Gen 1 uses category inputs, SDL, function templates, a REST override and custom CDK. Native Gen 2 uses TypeScript factories and CDK. Both projects already provide `npm run validate`; their scripts perform TypeScript checks, 21 runtime tests and synthesis.
+The diagrams were created during the initial local validation phase and preserve that historical status banner. The repositories now include connected GitHub Actions backend deployment pipelines; see [cloud results](CLOUD-DEPLOYMENT.md) for the current implementation. The CI diagram shows the Amplify-managed build option. Gen 1 uses category inputs, SDL, function templates, a REST override and custom CDK. Native Gen 2 uses TypeScript factories and CDK. Both projects already provide `npm run validate`; the original diagram-era scripts performed TypeScript checks, 21 runtime tests and synthesis; the current counts are listed above.
 
 The cloud command examples follow AWS documentation: [Gen 1 Hosting deployment helper](https://docs.aws.amazon.com/amplify/latest/userguide/edit-build-settings.html) and [Gen 2 pipeline deployment](https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/cross-account-deployments/). No CI service, build specification, service role or deployed environment was created by this diagram task.
 

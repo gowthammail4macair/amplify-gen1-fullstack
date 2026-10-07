@@ -1,0 +1,21 @@
+flowchart LR
+  U["Browser: ticket owner or Agent"] -->|"Sign in"| C["Amazon Cognito"]
+  C -->|"ID token"| U
+  U --> R["API Gateway REST"]
+  R --> RA["Cognito or Agents Lambda authorizer"]
+  RA --> RL["ticketRest Lambda"]
+  U --> G["AppSync with Cognito authorization"]
+  G --> D["Generated CRUD resolvers"]
+  G --> W["ticketWorkflow: summary, close, comments"]
+  RL --> T[("Ticket table with stored comments")]
+  D --> T
+  W --> T
+  T --> E["DynamoDB Streams: NEW_AND_OLD_IMAGES"]
+  E --> L["ticketSocketHandler: owner/Agents and expiry filter"]
+  U -->|"Authenticated connection"| S["API Gateway WebSocket"]
+  S -.->|"$connect verification"| A["Lambda verifies Cognito ID token"]
+  A -.->|"Allow or deny connect"| S
+  S -->|"Connect, disconnect, heartbeat"| L
+  L -->|"Manage live connections"| K[("Connections: ID, owner, groups, JWT expiry, TTL")]
+  L -->|"Push authorized metadata"| S
+  S -->|"Automatic ticket/status/comment notification"| U

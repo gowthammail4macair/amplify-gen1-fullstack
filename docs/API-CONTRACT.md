@@ -8,26 +8,32 @@ WebSocket Lambda, which pushes metadata to authorized connected browsers.
 
 ## Architecture
 
+![Current stream-driven WebSocket architecture](support-ticket-live-updates.png)
+
+[Two-browser sequence and diagram sources](CURRENT-DIAGRAMS.md).
+
 ```mermaid
 flowchart LR
-  U["Signed-in browser"] --> C["Cognito sign-in"]
+  U["Browser: ticket owner or Agent"] -->|"Sign in"| C["Amazon Cognito"]
+  C -->|"ID token"| U
   U --> R["API Gateway REST"]
   R --> RA["Cognito or Agents Lambda authorizer"]
-  RA --> RL["Ticket REST Lambda"]
-  U --> G["AppSync with Cognito"]
-  G --> D["Generated model resolvers"]
-  G --> W["Custom workflow Lambda"]
-  RL --> T[("Ticket table and comments")]
+  RA --> RL["ticketRest Lambda"]
+  U --> G["AppSync with Cognito authorization"]
+  G --> D["Generated CRUD resolvers"]
+  G --> W["ticketWorkflow: summary, close, comments"]
+  RL --> T[("Ticket table with stored comments")]
   D --> T
   W --> T
-  T --> E["DynamoDB Streams"]
-  E --> L["WebSocket Lambda"]
-  U --> S["API Gateway WebSocket"]
-  S --> A["Connect Lambda verifies Cognito token"]
-  S --> L
-  L --> K[("Connection records")]
+  T --> E["DynamoDB Streams: NEW_AND_OLD_IMAGES"]
+  E --> L["ticketSocketHandler: owner/Agents and expiry filter"]
+  U -->|"Authenticated connection"| S["API Gateway WebSocket"]
+  S -.->|"$connect verification"| A["Lambda verifies Cognito ID token"]
+  A -.->|"Allow or deny connect"| S
+  S -->|"Connect, disconnect, heartbeat"| L
+  L -->|"Manage live connections"| K[("Connections: ID, owner, groups, JWT expiry, TTL")]
   L -->|"Push authorized metadata"| S
-  S -->|"Live notifications"| U
+  S -->|"Automatic ticket/status/comment notification"| U
 ```
 
 ## REST

@@ -36,6 +36,8 @@ The REST origin allowlist supports both localhost:3000 and this hosted origin.
 
 ## Workflows
 
+[Current architecture and browser-notification diagrams](../docs/CURRENT-DIAGRAMS.md) show how API writes update another signed-in browser.
+
 - Create and list tickets through REST or generated GraphQL resolvers.
 - Edit through REST, then read the same record through GraphQL.
 - Get a summary and close a ticket using custom AppSync Lambda resolvers.

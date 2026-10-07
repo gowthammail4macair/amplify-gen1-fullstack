@@ -1,5 +1,7 @@
 # Architecture diagram generation
 
+The updated illustrated architecture and notification sequence are in [CURRENT-DIAGRAMS.md](CURRENT-DIAGRAMS.md), with exact prompts in [live-diagram-generation.json](live-diagram-generation.json). The prompt below generated the original historical lookup diagram.
+
 Historical prompt and bitmap for the original manual-lookup version. The current stream-driven architecture is documented in [API-CONTRACT.md](API-CONTRACT.md#architecture) and [the live feature guide](LIVE-UPDATES-AND-COMMENTS.md).
 
 Mode: built-in image_gen (imagegen skill).

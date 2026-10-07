@@ -4,6 +4,10 @@ The SupportDesk frontend is included under [`frontend/`](frontend/README.md). It
 
 ## Current live notifications and comments
 
+![Current live-update architecture](docs/support-ticket-live-updates.png)
+
+[Two-browser notification sequence](docs/ticket-live-notifications-sequence.png) · [Diagram details and editable sources](docs/CURRENT-DIAGRAMS.md)
+
 After sign-in, WebSocket updates connect automatically. Creating a ticket through
 REST or GraphQL, changing its title/status, or adding a comment pushes an update
 to its owner and authorized Agents. The queue, counters, selected status, and
@@ -17,24 +21,26 @@ form and Add comment. Comments persist with verified authors and timestamps.
 
 ```mermaid
 flowchart LR
-  U["Signed-in browser"] --> C["Cognito sign-in"]
+  U["Browser: ticket owner or Agent"] -->|"Sign in"| C["Amazon Cognito"]
+  C -->|"ID token"| U
   U --> R["API Gateway REST"]
   R --> RA["Cognito or Agents Lambda authorizer"]
-  RA --> RL["Ticket REST Lambda"]
-  U --> G["AppSync with Cognito"]
-  G --> D["Generated model resolvers"]
-  G --> W["Custom workflow Lambda"]
-  RL --> T[("Ticket table and comments")]
+  RA --> RL["ticketRest Lambda"]
+  U --> G["AppSync with Cognito authorization"]
+  G --> D["Generated CRUD resolvers"]
+  G --> W["ticketWorkflow: summary, close, comments"]
+  RL --> T[("Ticket table with stored comments")]
   D --> T
   W --> T
-  T --> E["DynamoDB Streams"]
-  E --> L["WebSocket Lambda"]
-  U --> S["API Gateway WebSocket"]
-  S --> A["Connect Lambda verifies Cognito token"]
-  S --> L
-  L --> K[("Connection records")]
+  T --> E["DynamoDB Streams: NEW_AND_OLD_IMAGES"]
+  E --> L["ticketSocketHandler: owner/Agents and expiry filter"]
+  U -->|"Authenticated connection"| S["API Gateway WebSocket"]
+  S -.->|"$connect verification"| A["Lambda verifies Cognito ID token"]
+  A -.->|"Allow or deny connect"| S
+  S -->|"Connect, disconnect, heartbeat"| L
+  L -->|"Manage live connections"| K[("Connections: ID, owner, groups, JWT expiry, TTL")]
   L -->|"Push authorized metadata"| S
-  S -->|"Live notifications"| U
+  S -->|"Automatic ticket/status/comment notification"| U
 ```
 
 [Original lookup architecture — historical](docs/support-ticket-architecture.png)

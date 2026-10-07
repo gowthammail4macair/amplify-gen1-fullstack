@@ -1,0 +1,28 @@
+sequenceDiagram
+  autonumber
+  actor A as Browser A
+  participant R as REST API and ticketRest Lambda
+  participant D as Ticket table and DynamoDB Streams
+  participant L as ticketSocketHandler
+  participant S as API Gateway WebSocket
+  actor B as Browser B: owner/Agent, ticket selected
+  Note over A,B: Both sign in with Cognito and open WebSocket connections; connect Lambda verifies ID tokens
+  rect rgb(225,247,235)
+    A->>R: PATCH /tickets/{id}: IN_PROGRESS
+    R->>D: Persist status
+    D->>L: Stream new and old images
+    L->>L: Filter owner/Agents and check JWT expiry
+    L->>S: Post ticketChanged metadata to connection
+    S-->>B: Update queue and selected status
+  end
+  rect rgb(237,231,255)
+    A->>R: POST /tickets/{id}/comments
+    R->>D: Atomic append with verified author
+    D->>L: Stream commentAdded
+    L->>S: Push metadata: commentsChanged=true
+    S-->>B: New-comment notification
+    B->>R: GET /tickets/{id}/comments with Cognito token
+    R-->>B: Return comments after owner/Agents check
+  end
+  Note over L,B: WebSocket sends metadata; comment bodies come from the protected API
+  Note over A,B: Pause/resume reconnects and resyncs; GraphQL writes use the same stream-to-push path
