@@ -1,5 +1,29 @@
 # Live notifications and ticket comments
 
+## Current event flow
+
+```mermaid
+flowchart LR
+  U["Signed-in browser"] --> C["Cognito sign-in"]
+  U --> R["API Gateway REST"]
+  R --> RA["Cognito or Agents Lambda authorizer"]
+  RA --> RL["Ticket REST Lambda"]
+  U --> G["AppSync with Cognito"]
+  G --> D["Generated model resolvers"]
+  G --> W["Custom workflow Lambda"]
+  RL --> T[("Ticket table and comments")]
+  D --> T
+  W --> T
+  T --> E["DynamoDB Streams"]
+  E --> L["WebSocket Lambda"]
+  U --> S["API Gateway WebSocket"]
+  S --> A["Connect Lambda verifies Cognito token"]
+  S --> L
+  L --> K[("Connection records")]
+  L -->|"Push authorized metadata"| S
+  S -->|"Live notifications"| U
+```
+
 After Cognito sign-in the browser opens an authenticated WebSocket connection.
 The Live channel card shows connection state, recent notifications, and a
 Pause/Resume control. No manual ticket lookup is required. New tickets and

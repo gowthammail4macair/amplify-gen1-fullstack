@@ -49,9 +49,9 @@ WebSocket notifications update other authorized connected browsers automatically
 See [live updates and comments](../docs/LIVE-UPDATES-AND-COMMENTS.md) for the event flow, API routes, validation, and limits. Existing accounts must be created through
 Cognito administration; this demo frontend does not offer public registration.
 
-## Latest live browser recheck
+## Original lookup browser recheck — 4 October 2026
 
-On 4 October 2026 the final hosted frontend passed 17 browser checks, including
+On 4 October 2026 the original lookup frontend passed 17 browser checks, including
 REST, generated and custom GraphQL resolvers, WebSocket lookup, authentication,
 and owner authorization denial. Summaries and live responses now clear when the
 selected ticket or its stored content changes. See
@@ -60,6 +60,8 @@ selected ticket or its stored content changes. See
 All new fixtures were cleaned up and the existing demo owner account was retained.
 
 Live notifications and comments supersede the earlier manual lookup walkthrough. The earlier browser reports are historical evidence for that original version.
+
+## Current live-notification verification — 7 October 2026
 
 The live-notification version was deployed and verified on 7 October 2026. See
 [the latest browser evidence](../evidence/live-feature-browser.json), including

@@ -1,5 +1,7 @@
 # Architecture diagram generation
 
+Historical prompt and bitmap for the original manual-lookup version. The current stream-driven architecture is documented in [API-CONTRACT.md](API-CONTRACT.md#architecture) and [the live feature guide](LIVE-UPDATES-AND-COMMENTS.md).
+
 Mode: built-in image_gen (imagegen skill).
 
 Selected final output:

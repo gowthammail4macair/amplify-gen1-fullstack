@@ -2,6 +2,41 @@
 
 The steps below record initial construction and local validation. The later authorized GitHub Actions deployment and live API results are recorded in [CLOUD-DEPLOYMENT.md](CLOUD-DEPLOYMENT.md).
 
+## Live notifications, comments, and status editing — current implementation
+
+The initial construction steps below are followed by the deployed enhancement
+verified on 7 October 2026. [LIVE-UPDATES-AND-COMMENTS.md](LIVE-UPDATES-AND-COMMENTS.md)
+and [API-CONTRACT.md](API-CONTRACT.md) describe the current UI and message protocol.
+
+- `src/domain.cjs`, `src/database.cjs`, and `src/rest.cjs` validate comments,
+  derive authors from verified claims, and append them atomically to the Ticket
+  item. GET/POST `/tickets/{id}/comments` enforce owner/Agents access. Comments
+  are limited to 100 per ticket and 2000 UTF-8 bytes each.
+- `src/workflow.cjs` implements `listTicketComments` and `addTicketComment`
+  alongside summary and close. The generated Ticket input does not expose the
+  stored comment attribute.
+- `src/websocket.cjs` dispatches DynamoDB stream events to `src/notifications.cjs`.
+  The broadcaster sends ticket metadata to authorized owner/Agent connections,
+  removes expired/gone sessions, and emits removal messages after deletion or
+  access revocation. The existing socket Lambda is reused.
+- `frontend/src/api.js` connects automatically, handles repeated push messages,
+  sends a four-minute heartbeat, and reconnects with a current token.
+  `frontend/src/main.js` updates the queue/status/comments, preserves drafts,
+  and prevents delayed responses crossing sign-ins. Pause/Resume resyncs the
+  queue and selected comments. The Status selector and Comments form appear
+  after selecting a ticket.
+
+Current validation: 30 runtime/UI tests, 17 live API check groups, five hosting
+checks, and 12 two-session browser checks per repository. See
+[CI evidence](../evidence/live-feature-ci.json) and
+[browser results and fixture cleanup](../evidence/live-feature-browser.json).
+
+The Gen 1 `custom/ticketSocket/cdk-stack.ts` imports the transformer-exported
+Ticket stream ARN and creates a scoped stream-read policy and Lambda event
+source mapping. The handler's native template grants connection-table scanning.
+`scripts/synth.ts` compiles GraphQL before the custom CDK dependency helper reads
+its generated outputs; this order also passes with no cached GraphQL build.
+
 ## 1. Define the use case and shared contract
 
 A support-ticket owner creates and manages tickets. Agents have additional administrative access. REST, GraphQL and WebSockets all use the same model table within the backend. [API-CONTRACT.md](API-CONTRACT.md) lists every operation and its authorization.
@@ -25,7 +60,7 @@ The local synthesis script invokes the **official** `AmplifyAuthTransform` to bu
 
 ## 4. Define GraphQL and DynamoDB
 
-`api/supportGraphql/schema.graphql` contains `Ticket @model`, owner and Agents `@auth` rules, and a TicketStatus enum. Amplify generates the Ticket DynamoDB table, CRUD resolvers, auth pipeline functions and subscription fields. `ticketSummary` and `closeTicket` use `@function(name: "ticketWorkflow-${env}")`.
+`api/supportGraphql/schema.graphql` contains `Ticket @model`, owner and Agents `@auth` rules, and a TicketStatus enum. Amplify generates the Ticket DynamoDB table, CRUD resolvers, auth pipeline functions and subscription fields. `ticketSummary`, `closeTicket`, `listTicketComments`, and `addTicketComment` use `@function(name: "ticketWorkflow-${env}")`.
 
 `function/ticketWorkflow/` contains a native Lambda definition. Its runtime in `src/workflow.cjs` reads/updates DynamoDB and enforces owner or Agents authorization. The function gets the generated table name from the API ID and environment parameters.
 
@@ -39,19 +74,19 @@ The compiler needs Gen 1 environment metadata even for offline compilation. `scr
 
 ## 5. Add Lambda-backed REST
 
-`api/supportRest/cli-inputs.json` describes `/tickets` and `/admin/tickets` using `ticketRest`. The Gen 1 REST category normally generates open ANY/proxy methods for those inputs. `api/supportRest/override.ts` replaces that surface with the six explicit protected methods in the API contract and an unauthenticated CORS preflight.
+`api/supportRest/cli-inputs.json` describes `/tickets` and `/admin/tickets` using `ticketRest`. The Gen 1 REST category normally generates open ANY/proxy methods for those inputs. `api/supportRest/override.ts` replaces that surface with the eight explicit protected methods in the API contract and unauthenticated CORS preflights.
 
 The override adds two OpenAPI authorizers: native Cognito for ticket operations and a TOKEN Lambda authorizer for the Agent endpoint. It injects the Auth pool ARN and authorizer Lambda ARN from the parent stack and grants API Gateway permission to invoke the authorizer. The open category inputs are an input to the override; the synthesized deployed methods are protected. Removing the override would remove that protection.
 
-`src/rest.cjs` dispatches requests; `src/authorizer.cjs` validates Cognito ID tokens and group membership. `src/database.cjs` implements bounded owner-filtered listing and conditional writes. Native Lambda templates contain DynamoDB permissions and environment variables. CORS is restricted to `http://localhost:3000`; adjust the override and runtime origin together for a frontend deployment.
+`src/rest.cjs` dispatches requests; `src/authorizer.cjs` validates Cognito ID tokens and group membership. `src/database.cjs` implements bounded owner-filtered listing and conditional writes. Native Lambda templates contain DynamoDB permissions and environment variables. The origin allowlist in `frontend/origins.cjs` includes `http://localhost:3000` and this project's hosted HTTPS frontend. Lambda data responses and preflights use that allowlist; gateway-generated error responses have readable CORS headers.
 
 ## 6. Add WebSockets through Gen 1 custom CDK
 
-`custom/ticketSocket/cdk-stack.ts` creates the WebSocket API, Lambda integration, connect REQUEST authorizer, four routes, stage and connection table. It uses the Gen 1 `AmplifyHelpers.addResourceDependency` API to reference Auth and the native Lambda functions. The `env` parameter comes from the Gen 1 CLI.
+`custom/ticketSocket/cdk-stack.ts` creates the WebSocket API, Lambda integration, connect REQUEST authorizer, four routes, stage and connection table. It uses the Gen 1 `AmplifyHelpers.addResourceDependency` API to reference Auth, the native Lambda functions, and the compiled GraphQL API outputs. The `env` parameter comes from the Gen 1 CLI.
 
 The `ticketSocketHandler` Lambda depends on Auth/API, not on the custom stack. Both the Lambda's connection-table environment variable and the CDK table definition compute `Connections-<pool-id>`. This avoids a circular dependency. Its callback IAM policy allows only the deployment stage's connection-management paths, but must wildcard API IDs in Gen 1 to avoid a custom-stack/function-stack cycle. Gen 2 uses the exact API ID.
 
-The connection table uses PAY_PER_REQUEST, `connectionId` as its key, JWT expiry as TTL, and Retain deletion/replacement policy. The Lambda verifies access again for every ticket lookup and disconnects expired sessions.
+The connection table uses PAY_PER_REQUEST, `connectionId` as its key, JWT expiry as TTL, and Retain deletion/replacement policy. The Lambda enforces access and expiry for legacy requests and every broadcast recipient. The current website receives stream-driven push notifications; `getTicket` remains an API compatibility route.
 
 ## 7. Run local verification
 
@@ -59,9 +94,9 @@ The connection table uses PAY_PER_REQUEST, `connectionId` as its key, JWT expiry
 npm run validate
 ```
 
-This runs TypeScript checks, 21 runtime tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
+This runs TypeScript checks, 30 runtime/UI tests, official Auth/REST template synthesis, official CLI GraphQL compilation, custom WebSocket CDK synthesis and dependency-graph cycle checks. Evidence is in `evidence/synthesis.json` and `evidence/graphql-compile.log`. CDK's unused dependency-parameter warnings and Amplify's root-field/owner-rule warnings are recorded; they are not deployment success evidence.
 
-`dist/`, `build/`, local environment metadata and cloud outputs are ignored. Lambda code and all infrastructure inputs are committed. All four functions package their own dependencies on a future `amplify push`.
+`dist/`, `build/`, local environment metadata and cloud outputs are ignored. Lambda code and all infrastructure inputs are committed. All four functions package their own dependencies during `amplify push`.
 
 ## 8. Initialize and test in AWS later
 
@@ -76,7 +111,7 @@ npm run amplify -- status
 npm run amplify -- push
 ```
 
-Choose a lowercase environment such as `dev`; review all category changes. Read the REST and GraphQL endpoints from CLI outputs and the WebSocket URL from the `customticketSocket` nested stack outputs. Create confirmed test users, add one to Agents, and run the cloud smoke matrix in [API-CONTRACT.md](API-CONTRACT.md). Fresh CloudFormation deployment, IAM enforcement and cloud resolver execution have not been validated here.
+Choose a lowercase environment such as `dev`; review all category changes. Read the REST and GraphQL endpoints from CLI outputs and the WebSocket URL from the `customticketSocket` nested stack outputs. Create confirmed test users, add one to Agents, and run the cloud smoke matrix in [API-CONTRACT.md](API-CONTRACT.md). The independent deployed environment passed the live checks linked above. Stateful Gen 1-to-Gen 2 resource transfer remains a separate, unperformed operation.
 
 ## References
 
