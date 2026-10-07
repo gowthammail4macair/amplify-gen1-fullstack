@@ -42,6 +42,8 @@ jobs:
         run: node scripts/hosting.cjs prepare
       - name: Deploy Amplify Gen 1 environment
         run: node scripts/deploy.cjs
+      - name: Verify deployed Lambda package contents
+        run: node scripts/check-lambda-packages.cjs
       - name: Exercise deployed REST, GraphQL and WebSocket APIs
         run: node scripts/smoke-test.cjs
       - name: Build frontend against the deployed backend
@@ -58,6 +60,7 @@ jobs:
             amplify_outputs.json
             evidence/live-smoke.json
             evidence/synthesis.json
+            evidence/deployed-lambda-packages.json
             evidence/frontend-deployment.json
             evidence/frontend-hosting-checks.json
             frontend/hosting.json

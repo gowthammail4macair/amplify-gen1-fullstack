@@ -56,7 +56,7 @@ npm run validate
 
 Read [the implementation guide](docs/IMPLEMENTATION.md) for the steps used to build this project, and [the API contract](docs/API-CONTRACT.md) for requests and authorization behavior. [Synthesis evidence](evidence/synthesis.json) records the checks performed.
 
-`amplify/backend/` contains native Gen 1 Auth, API and Function definitions. WebSockets are a Gen 1 custom CDK resource. `src/` is the canonical Lambda code; the prepare script copies it into self-contained Gen 1 Lambda source folders. CLI version 14.5.1 is pinned as the official source-distributed `@aws-amplify/cli-internal` package, whose binary is `amplify`. Node 22 is the target Lambda/runtime version. This session validated with Node 24.16.0.
+`amplify/backend/` contains native Gen 1 Auth, API and Function definitions. WebSockets are a Gen 1 custom CDK resource. `src/` is the canonical Lambda code; the prepare script copies only the modules required by each handler into its self-contained Gen 1 Lambda source folder and removes stale `.cjs` copies. Function package manifests list only their required libraries. `npm test` checks those packages in isolated directories and runs the backend suites against the packaged modules. CLI version 14.5.1 is pinned as the official source-distributed `@aws-amplify/cli-internal` package, whose binary is `amplify`. Node 22 is the target Lambda/runtime version. This session validated with Node 24.16.0.
 
 `.github/workflows/deploy.yml` deploys commits to `main` using temporary OIDC credentials. `scripts/deploy.cjs` selects the configured `dev` environment, replaces offline validation metadata, initializes against the actual application and pushes the backend. See the cloud deployment guide for evidence and pipeline status.
 

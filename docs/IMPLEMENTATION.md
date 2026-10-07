@@ -45,7 +45,7 @@ A support-ticket owner creates and manages tickets. Agents have additional admin
 
 I authored the Gen 1 category inputs and function templates under `amplify/backend/`, using CLI 14.5.1 structures. This initial construction was offline; the later CI deployment uses actual `amplify init`/`push` against the configured environment. `amplify/.config/project-config.json` describes the JavaScript project. `amplify/cli.json` enables GraphQL Transformer v2 and the default `sub::username` owner claim.
 
-`backend-config.json` records category dependencies. The official CLI is a pinned development dependency. `scripts/prepare-local.cjs` creates ignored local metadata only when missing and copies canonical `src/*.cjs` into each Lambda's `src/` folder. It does not fabricate an AWS app ID, stack or credentials.
+`backend-config.json` records category dependencies. The official CLI is a pinned development dependency. `scripts/prepare-local.cjs` creates ignored local metadata only when missing and copies each handler's required canonical `src/*.cjs` modules into its Lambda `src/` folder, removing obsolete `.cjs` copies. The authorizer includes `authorizer` and `domain`; REST and workflow include their handler, `domain`, and `database`; the socket includes `websocket`, `domain`, `database`, and `notifications`. Function manifests contain only the libraries those files import. `test/lambda-packages.test.cjs` checks the dependency graph and reruns the backend suites using isolated copies with only declared dependencies available. It does not fabricate an AWS app ID, stack or credentials.
 
 ```bash
 npm ci

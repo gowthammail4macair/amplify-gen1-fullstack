@@ -4,10 +4,18 @@ const config = require('../amplify/backend/backend-config.json');
 fs.mkdirSync('amplify/.config', { recursive: true });
 if (!fs.existsSync('amplify/.config/local-env-info.json')) fs.writeFileSync('amplify/.config/local-env-info.json', JSON.stringify({ projectPath: process.cwd(), envName: 'local' }, null, 2));
 if (!fs.existsSync('amplify/backend/amplify-meta.json')) fs.writeFileSync('amplify/backend/amplify-meta.json', JSON.stringify({ ...config, providers: { awscloudformation: { Region: 'us-east-1' } } }, null, 2));
-for (const [name, module] of Object.entries({ ticketRest: 'rest', ticketAuthorizer: 'authorizer', ticketWorkflow: 'workflow', ticketSocketHandler: 'websocket' })) {
+// ponytail: explicit file lists keep each Gen 1 package self-contained without bundling other handlers.
+for (const [name, modules] of Object.entries({
+  ticketRest: ['rest', 'domain', 'database'],
+  ticketAuthorizer: ['authorizer', 'domain'],
+  ticketWorkflow: ['workflow', 'domain', 'database'],
+  ticketSocketHandler: ['websocket', 'domain', 'database', 'notifications']
+})) {
   const dir = `amplify/backend/function/${name}/src`;
-  for (const f of fs.readdirSync('src').filter(f => f.endsWith('.cjs'))) fs.copyFileSync(`src/${f}`, `${dir}/${f}`);
-  fs.writeFileSync(`${dir}/index.js`, `exports.handler = require('./${module}.cjs').handler;\n`);
+  const files = modules.map(module => `${module}.cjs`);
+  for (const file of fs.readdirSync(dir)) if (file.endsWith('.cjs') && !files.includes(file)) fs.rmSync(`${dir}/${file}`);
+  for (const file of files) fs.copyFileSync(`src/${file}`, `${dir}/${file}`);
+  fs.writeFileSync(`${dir}/index.js`, `exports.handler = require('./${modules[0]}.cjs').handler;\n`);
 }
 
 // Category-add normally records this metadata. Reconstruct it from the checked-in CLI inputs.
