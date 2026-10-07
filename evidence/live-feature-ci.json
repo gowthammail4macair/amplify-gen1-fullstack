@@ -1,0 +1,23 @@
+{
+  "runId": 37592738857,
+  "url": "https://github.com/gowthammail4macair/amplify-gen1-fullstack/actions/runs/37592738857",
+  "sourceSha": "846ae9098428a7777fb4739ea23088ac27da7d88",
+  "conclusion": "success",
+  "liveApiChecksPassed": 17,
+  "hostingChecksPassed": 5,
+  "existingPoolAndTablePreserved": true,
+  "cleanup": {
+    "users": [
+      "fulfilled",
+      "fulfilled",
+      "fulfilled"
+    ],
+    "socketsClosed": 3,
+    "ticketIds": [
+      "ac4c791e-056d-488c-aead-6a0fbf8bb05b",
+      "e299fc68-1b3a-43f1-9d42-ea7a3273ca56",
+      "de437cc8-3b33-4f96-9941-d09e48516d29",
+      "4e18f7c3-d846-47d6-bc7f-738a00ffe6d7"
+    ]
+  }
+}

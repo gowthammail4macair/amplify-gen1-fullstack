@@ -48,3 +48,19 @@ identities and fixtures are removed in the existing finally cleanup.
 
 AWS references: [Gen 1 model Lambda triggers](https://docs.amplify.aws/gen1/react/tools/cli/usage/lambda-triggers/),
 [Gen 2 DynamoDB Streams](https://docs.amplify.aws/javascript/build-a-backend/functions/examples/dynamo-db-stream/).
+
+## Deployment verification — 7 October 2026
+
+The deployed version passed 30 local/runtime UI tests, 17 live AWS API check
+groups, five hosting checks, and 12 checks using two real browser sessions.
+The observer received REST and GraphQL creations, REST status updates, a custom
+Lambda close, and a new comment without refresh. Pause/resume recovered a missed
+status update and retained the persisted comment. Incoming updates preserved an
+unsaved title. Both sessions signed out.
+
+See [CI results](../evidence/live-feature-ci.json),
+[browser results and fixture cleanup](../evidence/live-feature-browser.json), and
+[the browser screenshot](../evidence/live-feature-browser.jpg). The screenshot
+was captured before the new fixtures were removed. Pre-existing tickets and the
+existing demo owner account were preserved. Browser tests used the same owner in
+two sessions; cross-owner and Agents authorization were tested in live CI.

@@ -1,24 +1,24 @@
 {
   "project": "amplify-gen1-fullstack",
   "configSource": "amplify_outputs.json",
-  "sourceSha": "a2f5e0a8f78765d16b5aedcf2051de2d938a43c4",
-  "builtAt": "2026-10-04T11:47:23.274Z",
+  "sourceSha": "846ae9098428a7777fb4739ea23088ac27da7d88",
+  "builtAt": "2026-10-07T08:27:50.014Z",
   "frontendLabel": "Amplify Gen 1",
   "assets": [
     {
-      "path": "assets/app-b7aa2532f7f0.js",
-      "sha256": "b7aa2532f7f0f8d120a19569538bb2b30c2270712c270815f8951902c053449c",
-      "bytes": 104528
+      "path": "assets/app-e39537a2cbfc.js",
+      "sha256": "e39537a2cbfc960754f82e3e490fec8f0fdfb4e757ef960c7e91940e8d327e87",
+      "bytes": 108318
     },
     {
-      "path": "assets/style-012d39db5352.css",
-      "sha256": "012d39db53520053bb83aa631e5014833e93bd4d091cbda241e6703a35be2a4f",
-      "bytes": 10711
+      "path": "assets/style-861d63dccec6.css",
+      "sha256": "861d63dccec639b8202e547cb31712c292de8bf37e6de8ba5e878b7e76aa14a4",
+      "bytes": 11763
     },
     {
       "path": "index.html",
-      "sha256": "710aa0633dd071da5f2a259773502d505201e2bf9579ca4aba24e09670c858c3",
-      "bytes": 8038
+      "sha256": "e78de94354af5a126a55795b3e474777605226fc24db66e804f0234d7622a0a7",
+      "bytes": 8843
     }
   ],
   "auth": {

@@ -1,0 +1,91 @@
+{
+  "run": "20261007-muxubna4",
+  "method": "Two live browser sessions; writer actions and observer push updates without refresh",
+  "result": {
+    "url": "https://d2i2kf1hg91937.cloudfront.net/",
+    "script": "/assets/app-e39537a2cbfc.js",
+    "checks": [
+      {
+        "name": "Observer sign-in and automatic WebSocket connection",
+        "passed": true
+      },
+      {
+        "name": "Writer sign-in and automatic WebSocket connection",
+        "passed": true
+      },
+      {
+        "name": "REST creation appears in observer without refresh",
+        "passed": true
+      },
+      {
+        "name": "REST status update reaches selected observer ticket without refresh",
+        "passed": true
+      },
+      {
+        "name": "Persisted comment is pushed and rendered in selected observer ticket",
+        "passed": true
+      },
+      {
+        "name": "Custom GraphQL Lambda close is pushed to observer",
+        "passed": true
+      },
+      {
+        "name": "Incoming updates preserve unsaved title edits",
+        "passed": true
+      },
+      {
+        "name": "Generated GraphQL creation appears in observer without refresh",
+        "passed": true
+      },
+      {
+        "name": "Paused observer stays unchanged while writer updates",
+        "passed": true
+      },
+      {
+        "name": "Resume reconnects and resyncs the missed status update",
+        "passed": true
+      },
+      {
+        "name": "Persisted comment remains after reconnect and resync",
+        "passed": true
+      },
+      {
+        "name": "Both sessions sign out and stop live updates",
+        "passed": true
+      }
+    ],
+    "fixtures": [
+      {
+        "id": "cdae0708-374f-46f3-931e-2338823e6be3",
+        "title": "Live push Gen1 20261007-muxubna4",
+        "source": "REST"
+      },
+      {
+        "id": "6a7949f0-3942-4768-96c1-1696ce234088",
+        "title": "Live push Gen1 20261007-muxubna4 GraphQL",
+        "source": "GraphQL"
+      }
+    ],
+    "sourceSha": "846ae9098428a7777fb4739ea23088ac27da7d88",
+    "ciRun": "https://github.com/gowthammail4macair/amplify-gen1-fullstack/actions/runs/37592738857"
+  },
+  "cleanup": {
+    "removedOnlyFixtureIds": [
+      "cdae0708-374f-46f3-931e-2338823e6be3",
+      "6a7949f0-3942-4768-96c1-1696ce234088"
+    ],
+    "remainingTicketIds": [
+      "c6491c61-b664-4281-98ca-3b5d09e8d6b7",
+      "30e5ee9d-cf1d-456e-85d9-d1a52dd1ce5c",
+      "3acdd8af-edac-4612-b45a-abf0e335f2b4",
+      "32a90fac-1cc0-4054-80b9-7d804d50b7c4"
+    ],
+    "preExistingTicketsPreserved": true,
+    "ownerSignInSucceeded": true
+  },
+  "limits": [
+    "The permanent-delete browser dialog was not exercised. Only exact new fixtures were deleted through the protected REST API.",
+    "Browser testing used two sessions of the same owner; cross-owner isolation and Agents access were tested by live API CI.",
+    "Notifications update the open signed-in website; operating-system notification popups are not requested."
+  ]
+}

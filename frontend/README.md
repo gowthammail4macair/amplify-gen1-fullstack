@@ -60,3 +60,7 @@ selected ticket or its stored content changes. See
 All new fixtures were cleaned up and the existing demo owner account was retained.
 
 Live notifications and comments supersede the earlier manual lookup walkthrough. The earlier browser reports are historical evidence for that original version.
+
+The live-notification version was deployed and verified on 7 October 2026. See
+[the latest browser evidence](../evidence/live-feature-browser.json), including
+two-session push checks and comment/status workflows.
