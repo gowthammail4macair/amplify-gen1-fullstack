@@ -35,12 +35,12 @@ test('Browser push updates the queue/status, preserves drafts, and renders persi
   }
   const elements=new Map(),element=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
   element('status-filter').value='ALL';element('list-api').value='REST';element('create-api').value='REST';
-  let onState,onEvent,comments=[],posted;
+  let onState,onEvent,comments=[],posted,profileEmail='alice@example.invalid';
   const ticket={id:'one',owner:'alice::alice',title:'Printer',status:'OPEN',updatedAt:'2026-10-07T00:00:00.000Z'};
   const api={list:async()=>({items:[],nextToken:null}),comments:async()=>({items:comments}),addComment:async(id,body)=>{posted={id,body};const c={id:'c1',body,author:'Alice',createdAt:'2026-10-07T00:02:00.000Z'};comments.push(c);return c;}};
   const scope={document:{getElementById:element,createElement:()=>new Element(),querySelectorAll:()=>[]},
     __APP_CONFIG__:{auth:{},api:{websocket:'wss://example.invalid'},project:{label:'Test',repository:'https://example.invalid'}},
-    authentication:()=>({signIn:async()=>({email:'alice@example.invalid'}),token:async()=>'',signOut(){}}),ticketApi:()=>api,
+    authentication:()=>({signIn:async()=>({email:profileEmail}),token:async()=>'',signOut(){}}),ticketApi:()=>api,
     liveChannel:(url,token,state,event)=>{onState=state;onEvent=event;return{connect:async()=>onState(true),disconnect:()=>onState(false)};},
     window:{addEventListener(){}},crypto:{randomUUID:()=> 'sync'},queueMicrotask,Date,JSON,Set,Map,console};
   vm.createContext(scope);
@@ -59,5 +59,9 @@ test('Browser push updates the queue/status, preserves drafts, and renders persi
   assert.deepEqual(posted,{id:'one',body:'<script>alert(1)</script>'});
   assert.equal(element('comment-list').children[0].children[1].textContent,'<script>alert(1)</script>');
   assert.equal(element('new-comment').value,'');assert.equal(element('comments-empty').hidden,true);
+  let completeOldRead;api.comments=()=>new Promise(resolve=>{completeOldRead=resolve;});
+  onEvent({type:'ticketChanged',eventId:'late',change:'commentAdded',commentsChanged:true,ticket:{...ticket,status:'CLOSED',updatedAt:'2026-10-07T00:03:00.000Z'}});
   element('sign-out').onclick();assert.equal(element('workspace').hidden,true);assert.equal(element('comment-list').children.length,0);
+  profileEmail='bob@example.invalid';await element('sign-in-form').onsubmit({preventDefault(){}});completeOldRead({items:comments});await settle();
+  assert.equal(element('live-events').children.length,0);assert.equal(element('total-count').textContent,0);element('sign-out').onclick();
 });

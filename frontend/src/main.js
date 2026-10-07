@@ -1,7 +1,7 @@
 import { authentication, ticketApi, liveChannel } from './api.js';
 const config=__APP_CONFIG__, $=id=>document.getElementById(id);
 const auth=authentication(config.auth), api=ticketApi(config.api,()=>auth.token());
-const state={profile:null,tickets:[],selected:null,detailVersion:null,nextToken:null,busy:false,connected:false,livePaused:false,activity:[],notifications:[],pending:[],seen:new Set(),processing:false,commentRequest:0};
+const state={profile:null,tickets:[],selected:null,detailVersion:null,nextToken:null,busy:false,connected:false,livePaused:false,activity:[],notifications:[],pending:[],seen:new Set(),processing:false,commentRequest:0,sessionVersion:0};
 const prettyStatus=value=>({OPEN:'Open',IN_PROGRESS:'In progress',CLOSED:'Closed'}[value]||value);
 const live=liveChannel(config.api.websocket,()=>auth.token(),connected=>{
   state.connected=connected;
@@ -86,12 +86,13 @@ function renderDetails(){
 }
 async function loadComments(){
   const id=state.selected?.id;if(!id)return {items:[]};
-  const request=++state.commentRequest,result=await api.comments(id);
-  if(state.selected?.id===id&&request===state.commentRequest){state.selected.comments=result.items;renderComments();}
+  const epoch=state.sessionVersion,request=++state.commentRequest,result=await api.comments(id);
+  if(epoch===state.sessionVersion&&state.selected?.id===id&&request===state.commentRequest){state.selected.comments=result.items;renderComments();}
   return result;
 }
 async function load(more=false,keepDraft=false,source=$('list-api').value){
-  const edits=keepDraft?draft():null,previous=state.selected,result=await api.list(source,more?state.nextToken:null);
+  const epoch=state.sessionVersion,edits=keepDraft?draft():null,previous=state.selected,result=await api.list(source,more?state.nextToken:null);
+  if(epoch!==state.sessionVersion||!state.profile)return result;
   state.tickets=more?[...new Map([...state.tickets,...result.items].map(t=>[t.id,t])).values()]:result.items;
   state.nextToken=result.nextToken;
   const selected=state.tickets.find(t=>t.id===previous?.id);
@@ -109,7 +110,7 @@ async function flushLive(){
   state.processing=true;
   try{
     while(state.pending.length&&!state.busy&&state.profile){
-      const event=state.pending.shift();
+      const epoch=state.sessionVersion,event=state.pending.shift();
       state.seen.add(event.eventId);if(state.seen.size>200)state.seen.delete(state.seen.values().next().value);
       if(event.type==='sync'){state.busy=true;renderControls();try{await load(false,true,'REST');}finally{state.busy=false;renderControls();}continue;}
       let label;
@@ -123,6 +124,7 @@ async function flushLive(){
         if(state.selected?.id===event.ticketId)state.selected=null;
         renderTickets();renderDetails();label='Ticket removed from your queue.';
       }else continue;
+      if(epoch!==state.sessionVersion||!state.profile)break;
       state.notifications.unshift(label);state.notifications=state.notifications.slice(0,5);
       $('live-events').replaceChildren(...state.notifications.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
       $('live-result').textContent=label;
@@ -134,7 +136,7 @@ $('project-badge').textContent=config.project.label;$('environment-label').textC
 $('sign-in-form').onsubmit=async event=>{
   event.preventDefault();if(state.busy)return;state.busy=true;$('login-error').textContent='';$('sign-in').textContent='Signing in…';renderControls();
   try{
-    state.profile=await auth.signIn($('email').value.trim(),$('password').value);$('password').value='';
+    state.profile=await auth.signIn($('email').value.trim(),$('password').value);state.sessionVersion++;$('password').value='';
     $('sign-in-page').hidden=true;$('workspace').hidden=false;$('account-label').textContent=state.profile.email;$('sign-out').hidden=false;
     notice('Signed in. Loading your tickets…');const result=await load();
     notice('Signed in. Your ticket queue is ready.');log('Signed in and loaded tickets',{profile:state.profile,tickets:result});
@@ -143,7 +145,7 @@ $('sign-in-form').onsubmit=async event=>{
   finally{state.busy=false;$('sign-in').textContent='Sign in to workspace →';renderControls();flushLive();}
 };
 $('sign-out').onclick=()=>{
-  state.livePaused=true;live.disconnect();auth.signOut();state.profile=null;state.tickets=[];state.selected=null;state.nextToken=null;state.activity=[];state.pending=[];state.seen.clear();state.notifications=[];
+  state.sessionVersion++;state.livePaused=true;live.disconnect();auth.signOut();state.profile=null;state.tickets=[];state.selected=null;state.nextToken=null;state.activity=[];state.pending=[];state.seen.clear();state.notifications=[];
   $('workspace').hidden=true;$('sign-in-page').hidden=false;$('sign-out').hidden=true;$('account-label').textContent='';$('password').value='';$('api-response').textContent='{}';$('activity').replaceChildren();$('live-events').replaceChildren();
   renderTickets();renderDetails();
 };

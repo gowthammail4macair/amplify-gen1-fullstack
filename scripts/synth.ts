@@ -28,11 +28,6 @@ async function main() {
   rest.generateCfnInputParameters();
   await rest.saveBuildFiles();
   const restTemplate = rest.cfn;
-  const app = new App({ outdir: 'dist/socket-cdk' });
-  const socket = new cdkStack(app, 'SocketValidation', {}, { category: 'custom', resourceName: 'ticketSocket' });
-  const socketTemplate = app.synth().getStackArtifact(socket.artifactId).template;
-  mkdirSync('amplify/backend/custom/ticketSocket/build', { recursive: true });
-  writeFileSync('amplify/backend/custom/ticketSocket/build/ticketSocket-cloudformation-template.json', JSON.stringify(socketTemplate, null, 2));
   // The CLI compiler reads a current-cloud snapshot even before first deployment.
   // Only create an offline metadata fixture if no real cloud snapshot exists.
   mkdirSync('amplify/#current-cloud-backend', { recursive: true });
@@ -42,6 +37,12 @@ async function main() {
   }
   const compile = spawnSync(process.execPath, ['node_modules/@aws-amplify/cli-internal/bin/amplify', 'api', 'gql-compile'], { encoding: 'utf8', env: { ...process.env, AMPLIFY_CLI_DISABLE_USAGE_DATA: 'true' } });
   if (compile.status || !compile.stdout.includes('GraphQL schema compiled successfully')) throw new Error(compile.stdout + compile.stderr);
+  // Compile GraphQL first: the CDK dependency helper reads its generated outputs.
+  const app = new App({ outdir: 'dist/socket-cdk' });
+  const socket = new cdkStack(app, 'SocketValidation', {}, { category: 'custom', resourceName: 'ticketSocket' });
+  const socketTemplate = app.synth().getStackArtifact(socket.artifactId).template;
+  mkdirSync('amplify/backend/custom/ticketSocket/build', { recursive: true });
+  writeFileSync('amplify/backend/custom/ticketSocket/build/ticketSocket-cloudformation-template.json', JSON.stringify(socketTemplate, null, 2));
   const schema = readFileSync('amplify/backend/api/supportGraphql/build/schema.graphql', 'utf8');
   for (const operation of ['createTicket', 'getTicket', 'listTickets', 'updateTicket', 'deleteTicket', 'ticketSummary', 'closeTicket', 'listTicketComments', 'addTicketComment']) assert.ok(schema.includes(operation), operation);
   assert.ok(readdirSync('amplify/backend/api/supportGraphql/build/resolvers').some(f => f.includes('createTicket')));

@@ -29,7 +29,7 @@ async function user(label, agent = false) {
   });
 }
 async function rest(token, method, path, input) {
-  const response = await fetch(restBase + path, { method, headers: { ...(token ? { Authorization: token } : {}), 'Content-Type': 'application/json' }, ...(input ? { body: JSON.stringify(input) } : {}), signal: AbortSignal.timeout(30000) });
+  const response = await fetch(restBase + path, { method, headers: { ...(token ? { Authorization: token } : {}), 'Content-Type': 'application/json' }, ...(input && !['GET','HEAD'].includes(method) ? { body: JSON.stringify(input) } : {}), signal: AbortSignal.timeout(30000) });
   return { status: response.status, body: await response.json() };
 }
 async function gql(token, query, variables = {}) {
