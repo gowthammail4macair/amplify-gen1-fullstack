@@ -1,53 +1,20 @@
-flowchart TB
-  subgraph workflow["GitHub Actions workflow — runs independently in EACH repository"]
-    direction LR
-    trigger["Push main / workflow_dispatch"] --> runner["Ubuntu / Node 22 / npm 11.13.0"]
-    runner --> validate["npm ci; npm run validate<br/>Typecheck, runtime/UI tests, synthesis"]
-    validate --> oidc["GitHub OIDC → project IAM role<br/>Temporary AWS credentials / ap-south-1"]
-    oidc --> plugins["Gen 1 only: configure CLI and scan plugins"]
-    plugins --> hosting["hosting.cjs prepare<br/>CloudFormation frontend stack"]
-    hosting --> backend["Deploy this repository's backend<br/>Use the matching implementation below"]
-    backend --> outputs["amplify_outputs.json<br/>This deployment's endpoints and Cognito IDs"]
-    outputs --> packages["Gen 1 only: verify deployed Lambda packages"]
-    packages --> smoke["smoke-test.cjs<br/>REST, GraphQL, WebSocket, auth, comments, stream push"]
-    smoke --> build["npm run frontend:build<br/>Uses this deployment's outputs"]
-    build --> publish["hosting.cjs publish<br/>Upload frontend/dist to private S3"]
-    publish --> checks["check-hosting.cjs<br/>HTTPS asset hashes, manifest, redirect, private origin"]
+flowchart LR
+  subgraph P1["Project1 — preserved Gen1 reference"]
+    G1["GitHub main / dispatch"] --> V1["npm ci + npm run validate"] --> E1["Validation evidence · 14 days"]
+    LOCK["Gen1 deployment locked"]
+    A1["Retained Gen1 APIs"]
   end
-  workflow -. "if: always() — also after failure" .-> evidence["Upload available deployment-evidence<br/>Outputs, synthesis, live API and hosting results<br/>Retention: 14 days"]
-
-  subgraph implementations["Backend implementations — separate apps and stack sets; no cross-project data flow"]
-    direction TB
-    subgraph gen1["amplify-gen1-fullstack / environment dev"]
-      direction LR
-      source1["amplify/backend/<br/>Categories, SDL, overrides, custom CDK"] --> deploy1["node scripts/deploy.cjs<br/>amplify init; amplify push --yes"]
-      deploy1 --> stacks1["CloudFormation root + category stacks"]
-      stacks1 --> output1["deploy.cjs exports amplify_outputs.json"]
-    end
-    subgraph gen2["amplify-gen2-fullstack / branch main"]
-      direction LR
-      source2["amplify/backend.ts<br/>TypeScript factories + CDK"] --> deploy2["ampx pipeline-deploy<br/>--branch main --app-id AMPLIFY_APP_ID"]
-      deploy2 --> stacks2["CloudFormation / CDK resource stacks"]
-      stacks2 --> output2["ampx generate outputs<br/>amplify_outputs.json"]
-    end
-    subgraph migrated["amplify-gen1-to-gen2-migration / branch main"]
-      direction LR
-      source3["Repaired Gen 2 source<br/>TypeScript factories + CDK"] --> deploy3["ampx pipeline-deploy<br/>Separate app ID / main branch"]
-      deploy3 --> stacks3["Independent CloudFormation / CDK stacks"]
-      stacks3 --> output3["ampx generate outputs<br/>amplify_outputs.json"]
-    end
+  subgraph P2["Project2 — independent native Gen2"]
+    G2["GitHub main / dispatch"] --> V2["Validate"] --> O2["AWS OIDC"] --> H2["Prepare hosting"] --> D2["ampx pipeline-deploy"] --> C2["Gen2 CDK stacks"]
+    C2 --> S2["Independent Cognito + DynamoDB"]
+    C2 --> T2["Generate outputs + live API checks"] --> F2["Build + publish frontend"] --> K2["Hosting checks + evidence"]
   end
-
-  subgraph infrastructure["Infrastructure pattern repeated in each project — isolated resources"]
-    direction LR
-    identity["Service inventory:<br/>Cognito / API Gateway REST / AppSync / Lambda"]
-    tickets[("Ticket table<br/>Tickets + comments")]
-    tickets --> stream["DynamoDB Stream"] --> socket["ticketSocketHandler<br/>Owner / Agents / expiry filter"]
-    connections[("Connections table")] --- socket
-    socket --> websocket["API Gateway WebSocket"] --> browser["Signed-in browser"]
-    browser --> cloudfront["CloudFront HTTPS"]
-    cloudfront -->|"OAC origin access"| assets[("Private S3 assets")]
-    redirect["Separate S3 website bucket"] -->|"301 redirect"| cloudfront
+  subgraph P3["Project3 — migrated Gen2"]
+    G3["GitHub main / dispatch"] --> V3["Validate + main import synthesis"] --> O3["AWS OIDC"] --> H3["Prepare hosting"] --> D3["ampx pipeline-deploy"] --> C3["Gen2 CDK APIs + Lambda"]
+    C3 --> T3["Generate outputs + live API checks"] --> F3["Build frontend"] --> PUB["Publish migration and original URLs"] --> K3["Hosting checks + evidence"]
   end
-  isolation["Migrated Gen 2 deploys independently.<br/>No Gen 1 users or data are transferred."]
-  failure["Failed steps stop later deployment and publishing.<br/>Browser E2E checks are separate from this workflow."]
+  A1 --> STATE["Original Gen1 user/identity pools, clients, Agents, Ticket and Connections"]
+  C3 --> STATE
+  STATE --> STREAM["Original Ticket stream"] --> N3["Gen2 notification Lambda"] --> WS["Old + new WebSocket clients"]
+  N1["Old Gen1 stream consumer disabled"]
+  HOLD["Previous destination auth/custom state held; old Ticket table retained"]

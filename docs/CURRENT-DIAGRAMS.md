@@ -1,3 +1,5 @@
+> **Current architecture — 8 October 2026:** Gen1 deployment is locked and validates the preserved reference; Project3 owns or imports the original Gen1 state and publishes both website URLs. Native Gen2 remains independent. See [current CI/CD](CI-CD-AND-MIGRATION.md) and [the completed migration report](https://github.com/gowthammail4macair/amplify-gen1-to-gen2-migration/blob/main/docs/STATEFUL-MIGRATION.md). Earlier dated independent-deployment descriptions are historical.
+
 # Current architecture and live-update diagrams
 
 These diagrams describe the deployed notification and comment implementation

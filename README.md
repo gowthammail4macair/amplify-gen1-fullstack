@@ -1,5 +1,12 @@
 # Amplify Gen 1: support tickets
 
+## Preserved Gen1 source after completed migration — 8 October 2026
+
+The original Cognito users, clients, identity pool, Agents and Connections resources are now owned by Project3; the original Ticket table is imported and retained. Gen1 infrastructure deployment is locked. This repository validates the retained source. Its original website URL now serves Project3’s Gen2 frontend, while existing open Gen1 clients can still use the retained APIs.
+
+[Current three-project CI/CD](docs/CI-CD-AND-MIGRATION.md) · [Completed migration and evidence](https://github.com/gowthammail4macair/amplify-gen1-to-gen2-migration/blob/main/docs/STATEFUL-MIGRATION.md)
+
+
 The SupportDesk frontend is included under [`frontend/`](frontend/README.md). Its separate S3/CloudFront hosting and full-stack deployment are managed by the GitHub workflow; live URLs are recorded in [`frontend/hosting.json`](frontend/hosting.json).
 
 ## Current live notifications and comments
