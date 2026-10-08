@@ -1,10 +1,26 @@
-> Historical image prompts from the initial local phase. Cloud deployment and API verification were subsequently authorized; current results are in CLOUD-DEPLOYMENT.md. The original images have not been regenerated.
-
 # CI/CD and migration diagram generation
 
 Mode: built-in image_gen, using the imagegen skill.
 
-## CI/CD and infrastructure prompt
+## Current CI/CD diagram — 8 October 2026
+
+The CI/CD PNG has been replaced with the current GitHub Actions architecture for
+Gen 1, native Gen 2, and independently deployed migrated Gen 2. It now includes
+OIDC, actual deployment commands, live API tests, S3/CloudFront frontend hosting,
+hosting verification, and the always-run evidence upload.
+
+The exact replacement prompt, PNG hash, inspected source hashes, and successful
+workflow runs are in [ci-cd-diagram-generation.json](ci-cd-diagram-generation.json).
+The matching editable flow is [ci-cd-infrastructure-gen1-gen2.mmd](ci-cd-infrastructure-gen1-gen2.mmd).
+The replacement uses the built-in imagegen tool with the old bitmap as the edit
+target; it is saved under the same filename in all three repositories and the
+enclosing workspace. See [current pipeline details](CI-CD-AND-MIGRATION.md).
+
+The prompts below are retained only as historical generation records. The
+migration-tool PNG still illustrates the original local exercise; its later
+independent AWS deployment is described in the project deployment guide.
+
+## Historical CI/CD prompt — superseded
 
 Use case: infographic-diagram
 Asset type: documentation architecture diagram for these AWS Amplify support-ticket repositories.
@@ -55,7 +71,7 @@ A separate bottom note: "Gen 2 ampx sandbox is a personal AWS deployment, not of
 
 Do not draw a frontend, CDN or frontend build; these repositories are backend-only. Do not depict CI/CD as already deployed. Do not invent an amplify.yml or GitHub Actions workflow present in the repo. This is an informative reference design using the actual local check commands and documented cloud deployment mechanisms. Keep spelling exact, avoid crossed arrows, and show clearly that backend definitions become CloudFormation-managed services.
 
-## Migration workflow prompt
+## Historical migration workflow prompt
 
 Use case: infographic-diagram
 Asset type: technical documentation diagram showing how the official AWS Amplify Gen 1 to Gen 2 tool produces destination code and how this repository exercised it.

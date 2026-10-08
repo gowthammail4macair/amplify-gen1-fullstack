@@ -30,6 +30,17 @@ Pause/Resume reconnects and resyncs current state. These are in-page updates in
 the signed-in website, with no manual WebSocket lookup required. The legacy
 `getTicket` route remains for compatibility and API tests.
 
+## Current CI/CD
+
+![Current CI/CD for Gen 1, native Gen 2, and migrated Gen 2](ci-cd-infrastructure-gen1-gen2.png)
+
+Updated on 8 October 2026 from all three GitHub Actions workflows and successful
+deployment runs. It covers validation, OIDC credentials, separate backend
+deployments, live API checks, frontend publishing to S3/CloudFront, hosting checks,
+and evidence upload. [Pipeline details](CI-CD-AND-MIGRATION.md),
+[editable source](ci-cd-infrastructure-gen1-gen2.mmd), and
+[generation and verification record](ci-cd-diagram-generation.json).
+
 ## Sources and verification
 
 - [Editable architecture source](support-ticket-live-updates.mmd)
@@ -41,5 +52,5 @@ the signed-in website, with no manual WebSocket lookup required. The legacy
 The PNGs were created with the built-in imagegen tool and visually inspected
 against `src/notifications.cjs`, `src/websocket.cjs`, and the workflow handlers.
 The Mermaid files describe the same flow and provide an editable reference.
-The original lookup bitmap and earlier CI/migration illustrations remain
-historical artifacts; they do not describe the current notification UI.
+The original lookup bitmap and migration-tool illustration remain historical
+artifacts. The CI/CD illustration now documents the current deployed pipeline.

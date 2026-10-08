@@ -1,0 +1,97 @@
+{
+  "updatedOn": "2026-10-08",
+  "mode": "Built-in image_gen edit",
+  "asset": "ci-cd-infrastructure-gen1-gen2.png",
+  "editableSource": "ci-cd-infrastructure-gen1-gen2.mmd",
+  "prompt": "Use case: infographic-diagram.\nAsset type: replacement for docs/ci-cd-infrastructure-gen1-gen2.png, a current technical CI/CD architecture illustration shared by THREE repositories.\nInput image role: EDIT TARGET, old diagram. Replace all obsolete pipeline content and reorganize into the layout below. Keep the polished AWS-style flat iconography, white canvas, dark navy text, pale green/lavender/blue bands, rounded rectangles and crisp orthogonal arrows. Create a high-resolution wide landscape image, large readable labels with generous space. Prioritize exact stage order and accurate labels over decoration. No tiny text.\n\nTitle: \"CI/CD & Infrastructure: Three Amplify Projects\"\nSubtitle: \"GitHub Actions → AWS deployment → verified SupportDesk website\"\nStatus line: \"Current architecture · ap-south-1 · 8 October 2026\"\nSmall orientation line: \"Each repository runs this workflow independently\"\n\nBAND A, heading \"1 · Validate and prepare — in each repository\"\nFive boxes with left-to-right arrows:\n\"GitHub\" / \"Push main / manual dispatch\"\n→ \"Actions runner\" / \"Ubuntu · Node 22\" / \"npm 11.13.0\"\n→ \"Install + validate\" / \"npm ci\" / \"npm run validate\" / \"Types · tests · synthesis\"\n→ \"AWS OIDC role\" / \"Temporary credentials\"\n→ \"Prepare hosting\" / \"CloudFormation\" / \"S3 + CloudFront\".\nA readable small note below: \"Gen 1 discovers CLI plugins before preparing hosting.\"\nA separate concise label: \"Failed steps stop later deployment and publishing.\"\n\nBAND B, heading \"2 · Deploy the backend — separate app and stacks per row\"\nTHREE compact horizontal lanes with colored backgrounds and aligned columns. Each lane progresses left-to-right and does not connect to other rows.\nLane 1 green:\n\"Amplify Gen 1\" / \"Environment: dev\"\n→ \"amplify/backend/\" / \"Categories · SDL · overrides\"\n→ \"scripts/deploy.cjs\" / \"amplify init → amplify push --yes\"\n→ \"CloudFormation\" / \"Root + category stacks\"\n→ \"amplify_outputs.json\" / \"Exported by deploy script\".\nUnder Lane 1, a short note \"Then verify deployed Lambda packages\".\nLane 2 lavender:\n\"Native Gen 2\" / \"Branch: main\"\n→ \"amplify/backend.ts\" / \"TypeScript + CDK\"\n→ \"ampx pipeline-deploy\" / \"App ID + main branch\"\n→ \"CloudFormation\" / \"CDK resource stacks\"\n→ \"ampx generate outputs\" / \"amplify_outputs.json\".\nLane 3 light blue:\n\"Migrated Gen 2\" / \"Branch: main\"\n→ \"Repaired Gen 2 source\" / \"TypeScript + CDK\"\n→ \"ampx pipeline-deploy\" / \"Separate app ID + main\"\n→ \"CloudFormation\" / \"Independent CDK stacks\"\n→ \"ampx generate outputs\" / \"amplify_outputs.json\".\nUnder all lanes, a clear amber annotation: \"Migrated Gen 2 deploys independently; no Gen 1 users or data are transferred.\"\n\nBAND C, heading \"3 · Verify and publish — repeated independently in each repository\"\nFour aligned boxes with left-to-right arrows:\n\"Live API checks\" / \"REST · GraphQL · WebSocket\" / \"Auth · comments · live push\"\n→ \"Build frontend\" / \"npm run frontend:build\" / \"Uses deployed outputs\"\n→ \"Publish assets\" / \"Private S3 asset bucket\" / \"CloudFront HTTPS + OAC\"\n→ \"Hosting checks\" / \"HTTPS assets match build\" / \"Redirect + private origin\".\nSmall note: \"A second S3 website bucket redirects to the HTTPS site.\"\nDistinct artifact callout outside the success-only path, with dashed styling:\n\"Always upload available evidence\" / \"deployment-evidence · 14 days\" / \"Outputs · synthesis · API + hosting results\".\nThis is attempted even if an earlier step fails; do not imply it runs only on success.\n\nBAND D, compact bottom architecture inventory titled \"Infrastructure in EACH project\"\nUse flat AWS icons beside readable names, four separated cards:\n\"Identity + APIs\" / \"Cognito · REST · AppSync\" / \"API Gateway WebSocket\"\n\"Functions + data\" / \"Lambda · Ticket table\" / \"Connections table\"\n\"Automatic live updates\" / \"Ticket DynamoDB Stream\" / \"→ socket Lambda → WebSocket\"\n\"Frontend hosting\" / \"CloudFront → private S3 (OAC)\" / \"Separate redirect bucket\".\nFooter: \"Three repositories · three backends · three frontend sites · isolated resources\"\n\nImportant correctness constraints: All stages are GitHub Actions, not Amplify Hosting build jobs. The prep and publish bands are a repeated pattern, NOT a single shared service or a fan-in joining the three backends. Make this obvious through the repeated-per-repository labels; do not draw arrows joining resources across projects. No CodePipeline, CodeBuild, Amplify Hosting, queues, manual approval stage, CloudFront invalidation, sandbox deployment, stateful migration, or browser E2E pipeline stage. Do not claim a fixed test count. Remove old local-only warning, proposed banner, amplifyPush --simple, and backend-only assertion. Keep typography exact and command text monospaced; no 3D, watermark, or photo imagery.",
+  "scope": "One comparison diagram covering all three independent pipelines, saved in each repository and the enclosing workspace.",
+  "sha256": "3c822356cfdb1574608e6136d980a547484f2dce7eaa195b856a17bb3c901c6d",
+  "sourceVerification": {
+    "inspectedOn": "2026-10-08",
+    "checks": [
+      "Verified stage ordering against all three .github/workflows/deploy.yml files.",
+      "Verified temporary OIDC role, region, branch, and distinct Amplify app IDs against GitHub variables and deployment.json.",
+      "Verified Gen 1 init/push, outputs export, plugin discovery and deployed Lambda package check.",
+      "Verified native and migrated Gen 2 pipeline-deploy and generate outputs commands.",
+      "Verified hosting prepare precedes backend deployment and frontend publication follows live API smoke checks.",
+      "Verified private S3 origin with CloudFront OAC and a second redirect-only S3 website bucket.",
+      "Verified artifact upload uses if: always() and retention-days: 14.",
+      "Verified latest deployment runs completed successfully, including API and frontend hosting checks.",
+      "Visually inspected the generated PNG: readable labels, correct stage order, three distinct project lanes, current status, and no cross-project resource sharing.",
+      "Documentation-only update; no new deployment or browser test run is claimed."
+    ],
+    "projects": [
+      {
+        "repository": "amplify-gen1-fullstack",
+        "sourceCommit": "fe97b125fb9aa7fab388372d47c8d52e6294b1db",
+        "latestSuccessfulDeployment": {
+          "conclusion": "success",
+          "createdAt": "2026-10-07T18:54:10Z",
+          "databaseId": 37670369890,
+          "headSha": "fe97b125fb9aa7fab388372d47c8d52e6294b1db",
+          "status": "completed",
+          "url": "https://github.com/gowthammail4macair/amplify-gen1-fullstack/actions/runs/37670369890"
+        },
+        "sourceFiles": {
+          ".github/workflows/deploy.yml": "9f41ba166d44548d697d466074af46061c369928679ed8a99fd894a788893e40",
+          "deployment.json": "63618ceca8010a4266396ab7aaf1a1b4398d6247f50637dfe01ab5e42671cdd2",
+          "package.json": "c32652e6b31c43788e826bfa011162fcc12a627acaafba051ecdc42b4c34bad8",
+          "scripts/hosting.cjs": "fe41a3fda16073a204eb64fb9796e7fe45359dbb4c94068978b819c60313be51",
+          "scripts/build-frontend.cjs": "1f6a00aab55de0a1883e1ecd8193e7922b9f3a35cf9bfa77b9978cf14e0dd6e3",
+          "scripts/check-hosting.cjs": "19d117622594dc1348f3d16139eeef9f5d4ed4c36e2a6b976e489aa998b51b5d",
+          "scripts/smoke-test.cjs": "243d36661a86d451e94d6a92694f7e659b9545edab788022a3bf0ec7086d72d4",
+          "frontend/hosting-template.json": "40fb6574daff5695ee6217678bdb802a9470c0d30edcc33a30ad5ee7e19c5d41",
+          "scripts/deploy.cjs": "5feb40aa2fd3a61cc2186139cd2e7729e18a4d43ce5f9a03a48bc86d68b4de84",
+          "scripts/configure-cli.cjs": "19dd66cde2e3b9e079c9c1a5eb5cd4c90f7e42bcb128c0f51543053be6de3ba3",
+          "scripts/check-lambda-packages.cjs": "c9216bbb987352e171b5298cb3f3236d60ef09878cc87f34e2c693a21e03162f"
+        }
+      },
+      {
+        "repository": "amplify-gen2-fullstack",
+        "sourceCommit": "9b35d432511d441f5b90a49453082e946376df45",
+        "latestSuccessfulDeployment": {
+          "conclusion": "success",
+          "createdAt": "2026-10-07T08:17:04Z",
+          "databaseId": 37592740123,
+          "headSha": "8a682fb201583703f09a923c7036c74517515379",
+          "status": "completed",
+          "url": "https://github.com/gowthammail4macair/amplify-gen2-fullstack/actions/runs/37592740123"
+        },
+        "sourceFiles": {
+          ".github/workflows/deploy.yml": "eeb8b4c998c3cbffc531a682df8906982d81130b3feabc9bdf5130f27017a6de",
+          "deployment.json": "5016a604c1ead8f8132a5032e34335b840fcbb3b14f594cda7b54aab95427643",
+          "package.json": "d34cf67294170f80258aee5652847f12109246b179c1f7fbe3bf80259a8fa9ef",
+          "scripts/hosting.cjs": "fe41a3fda16073a204eb64fb9796e7fe45359dbb4c94068978b819c60313be51",
+          "scripts/build-frontend.cjs": "1f6a00aab55de0a1883e1ecd8193e7922b9f3a35cf9bfa77b9978cf14e0dd6e3",
+          "scripts/check-hosting.cjs": "19d117622594dc1348f3d16139eeef9f5d4ed4c36e2a6b976e489aa998b51b5d",
+          "scripts/smoke-test.cjs": "004a766f60b02f53ff68db7f3cff98f70e24cd4bec5e5c46aed56354b1a871a3",
+          "frontend/hosting-template.json": "40fb6574daff5695ee6217678bdb802a9470c0d30edcc33a30ad5ee7e19c5d41",
+          "amplify/backend.ts": "8addf2060854bd24fe9e82c807e3167d4c08239ba46d4517dc0b17512a9f4d98"
+        }
+      },
+      {
+        "repository": "amplify-gen1-to-gen2-migration",
+        "sourceCommit": "4730240a0a52b41cd0def8f6368857327a87a815",
+        "latestSuccessfulDeployment": {
+          "conclusion": "success",
+          "createdAt": "2026-10-07T08:17:05Z",
+          "databaseId": 37592742171,
+          "headSha": "b9cbe400f99022a1af837254cf4b2a1e8e12b747",
+          "status": "completed",
+          "url": "https://github.com/gowthammail4macair/amplify-gen1-to-gen2-migration/actions/runs/37592742171"
+        },
+        "sourceFiles": {
+          ".github/workflows/deploy.yml": "eeb8b4c998c3cbffc531a682df8906982d81130b3feabc9bdf5130f27017a6de",
+          "deployment.json": "9323e3eff4f45fec3860021688c0fab2d0361b10bbbcc9f99dde4a2012e67369",
+          "package.json": "ebe1b8c866d5ddbe34717df34552b4b0847c53b46193d9e04e3bfaf432d733fd",
+          "scripts/hosting.cjs": "fe41a3fda16073a204eb64fb9796e7fe45359dbb4c94068978b819c60313be51",
+          "scripts/build-frontend.cjs": "1f6a00aab55de0a1883e1ecd8193e7922b9f3a35cf9bfa77b9978cf14e0dd6e3",
+          "scripts/check-hosting.cjs": "19d117622594dc1348f3d16139eeef9f5d4ed4c36e2a6b976e489aa998b51b5d",
+          "scripts/smoke-test.cjs": "004a766f60b02f53ff68db7f3cff98f70e24cd4bec5e5c46aed56354b1a871a3",
+          "frontend/hosting-template.json": "40fb6574daff5695ee6217678bdb802a9470c0d30edcc33a30ad5ee7e19c5d41",
+          "amplify/backend.ts": "8b2785ce7c947d438bdd486bd9d98df7c362310f00cd4aaae5f224950c64a373"
+        }
+      }
+    ]
+  }
+}
